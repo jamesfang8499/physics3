@@ -163,7 +163,48 @@
 磁场方向是向下的，如图中所示。从楞次定律知道，感生电流要阻碍磁通量的增加，因此螺线管$B$中感生电流的磁场方向跟$A$的磁场方向相反，即磁力线的方向是向上的，由此可以知道，感生电流在$B$中是沿着反时针方向流动的，打开电键使$A$断电时，或者增大变阻器的电阻时，$B$中感生电流是沿着顺时针方向流动的，如图2.13乙所示，这种情形请同学们自己利用
 楞次定律来判断。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.6]{fig/2-13.png}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex,scale=.8]
+\draw (0,0) circle (1);
+\draw (0,0) circle (1.1);
+\draw (0,0) circle (2);
+\draw (0,0) circle (2.1);
+\foreach \x in {-.5, 0, .5}
+\foreach \y in {-.35,.35}
+{
+   \node at (\x,\y){$\times$};
+}
+
+\draw[->] (30:1.3) node [above]{$A$} arc (30:-30:1.3);
+\draw[->] (-30:2.3) arc (-30:30:2.3);
+\draw[->] (210:1.3) arc (210:150:1.3);
+\draw[->] (150:2.3) arc (150:210:2.3) node [below]{$B$};
+
+\end{tikzpicture}
+\caption*{甲}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex,scale=.8]
+\draw (0,0) circle (1);
+\draw (0,0) circle (1.1);
+\draw (0,0) circle (2);
+\draw (0,0) circle (2.1);
+\foreach \x in {-.5, 0, .5}
+\foreach \y in {-.35,.35}
+{
+   \node at (\x,\y){$\times$};
+}
+
+\draw[->] (30:1.3) node [above]{$A$} arc (30:-30:1.3);
+\draw[->] (30:2.3) arc (30:-30:2.3);
+\draw[->] (210:1.3) arc (210:150:1.3);
+\draw[->] (210:2.3) node [below]{$B$} arc (210:150:2.3) ;
+
+\end{tikzpicture}
+\caption*{乙}
+\end{minipage}
 \caption{这是图2.3所示实验的俯视图，图中只画出了$A$中电流的磁场方向}
 \end{figure}
 
@@ -186,16 +227,42 @@
 \centering
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/2-15.png}
+\begin{circuitikz}[>=latex, yscale=.5]
+\draw (0,0) to [battery2] (2,0) to [cute open switch](4,0)--(5,0)--(5,2)--(0,2)--(0,0);
+\draw (0,3)--(5,3)--(5,5) to [rmeter, t=G](0,5)--(0,3);
+\node at (-.25, 2){$A$};
+\node at (-.25, 3){$C$};
+\node at (5.25, 2){$B$};
+\node at (5.25, 3){$D$};
+\node at (3, -.5){$K$};
+\end{circuitikz}
 \caption{}
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/2-16.png}
+\begin{circuitikz}[>=latex, yscale=.8]
+\draw (0,0)--(5,0) to [rmeter, t=G] (5,4)--(0,4) to [rmeter, t=G] (0,0);
+
+\foreach \x in {.5,1.5,...,4.5}
+\foreach \y in {.5,1.5,2.5,3.5}
+{
+   \node at  (\x,\y) {$\times$};
+}
+
+\node at (0,-.5){$E$};
+\node at (2.7,-.5){$A$};
+\node at (5,-.5){$D$};
+\node at (0,4.5){$F$};
+\node at (2.7,4.5){$B$};
+\node at (5,4.5){$C$};
+\draw [fill=white](2.7,4.25) rectangle (2.9,-.25);
+\draw [->](2.9, 2)--(3.8,2)node[right]{$v$};
+
+\end{circuitikz}
 \caption{}
 \end{minipage}
 \end{figure}
-  \item 在图2.17所示的电路中把滑动变阻器R的滑动片向左移动使电流减弱。试确定这时线圈$A$和$B$中感生电流的方向。
+  \item 在图2.17所示的电路中把滑动变阻器$R$的滑动片向左移动使电流减弱。试确定这时线圈$A$和$B$中感生电流的方向。
   \item 如图2.18所示，把一个备形磁铁从闭合螺线管的右端插入，由左端抽出，在整个过程中，螺线管里产生的感生电流的方向是否发生改变？
 \begin{figure}[htp]\centering
 \includegraphics[scale=.6]{fig/2-17.png}
@@ -254,12 +321,44 @@
 \centering
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/2-20.png}
+\begin{circuitikz}[>=latex, scale=.7]
+\draw (0,0)--(6.5,0);
+\draw (0,0) to [rmeter, t=G] (0,5) --(6.5,5);
+
+\foreach \x in {1,2,...,6}
+\foreach \y in {1,...,4}
+{
+   \node at (\x,\y){$\times$};
+}
+
+\draw [fill=white](3.5,-.15) rectangle (3.5+.2,5.15);
+\draw [fill=white, dashed](5.5,-.15) rectangle (5.5+.2,5.15);
+
+\node at (0,5.5){$d$};
+\node at (0,-.5){$c$};
+\node at (3.5,5.5){$a$};
+\node at (3.5,-.5){$b$};
+\node at (5.5,5.5){$a_1$};
+\node at (5.5,-.5){$b_1$};
+
+\end{circuitikz}
 \caption{}
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/2-21.png}
+\begin{circuitikz}[>=latex]
+\foreach \x in {.5,2,3.5}
+{ 
+   \draw[->] (\x, 4)--(\x, 0);
+}
+\node at (2.4, 0){$B$};
+\draw[->] (1.5, 3)--(2.5,3) node[right]{$v_1$};
+\draw[->] (1.5,3)--(1.5, 1)node[below]{$v_2$};
+\draw[->] (1.5,3)--(2.5,1)node[right]{$v$};
+\draw [fill=white] (1.5, 3) circle (1.5pt);
+\node at  (1.6,2.5){$\theta$};
+
+\end{circuitikz}
 \caption{}
 \end{minipage}
 \end{figure}
@@ -423,13 +522,38 @@ $\mathcal{E}=B\ell v_1$
 
 在图2.25所示的实验中，先合上开关$K$，调节变阻器$R$的电阻，使同样规格的两个灯泡$A_1$和$A_2$的明亮程度相同，再调节变阻器$R_1$使两个灯泡都正常发光，然后断开开关$K$。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.6]{fig/2-25.png}
+\begin{circuitikz}[>=latex,european]
+\draw (2,0) to [battery] (0,0)--(0,3)--(.5,3);
+\draw (2,0) to [cute open switch](3,0)--(4,0) to [R] (5.1,0);
+
+\node at (2.5,-.5){$K$};
+\node at (4.5,-.5){$R_1$};
+\draw [american] (.5,3)--(.5,3.7) to [cute choke,l=$L$] (2.5,3.7) to [lamp] (4.5,3.7);
+\draw [->](.5,3)--(.5,3-.7)--(1.5,2.3)--(1.5,1.8);
+
+\draw  (1,1.6) to [R] (2.1,1.6)  to [lamp] (4.5,1.6)--(4.5,3.7);
+\draw [->](4.5,5.3/2)--(5.5,5.3/2)--(5.5, 1)--(4.5,1)--(4.5,.2);
+
+\node at (3.3,2.3){$A_2$};
+\node at (3.5,4.3){$A_1$};  \node at (1.5,1.2){$R$};
+\draw [fill=black](4.5,5.3/2) circle(1.5pt);
+\draw [fill=black](.5,3)circle(1.5pt);
+\end{circuitikz}
 \caption{}
 \end{figure}
 
 再接通电路时可以看到，跟变阻器$R$串联的灯$A_2$立刻正常发光，而跟有铁芯的线圈$L$串联的灯$A_1$却是逐渐亮起来的，为什么会出现这样的现象呢？原来，在接通电路的瞬间，电路中的电流增大，穿过线圈$L$的磁通量也随着增加，根据电磁感应定律，线圈中必然会产生感生电动势，这个感生电动势阻碍线圈中电流的增大。所以通过$A_1$的电流只能逐渐增大，灯$A_1$只能逐渐亮起来。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.6]{fig/2-26.png}
+\begin{circuitikz}[>=latex, yscale=.7]
+\draw (4,3) -- (5,3) -- (5,0) to [cute open switch] (2.5,0) to [battery] (0,0)--(0,3)--(1,3);
+\node at (7.5/2,.5){$K$};
+\draw (1,3)--(1,3.75) to [lamp] (4,3.75)--(4,3);
+\draw (1,3)--(1,2.25) to [L] (4,2.25)--(4,3);
+\node at (2.5,1.6){$L$};
+\node at (2.5,4.8){$A$};
+\draw [<-](2,3.75)--(1.5,3.75)node [above]{$I$};
+\draw [->](2,2.25)--(1.5,2.25);
+\end{circuitikz}
 \caption{}
 \end{figure}
 
@@ -659,16 +783,31 @@ $\mathcal{E}=B\ell v_1$
 简明扼要地写下来。
 \begin{figure}[htp]
 \centering
-\begin{minipage}[t]{0.48\textwidth}
-\centering
 \includegraphics[scale=.6]{fig/2-42.png}
 \caption{}
-\end{minipage}
-\begin{minipage}[t]{0.48\textwidth}
+\end{figure}
+
+\begin{figure}[htp]
 \centering
-\includegraphics[scale=.6]{fig/2-43.png}
+\begin{circuitikz}[>=latex, scale=.8]
+\draw (0,0) to [cute open switch] (3,0)--(6,0);
+\draw (6,4)--(0,4) to [battery2] (0,0);
+\foreach \x in {.5,1.25,...,6}
+\foreach \y in {.5,1.25,...,3.5}
+{
+   \node at (\x, \y) {$\times$};
+}
+
+\node at (1.5,-.2){$K$};
+
+\draw[very thick] (4,0)node[below]{$B$}--(4,4)node[above]{$A$};
+\draw[very thick] (4,0) arc (0:-180:0.1);
+\draw[very thick] (4,4) arc (0:180:0.1);
+
+\draw[->] (4,2.3)--(4.8,2.3)node[above]{$F$};
+
+\end{circuitikz}
 \caption{}
-\end{minipage}
 \end{figure}
 
 \item 如图2.43所示，电源的电动势$\mathcal{E}=1.5$伏，内电阻$r=0.5$欧，$AB=0.5$米，$AB$的电阻$R=0.1$欧，框架的电阻不计，磁感应强度为0.5特，金属框对$AB$的滑动摩擦力为$0.25$牛。
