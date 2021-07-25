@@ -353,7 +353,27 @@
 \begin{enumerate}
     \item 图1.24表示一根放在磁场里的通电直导线，图中已分别标明电流、磁感应强度和安培力这三个量中两个的方向，试画出第三个量的方向。
     \begin{figure}[htp]\centering
-    	\includegraphics[scale=.75]{fig/1-24.png}
+\begin{tikzpicture}[>=latex, scale=.8]
+		\foreach \x in {1,2,3,4}
+		{
+			\draw[->] (0,\x)--(4,\x);
+		}
+		\draw[->](2,2.5)--(2,3.5)node[right]{$F$};
+		\node at (4.5,2.5){$B$};
+		\draw [fill=white](2,2.5) circle (5pt);
+		
+		\draw[->](6.5,2.5)node[left]{$I$}--(7.5,2.5)node[above]{$F$};
+		\draw [fill=white](6.5,2.5) circle (5pt);
+		\node at (6.5,2.5){$\times$};
+		
+	\foreach \y in {1,2,3,4}
+	{
+		\draw[->] (9.5,\y)--(13.5,\y);
+	}	
+\draw [fill=white](11.5,2.5) circle (5pt);
+\node at (11.5,2.5){$\times$};
+		\node at (14,2.5){$B$};\node at (11.1,2.5){$I$};
+	\end{tikzpicture}
     	\caption{ }
     \end{figure}
     \item 试解释为什么两根平行直导线中通以相反方向电流时，它们互相推斥。
