@@ -186,7 +186,23 @@ $\mathcal{E}_m=2B\ell v$，把它代入上式就得到
 \caption{$e=\mathcal{E}_m \sin \omega t$的图象}
 \end{figure}
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-5.png}
+\begin{tikzpicture}[>=latex, xscale=.7]
+
+\draw[->] (-1,0)--(11,0)node [right]{$\omega t$};
+\draw[->] (3.1416/6, -1.5)--(3.1416/6, 2.5)node [above]{$i,u$};
+\foreach \x in {3.1416*7/6, 3.1416*13/6, 3.1416*19/6}
+{
+   \draw (\x, -.1)--(\x, .1);
+}
+\draw [ultra thick] plot[domain=0:3*3.1416, samples=1000] function{1.5*sin(x)} ;
+\draw[dashed](0,-1)--(0,0);
+
+\node at (3.1416/12, -.5){$\phi_0$};
+\node at (3.1416/12, -2){$\phi_0=\pi/6=30^{\circ}$};
+\draw[->] (-.5,-.5)--(0,-.5);
+\draw[->] (3.1416/6+.5,-.5)--(3.1416/6,-.5);
+\node at  (3.1416/6+.25,.25) {$O$};
+\end{tikzpicture}
 \caption{$i=I_m\sin(\omega t+\phi_0)$或$u=U_m\sin(\omega t+\phi_0)$的图象}
 \end{figure}
 
@@ -1430,9 +1446,9 @@ e_C&=\mathcal{E}_m\sin (\omega t-240^\circ)\\
 线叫做\textbf{中性线}，在照明电路里中性线是接地的，叫零线。这种有中性线的连接叫做\textbf{三相四线制}。照明电路通常采用三相四线制，灯泡连在端线和中性线之间（图3.46）。
 \begin{figure}[htp]\centering
 \begin{circuitikz}
-	\draw (0,0) to [L] (0,2);
-	\draw (0,0) to [L] (-2,-1)node[left]{$C$};	
-	\draw (0,0) to [L] (2,-1)node[right]{$B$};	
+	\draw (0,0) to [american inductors, L] (0,2);
+	\draw (0,0) to [american inductors, L] (-2,-1)node[left]{$C$};	
+	\draw (0,0) to [american inductors, L] (2,-1)node[right]{$B$};	
 	\draw[european] (5,0) to [R=1] (5,2);
 	\draw [european](5,0) to [R=3] (-2+5,-1);	
 	\draw[european] (5,0) to [R=2] (2+5,-1);				
@@ -1462,9 +1478,9 @@ e_C&=\mathcal{E}_m\sin (\omega t-240^\circ)\\
 在实际应用中，三相发电机的线圈通常都是采用图3.47所示的连接方法，这种连接方法叫做星形连接（符号是Y）。这时电源提供两种电压，一种是每相线圈两端的电压，叫做\textbf{相电压}；另一种是每两根端线之间的电压，叫做\textbf{线电压}（图3.47）。在实际的发电机中，各相线圈的情况相同，所以三个相电压相等，通常用$U_{\text{相}}$来表示。这时三个线电压也相等，通常用$U_{\text{线}}$来表示。
 \begin{figure}[htp]\centering
 \begin{circuitikz}[>=latex]
-	\draw (0,0) to [L] (0,2);
-	\draw (0,0) to [L] (-1.5,-1)node[left]{$C$};	
-	\draw (0,0) to [L] (1.5,-1)node[below]{$B$};	
+	\draw (0,0) to [american inductors, L] (0,2);
+	\draw (0,0) to [american inductors, L] (-1.5,-1)node[left]{$C$};	
+	\draw (0,0) to [american inductors, L] (1.5,-1)node[below]{$B$};	
 	
 	\node at (0,.1) [left]{$O$};
 	
@@ -1527,9 +1543,9 @@ e_C&=\mathcal{E}_m\sin (\omega t-240^\circ)\\
 
 \begin{figure}[htp]\centering
 	\begin{circuitikz}
-		\draw (0,0) to [L] (0,2);
-			\draw (0,0) to [L] (-2,-1)node[left]{$C$};	
-			\draw (0,0) to [L] (2,-1)node[right]{$B$};	
+		\draw (0,0) to [american inductors, L] (0,2);
+			\draw (0,0) to [american inductors, L] (-2,-1)node[left]{$C$};	
+			\draw (0,0) to [american inductors, L] (2,-1)node[right]{$B$};	
 		\draw[european] (5,0) to [R=1] (5,2);
 \draw [european](5,0) to [R=3] (-2+5,-1);	
 \draw[european] (5,0) to [R=2] (2+5,-1);				
@@ -1592,9 +1608,9 @@ e_C&=\mathcal{E}_m\sin (\omega t-240^\circ)\\
 \end{enumerate}
 \begin{figure}[htp]\centering
 \begin{circuitikz}
-	\draw (0,0) to [L] (-1.5, -2);
-	\draw (0,0) to [L] (1.5, -2);	
-		\draw (1.5, -2) to [L] (-1.5, -2);
+	\draw (0,0) to [american inductors, L] (-1.5, -2);
+	\draw (0,0) to [american inductors, L] (1.5, -2);	
+		\draw (1.5, -2) to [american inductors, L] (-1.5, -2);
 	\draw (0,0)-- (4,0)node [right]{$A$};
 	\draw (1.5, -2)-- (4,-2)node [right]{$B$};	
 	\draw (-1.5, -2)--(-1.5, -3)-- (4,-3)node [right]{$C$};	
@@ -1720,9 +1736,9 @@ $i_{AX}$是正值，电流从始端$A$流向末端$X$；线圈$BY$中的电流$i
     \item 如图3.61所示，电源采用星形连接，负载采用三角形连接。电源的相电压是220伏，各相负载相同，阻值都是110欧，求通过各相负载的相电流和线电流。
 \begin{figure}[htp]\centering
 	\begin{circuitikz}
-	\draw (0,0) to [L] (0,2);
-	\draw (0,0) to [L] (-2,-1)node[left]{$B$};	
-	\draw (0,0) to [L] (2,-1)node[right]{$C$};	
+	\draw (0,0) to [american inductors, L] (0,2);
+	\draw (0,0) to [american inductors, L] (-2,-1)node[left]{$B$};	
+	\draw (0,0) to [american inductors, L] (2,-1)node[right]{$C$};	
 	\draw[european] (5,2) to [R] (3,-1);
 	\draw [european](5,2) to [R] (7,-1);	
 	\draw[european] (3,-1) to [R] (7,-1);				
