@@ -161,7 +161,7 @@
 \centering
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/1-14.pdf}
+\includegraphics[scale=1]{fig/1-14.pdf}
 \caption{}
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
@@ -656,7 +656,7 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 图1.37是测定荷质比的一种装置。让中性的气体分子进入电离室$A$，在那里被电离成离子。这些离子从电离室的
 小孔飘出，从缝$S_1$进入加速电场中被加速。然后让粒子垂直进入匀强磁场中做匀速圆周运动，最后打在照相底片$D$上。
 \begin{figure}[htp]\centering
-\includegraphics[scale=1]{fig/1-37.pdf}
+\includegraphics[scale=1.2]{fig/1-37.pdf}
 \caption{}
 \end{figure}
 
@@ -767,7 +767,7 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
     \end{figure}
 
 图1.39表示从放在$A_0$处的粒子源发出一个带正电的粒子，它以某一速率$v_0$垂直进入匀强磁场中，在磁场中做匀速圆周运动，经过半个周期，当它沿着半圆弧$\widering{A_0A_1}$到达$A_1$时，我们在$A_1A'_1$处造成一个向上的电场，使这个带电粒子在$A_1A_1'$处受到一次电场的加速，速率由$v_0$增加到$v_1$。然后粒子以速率$v_1$在磁场中做匀速圆周运动，我们知道，粒子的轨道半径跟它的速率成正比，因而粒子将沿着半径增大了的圆周运动。
-又经过半个周期，当它沿着半圆弧$\widering{A'_1A'_2}$到达$A'_2$时，我们在$A_2A'_2$处造成一个向下的电场，使粒子又一次受到电场的加速，速率增加到$v_2$。如此继续下去，每当粒子运动到$A_1A'_1$、$A_3A'_3$等处时都使它受到一个向上电场的加速，每当粒子运动到$A_2A'_2$、$A_4A'_4$等处时都使它受到一个向下电场的加速，这样，粒子将沿着图示的螺线$A_0A_1A'_1A'_2A2$……回旋下去，速率将一步一步地增大。
+又经过半个周期，当它沿着半圆弧$\widering{A'_1A'_2}$到达$A'_2$时，我们在$A_2A'_2$处造成一个向下的电场，使粒子又一次受到电场的加速，速率增加到$v_2$。如此继续下去，每当粒子运动到$A_1A'_1$、$A_3A'_3$等处时都使它受到一个向上电场的加速，每当粒子运动到$A_2A'_2$、$A_4A'_4$等处时都使它受到一个向下电场的加速，这样，粒子将沿着图示的螺线$A_0A_1A'_1A'_2A_2$……回旋下去，速率将一步一步地增大。
 \begin{figure}[htp]
 	\centering
 	\begin{tikzpicture}[>=latex, scale=.5]
@@ -788,7 +788,7 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 \draw [->](5.5,.55)-- (5.5,2.75)node[above]{$v_1$};
 \node at (3.5-.2,-0.5) {$A_0$};
 \node at (5.5+.2,-0.5) {$A_1$};
-\node at (4.5, -1.5){甲};
+\node at (4.5, -2){甲};
 	\end{tikzpicture}
 	\begin{tikzpicture}[>=latex, scale=.5]
 	
@@ -806,7 +806,7 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 \node at (2.5-.2, 2.5){$A'_2$}; 
 \node at (7+.2, 2.5){$A'_1$};
 \draw [->](2.5,2-.55)-- (2.5,-1.3)node[below]{$v_2$};	
-\node at (4.5, -1.5){乙};
+\node at (4.5, -2){乙};
 	\end{tikzpicture}
 	\caption{甲：粒子运动到$A_1$时被电场加速。乙：经过半周期，粒子运动到$A'_2$，电场改变了方向，粒子又被电场加速。}
 \end{figure}
@@ -819,7 +819,7 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 
 \begin{figure}[htp]
 \centering
-\includegraphics{fig/1-41.pdf}
+\includegraphics[scale=1.2]{fig/1-41.pdf}
 \caption{回旋加速器的$D$形盒}
 \end{figure}
 
@@ -893,7 +893,18 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 	\caption{ }
 \end{figure}
 \begin{figure}[htp]\centering
-	\includegraphics[scale=.75]{fig/1-46.png}
+\begin{tikzpicture}[>=latex]
+\draw[->] (-1,0)--(6,0);
+\draw[->] (0,0)--(0,3)node [above]{$v_0$};
+\draw[very thick] (0,0) arc (180:0:2.5); 
+\draw[very thick, ->] (0,0) arc (180:90:2.5); 
+\node at (0,-.5){$A$};\node at (5,-.5){$B$};
+
+\draw (0,0) [fill=white]circle (4.5pt);
+\node at  (0,0) {\small $-$};
+
+
+\end{tikzpicture}
 	\caption{ }
 \end{figure}
 \item 图1.45表示由$O$点发出的电子和正电子（质量和电量跟电子相同，但带的是正电荷）在匀强磁场中运动的径迹。
@@ -926,7 +937,3 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 \caption{ }
 \end{figure}
 \end{enumerate}
-
-
-
-
