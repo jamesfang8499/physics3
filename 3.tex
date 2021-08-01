@@ -901,7 +901,44 @@ $\phi$，那么原、副线圈中产生的感生电动势分别是
 圈的一部分作原线圈，整个线圈作副线圈，就可以升高电压
 （图 3.26乙）．
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-26.png}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{circuitikz}[>=latex]
+    \ctikzset{inductors/scale=0.75, inductors/width=2.5, inductors/coils=8} \draw (0,0)--(2,0) to [american inductor] (2,2.8)--(0,2.8);
+\draw (2,0)--(4,0);
+\draw (4,1.4)--(2,1.4);
+\draw [<->](0,.1)--node[fill=white]{$U_1$}(0,2.8-.1);
+\draw [<->](4,.1)--node[fill=white]{$U_2$}(4,1.4-.1);
+\draw [ultra thick](1.7,.1)--node[left]{$n_1$} (1.7,2.7-.1);
+\draw (0,0) [fill=white] circle (1.5pt);
+\draw (0,2.8) [fill=white] circle (1.5pt);
+\draw (4,0) [fill=white] circle (1.5pt);
+\draw (4,1.4) [fill=white] circle (1.5pt);
+\node at (2.3, .7){$n_2$};
+
+
+\end{circuitikz}
+\caption*{甲}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{circuitikz}[>=latex]
+\draw (0,0)--(2,0)--(4,0);
+\ctikzset{inductors/scale=0.75, inductors/width=2.5, inductors/coils=8}  \draw (4,3)--(2,3) to [american inductor] (2,0);
+
+\draw [<->](0,.1)--node[fill=white]{$U_1$}(0,1.5-.1);
+\draw [<->](4,.1)--node[fill=white]{$U_2$}(4,3-.1);
+\draw [ultra thick](2.3,.1)--node[right]{$n_2$} (2.3,2.9-.1);
+\node at (1.7, .7){$n_1$};
+\draw (0,1.5)--(2,1.5);
+\draw (0,0) [fill=white] circle (1.5pt);
+\draw (0,1.5) [fill=white] circle (1.5pt);
+\draw (4,0) [fill=white] circle (1.5pt);
+\draw (4,3) [fill=white] circle (1.5pt);
+
+\end{circuitikz}
+\caption*{乙}
+\end{minipage}
 \caption{自耦变压器}
 \end{figure}
 
@@ -1139,14 +1176,18 @@ $D$是二极管，$R$是用电器的电阻，也叫负载电阻或负载。
     \begin{circuitikz}[>=latex,european]
 
 
-\draw (0,1.3)--(0,0)--(1,0) to [cute inductor] (1,3)--(0,3)--(0,1.7) ;
-\draw (1.5,0)--(5,0) to [R=$R$] (5,3) --(1.5,3) node[above]{$a$} to  [cute inductor] (1.50,0)node[below]{$b$};
-\draw (1.5,3) to[empty diode, fill=black](5,3);
+\draw (0,1.3)--(0,0)--(.7,0);
+\draw (.7,3) to [american inductor] (.7,0);
+\draw (.7,3)--(0,3)--(0,1.7) ;
+\draw (1.5,0)--(5,0) to [R=$R$] (5,3) --(1.5,3) node[above]{$a$};
+\draw (1.50,0)node[below]{$b$} to  [american inductor] (1.5,3);
+
+\ctikzset{diodes/scale=0.6}\draw (1.5,3) to[full diode](5,3);
  \draw (0,1.3) [fill=white]circle (1.5pt);
         \draw (0,1.7) [fill=white]circle (1.5pt);
         \node at (0,1.5){$\sim$};
-\draw [ultra thick](1.25,1)--(1.25,2);   \node at (3.125,3.5){$D$};
-\node at (1.25,2.5){$B$};
+\draw [ultra thick](1.1,1)--(1.1,2);   \node at (3.125,3.5){$D$};
+\node at (1.1,2.5){$B$};
 \draw [<->](2.25,0)--node [fill=white]{$u$} (2.25,3);
 \draw [<->](4,0)--node [fill=white]{$u_R$} (4,3);
 %\draw [ultra thick] (3.75,3.25)--(3.75,2.75);
@@ -1289,7 +1330,26 @@ R的电流方向总是相同的。图3.34是全波整流的波形，其中
 
 \subsection{桥式整流}
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-35.png}
+\begin{circuitikz}[>=latex, scale=1.3]
+
+        \draw (-3,.25)--(-3,1)--(-2+.25,1) to [american inductor] (-2+.25,-1)--(-3,-1)--(-3,-.25);
+        \draw (1,-1)--(1,-1.5)--(-1.25,-1.5) to [american inductor] (-1.25,1.5)--(1,1.5)--(1,1);
+        \draw [ultra thick] (-3/2, -.4)--(-3/2, .4);
+      \ctikzset{diodes/scale=0.6}  \draw (0,0) to [full diode] (1,1) to [full diode] (2,0);
+     \ctikzset{diodes/scale=0.6}  \draw (0,0) to [full diode] (1,-1) to [full diode] (2,0) ;
+        \draw (2,0)--(3,0) to [european, R=$R$] (3,-2) --(0,-2)--(0,0);
+        
+        \draw [fill=white] (-3,.25) circle (1pt);
+        \draw [fill=white] (-3,-.25) circle (1pt);
+        \draw [fill=black] (0,0) circle (1pt);
+        \draw [fill=black] (2,0) circle (1pt);\draw [fill=black] (1,-1) circle (1pt);
+        \draw [fill=black] (1,1) circle (1pt);
+        \node at (-3,0){\Huge $\sim $};
+        \node at (1.5,1){$D_1$};        \node at (1.5,-1){$D_2$};
+        \node at (.5,-1){$D_3$};        \node at (.5,1){$D_4$};
+        \node at (3.25,-.5){$+$};        \node at (3.25,-1.5){$-$};
+        \node at (-1.1,.5){$a$};        \node at (-1.1,-.5){$b$};
+        \end{circuitikz}
 \caption{}
 \end{figure}
 
@@ -1332,22 +1392,99 @@ R的电流方向总是相同的。图3.34是全波整流的波形，其中
 \end{figure}
 
 电容器具有通交流隔直流的作用，可以作滤波元件。图3.37甲是带有电容滤波的半波整流电路，电解电容器$C$和负载电阻$R$并联。并联电路有分流作用，当电容器的电容比较大时，容抗比较小，脉动电流的交流成分大部分通过电容器而滤掉，直流成分和一小部分交流成分通过负载电阻。因此，负载电阻的电压和电流就平稳多了。电容器的电容越大，负载电阻的电压和电流就越平稳，图3.37乙的粗实线是经过电容滤波的电压波形。这个电压波形可以用示波器观察到。
-\begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-37.png}
+\begin{figure}[htp]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{circuitikz}[>=latex, scale=1]
+    \draw (-3,.25)--(-3,1)--(-2,1) to [american inductor] (-2,-1)--(-3,-1)--(-3,-.25);
+    \draw (2,1.2) to [european, R=$R$] (2,-1.2)--(-1.25,-1.2) to [american inductor] (-1.25,1.2)--(2,1.2);
+    \node at (-3,0){$\sim $}; \node at (0,1.65){$D$};
+    \draw [ultra thick] (-1.6, -.5)--(-1.6, .5);
+    \ctikzset{diodes/scale=0.6}      \draw (-.5,1.2) to [full diode] (.5,1.2);
+    \draw (.8,1.2) to [eC=$C$, *-*] (.8,-1.2);
+    \draw [fill=white] (-3,.25) circle (1.5pt);
+    \draw [fill=white] (-3,-.25) circle (1.5pt);
+\end{circuitikz}
+\caption*{甲}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, xscale=1.2]
+\draw[<->](0,2)node[above]{$U_R$}--(0,0)--(5.2,0)node[below]{$t$};
+\draw [ thick, dashed] plot[domain=0:3.1416/2, samples=1000] function{1.5*sin(2*x)} ;
+\draw [ thick, dashed] plot[domain=3.1416:3.1416*3/2, samples=1000] function{1.5*sin(2*x)} ;
+\node at (3.1416/4,1.75) {滤波前};
+\node at (0,0)[below]{$O$};
+\draw [very thick](0,1.5*.866)--(3.1416/8, 1.5/1.414)--(3.1416/3, 1.5*.866)--(3.1416/8+3.1416, 1.5/1.414)--(3.1416/3+3.1416, 1.5*.866)--+(3.1416/8, 1.5/1.414-1.5*.866)node[right]{滤波后};
+
+\end{tikzpicture}
+\caption*{乙}
+\end{minipage}
 \caption{}
 \end{figure}
 
-\begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-38.png}
+\begin{figure}[htp]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{circuitikz}[>=latex, scale=1.2]
+    \draw (-3,.25)--(-3,1)--(-2,1) to [american inductor] (-2,-1)--(-3,-1)--(-3,-.25);
+    \ctikzset{diodes/scale=0.6} \draw (-1.25,-1.2) to [american inductor] (-1.25,1.2) to [full diode] (0,1.2)--(0,-1.2);
+   \ctikzset{diodes/scale=0.6} \draw (-1.25,-1.2) to [full diode]  (0,-1.2);
+    \node at (-3,0){$\sim $}; 
+    \draw [ultra thick] (-1.6, -.5)--(-1.6, .5);
+    \draw [fill=white] (-3,.25) circle (1.5pt);
+    \draw [fill=white] (-3,-.25) circle (1.5pt);
+\draw (0,1.2) to [american inductor] (1.5,1.2) to [european, R=$R$] (1.5,-.2)--(-1.3,-.2);
+\node at (-1.25/2,1.4)[above]{$D_1$};\node at (-1.25/2,-1.4)[below]{$D_2$};
+\draw [very thick] (.5-.2,1.5)--node [above]{$L$}(1+.2,1.5);
+\draw (0,1.2) [fill=black] circle (1.5pt);
+\end{circuitikz}
+\caption*{甲}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, xscale=1.2]
+        \draw[<->](0,2)node[above]{$U_R$}--(0,0)--(5.2,0)node[below]{$t$};
+        \draw [ thick, dashed] plot[domain=0:3.1416*3/2, samples=1000] function{abs(1.5*sin(2*x))} ;
+   %     \draw [ thick, dashed] plot[domain=3.1416:3.1416*3/2, samples=1000] function{1.5*sin(2*x)} ;
+   \draw [very thick] plot[domain=0:3.1416*3/2, samples=1000] function{0.2*cos(4.5*x)+1} ;
+        \node at (0,0)[below]{$O$};
+        \end{tikzpicture}
+\caption*{乙}
+\end{minipage}
 \caption{}
 \end{figure}
 
 电感线圈具有通直流阻交流的作用，也可作滤波元件。图3.38甲是带有电感滤波的全波整流电路，低频扼流圈$L$和负
-载电阻R串联。串联电路有分压作用，低频扼流圈的电感比较大，感抗也比较大，电压的交流成分大部分降在低频扼流圈上，低频扼流圈的电阻一般比负载电阻小，电压的直流成分大部分降在负载电阻上，因此，负载电阻的电压和电流也平稳多了。电感线圈的电感越大，负载电阻的电压和电流就越平稳，图3.38乙的粗实线是经过电感滤波的电压波形．
+载电阻$R$串联。串联电路有分压作用，低频扼流圈的电感比较大，感抗也比较大，电压的交流成分大部分降在低频扼流圈上，低频扼流圈的电阻一般比负载电阻小，电压的直流成分大部分降在负载电阻上，因此，负载电阻的电压和电流也平稳多了。电感线圈的电感越大，负载电阻的电压和电流就越平稳，图3.38乙的粗实线是经过电感滤波的电压波形．
 
 把电容滤波和电感滤波组合起来，可以组成滤波效果更好的$\pi$型滤波，图3.39是带有$\pi$型滤波的桥式整流电路。如果负载需要的电流不大，电感线圈也可以用电阻来代替，这样做虽然滤波效果差一些，但成本低、体积小，所以常常采用。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-39.png}
+\begin{circuitikz}[>=latex, scale=1.3]
+
+\draw (-3,.25)--(-3,1)--(-2+.25,1) to [american inductor] (-2+.25,-1)--(-3,-1)--(-3,-.25);
+\draw (1,-1)--(1,-1.5)--(-1.25,-1.5) to [american inductor] (-1.25,1.5)--(1,1.5)--(1,1);
+\draw [ultra thick] (-3/2, -.4)--(-3/2, .4);
+\ctikzset{diodes/scale=0.6} \draw (0,0) to [full diode] (1,1) to [full diode] (2,0);
+\ctikzset{diodes/scale=0.6} \draw (0,0) to [full diode] (1,-1) to [full diode] (2,0) ;
+\draw (2,0)to [american inductor](5,0)--(5.5,0) to [european, R=$R$] (5.5,-2) --(0,-2)--(0,0);
+\draw [ultra thick] (3+.1, .25) to node [above]{$L$} (4-.1, .25);
+
+
+\draw  (2.5,0) to [eC=$C_1$, *-*] (2.5,-2);
+\draw (4.2,0) to [eC=$C_2$, *-*] (4.2,-2);
+
+\draw [fill=white] (-3,.25) circle (1pt);
+\draw [fill=white] (-3,-.25) circle (1pt);
+\draw [fill=black] (0,0) circle (1pt);
+\draw [fill=black] (2,0) circle (1pt);\draw [fill=black] (1,-1) circle (1pt);
+\draw [fill=black] (1,1) circle (1pt);
+\node at (-3,0){\Huge $\sim $};
+
+
+\end{circuitikz}
 \caption{}
 \end{figure}
 
@@ -1359,10 +1496,10 @@ R的电流方向总是相同的。图3.34是全波整流的波形，其中
 	\item 在图3.35所示的桥式整流电路中，如果二极管$D_1$的极性接反，会发生什么现象？如果二极管$D_1$已被击穿，又会发生什么现象？说明理由，并画出负载电阻上的电压波形。
 \end{enumerate}
 \begin{figure}[htp]\centering
-\begin{circuitikz}[>=latex, european]
+\begin{circuitikz}[>=latex, european, scale=.9]
 \draw(0,0)--(2,0)--(5,0) to [R=$R$] (5,5)--(0,5);
-\draw (2,0) to [full diode, *-](2,2) to [full diode, -*](2,5) ;
-\draw (0,0)--(0,2) to [full diode](0,3.5) to [full diode](0,5) ;
+\ctikzset{diodes/scale=0.6} \draw (2,0) to [full diode, *-](2,2) to [full diode, -*](2,5) ;
+\ctikzset{diodes/scale=0.6} \draw (0,0)--(0,2) to [full diode](0,3.5) to [full diode](0,5) ;
 \node at (3-.25,1){$D_3$};
 \node at (3-.25,3.5){$D_2$};
 \node at (-.75,5.5/2){$D_4$};
@@ -1387,7 +1524,7 @@ R的电流方向总是相同的。图3.34是全波整流的波形，其中
 \begin{circuitikz}[>=latex, european]
 \draw (0,0)--(3,0) to [R=$R$] (3,3) ;
 \draw (1.5,3) to [battery2](0,3) to [rmeter, t=$\sim$](0,0);
-\draw (1.5,3) to [full diode](3,3) ;
+\ctikzset{diodes/scale=0.6}\draw (1.5,3) to [full diode](3,3) ;
 \node at (1,1.5){信号};
 \end{circuitikz}
 \caption{}
@@ -1397,7 +1534,43 @@ R的电流方向总是相同的。图3.34是全波整流的波形，其中
 象图3.1那样，使一个线圈在磁场里转动，电路里只产生
 一个交变电动势，这时发出的交流电叫做\textbf{单相交流电}。如果在磁场里有三个互成角度的线圈同时转动，电路里就产生三个交变电动势，这时发出的交流电叫做\textbf{三相交流电}。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-42.png}
+\begin{tikzpicture}[>=latex]
+\draw (0,0) circle (1.3);
+
+\foreach \x in {30,90,150}
+{
+    \draw [rotate=\x, dashed] (-1.6,-.08) rectangle (1.6,.08);
+}
+    \foreach \x in {30,90,150}
+{        
+    \draw (\x:1.6) [fill=white] circle (0.12);
+    \draw (-\x:1.6) [fill=white] circle (0.12);
+}
+
+\node at (30:1.6){$\times$};
+\node at (-30:1.6){$\times$};
+\node at (150:1.6){$\cdot$};
+\node at (-150:1.6){$\cdot$};
+
+\draw [->] (1,0) arc (0:20:1);
+\node at (32:1.7)[above]{$Z$};
+\node at (-28:1.7)[above]{$B$};
+\node at (150-2:1.7)[above]{$Y$};
+\node at (-150-2:1.7)[above]{$C$};
+\node at (90:1.7)[above]{$A$};
+\node at (-90:1.7)[below]{$X$};
+
+\draw (3,1.5)--(1.25,1.5);
+\draw (3,-1.5)--(1.25,-1.5);
+\draw (1.25,1.5) to [bend left=60](1.25,-1.5);
+\draw (3,1.5)--(3,-1.5);
+\draw (-3,1.5)--(-3,-1.5);
+\draw (-3,1.5)--(-1.25,1.5);
+\draw (-3,-1.5)--(-1.25,-1.5);
+\draw (-1.25,1.5) to [bend left=-60](-1.25,-1.5);
+\node at (-2.5,0){$N$};\node at (2.5,0){$S$};
+
+\end{tikzpicture}
 \caption{三相发电机的示意图}
 \end{figure}
 
@@ -1537,7 +1710,31 @@ e_C&=\mathcal{E}_m\sin (\omega t-240^\circ)\\
 例如三相负载是三个等值的电阻，或是三个相同的线圈，就属于负载相同的情况，图3.49表示在这种情况下三个相电流的曲线。三个电流的最大值和频率相同，位相互差120$^\circ$。从图中可以知道，三个相电流的总合在任何时刻都等于零，这一点，利用数学中学过的三角知识也可以得到证明，这就是说，在三相负载相同的情况下，在中性线里没有电流通过，既然
 如此，中性线就可以省去不用了，这就成为\textbf{三相三线制}（图3.50）。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-49.png}
+\begin{tikzpicture}[>=latex, yscale=1.6]
+    %\draw [|<->|](3.7,1.4796)--node[fill=white]{$i_b$}(3.7,0);
+%\draw [|<->|](3.3,-0.9534)--node[fill=white]{$i_c$}(3.3,0);
+%\draw [|<->|](3.7,-.5262)--node[fill=white]{$i_a$}(3.7,0);
+
+\draw[decorate,decoration=brace, thick](3.55,1.4796)--node[right]{$i_b$}(3.55,0);
+\draw[decorate,decoration=brace, thick](3.55,0)--node[right]{$i_c$}(3.55,-0.9534);
+\draw[decorate,decoration=brace, thick](3.45,-.5262)--node[left]{$i_a$}(3.45,0);
+
+
+\draw[->] (0,-1.6)--(0,1.8)node [right]{$i$};
+\draw [->](0,0)--(7,0)node [right]{$t$};
+\draw [thick] plot [domain=0:3.1416*2, samples=1000] function{1.5*sin(x)} ;
+\draw [very thick] plot [domain=0:3.1416*2, samples=1000] function{1.5*sin(3.1416*2/3+x)} ;
+\draw [ultra thick] plot [domain=0:3.1416*2, samples=1000] function{1.5*sin(3.1416*4/3+x)} ;
+\node at (3.1416/2, 1.7){$i_a$};
+\node at (3.1416/2+3.1416*2/3, 1.7){$i_b$};
+\node at (3.1416/2+3.1416*4/3, 1.7){$i_c$};
+
+
+
+\draw[dashed](3.5, 1.4796)--(3.5,-0.9534);
+
+
+\end{tikzpicture}
 \caption{三相负载相同时的电流}
 \end{figure}
 
@@ -1642,6 +1839,22 @@ e_C&=\mathcal{E}_m\sin (\omega t-240^\circ)\\
 
 不仅转动磁铁可以产生旋转磁场，三相交流电也可以产生旋转磁场。取三个相同的线圈，照图3.55那样使它们的平面交成120$^\circ$角，线圈中通以三相交流电，中间的铝框就象被转动的磁铁带着一样转动起来，说明三相交流电也产生旋转磁场。
 \begin{figure}[htp]\centering
+\begin{tikzpicture}[>=latex, scale=1.6]
+    \draw[->] (0,-1.3)--(0,1.5)node [right]{$i$};
+    \draw [->](0,0)node[left]{$O$}--(7,0)node [right]{$t$};
+    \draw [very thick] plot [domain=0:3.1416*2, samples=1000] function{0.9*sin(x)} ;
+    \draw [very thick] plot [domain=0:3.1416*2, samples=1000] function{0.9*sin(3.1416*2/3+x)} ;
+    \draw [very thick] plot [domain=0:3.1416*2, samples=1000] function{0.9*sin(3.1416*4/3+x)} ;
+    \node at (3.1416/2, 1.2){$i_{AX}$};
+    \node at (3.1416/2+3.1416*2/3, 1.2){$i_{BY}$};
+    \node at (3.1416/2+3.1416*4/3, 1.2){$i_{CZ}$};
+\draw[dashed] (3.1416*2/3, -1)--(3.1416*2/3, 1);
+\draw[dashed] (3.1416*4/3, -1)--(3.1416*4/3, 1);
+\draw[dashed] (3.1416*6/3, -1)--(3.1416*6/3, 1);
+\node at  (3.1416*2/3+.2, 0)[below]{$\frac{1}{3}T$};
+\node at  (3.1416*4/3+.2, 0)[below]{$\frac{2}{3}T$};
+\node at (3.1416*6/3+.2, 0)[below]{$T$};
+    \end{tikzpicture}
 \includegraphics[scale=.75]{fig/3-56.png}
 \caption{旋转磁场的产生}
 \end{figure}
@@ -1726,7 +1939,26 @@ $i_{AX}$是正值，电流从始端$A$流向末端$X$；线圈$BY$中的电流$i
     \item 在图3.35所示的桥式整流电路中，变压器原副线圈的匝数比等于8，原线圈接在220伏的交流电路中，能不能选用最高反向工作电压为50伏的晶体二极管进行整流？为什么？
     \item 图3.60是电子技术中用到的限幅电路，电池组的电动势都为$\mathcal{E}$，左端输入的是正弦交流电，电压$u_1$的最大值为$2\mathcal{E}$。试画出右端输出的电压$u_2$的图象，并分析说明理由。电池组的内电阻略去不计。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/3-60.png}
+\begin{circuitikz}[>=latex, european, scale=.8]
+\draw (0,0)--(3,0)--(5,0)--(7,0);
+\draw (0,4)to [R=$R$](3,4)--(5,4)--(7,4);
+\ctikzset{diodes/scale=0.6}\draw (3,4) to [full diode ] (3,2) to [battery] (3,0);
+\ctikzset{diodes/scale=0.6}\draw (5,0) to  [battery] (5,2) to [full diode ](5,4);
+
+\node at (2.3,3){$D_1$};\node at (5.7,3){$D_2$};
+
+\draw [fill=white] (0,0) circle (2.5pt);
+\draw [fill=white] (0,4) circle (2.5pt);
+\draw [fill=white] (7,0) circle (2.5pt);
+\draw [fill=white] (7,4) circle (2.5pt);
+\draw [fill=black] (3,0) circle (2.5pt);
+\draw [fill=black] (3,4) circle (2.5pt);
+\draw [fill=black] (5,0) circle (2.5pt);
+\draw [fill=black] (5,4) circle (2.5pt);
+
+\draw[<->](0,.1) to node [fill=white]{$u_1$} (0,3.9);
+\draw[<->](7,.1) to node [fill=white]{$u_2$} (7,3.9);
+\end{circuitikz}
 \caption{二极管限幅电路}
 \end{figure}
     \item 在图3.46所示的三相四线制照明电路中，设$A$相接通了8盏“220V,100W”的灯泡，$B$相接通了2盏“220V,100W”的灯泡，$C$相中没有接通灯泡，这时接通的灯泡都正常发光，因某种原因中性线断开了（在该图中$O$处断开），将会发生什么现象？说明理由。
@@ -1748,7 +1980,7 @@ $i_{AX}$是正值，电流从始端$A$流向末端$X$；线圈$BY$中的电流$i
 	
 \end{circuitikz}\caption{}
 \end{figure}
-    \item 每一台电动机都有一定的额定功率。在实际中要根据负载的功率来选择电动机的功率，使电动机的额定功率等于或稍大于负载的功率，有一台水浆，抽水量$Q=0.03{\rm m^3}/{\rm s}$，抽水高度$h=20{\rm m}$，效率$\eta_1=0.55$，用一台感应电动机道过皮带传动来带动，皮带传动的效率$\eta_2=0.8$。现有三台感应电动机，额定功率分别是14千瓦、20千瓦、28千瓦，应当选择哪一台？计算时取$g=10\msq$。
+    \item 每一台电动机都有一定的额定功率。在实际中要根据负载的功率来选择电动机的功率，使电动机的额定功率等于或稍大于负载的功率，有一台水泵，抽水量$Q=0.03{\rm m^3}/{\rm s}$，抽水高度$h=20{\rm m}$，效率$\eta_1=0.55$，用一台感应电动机道过皮带传动来带动，皮带传动的效率$\eta_2=0.8$。现有三台感应电动机，额定功率分别是14千瓦、20千瓦、28千瓦，应当选择哪一台？计算时取$g=10\msq$。
 \end{enumerate}
 
 

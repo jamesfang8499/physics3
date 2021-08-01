@@ -251,7 +251,20 @@ $1.33\x10^4$—$2.66\x10^4$帕。在两极加上大约800—1500伏的直
 场中的偏转，测出了它的质量和电量，确定它就是氢原子核，
 又叫做\textbf{质子}，通常用符号$\atom{H}{1}{1}$或$\atom{p}{1}{1}$表示。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/9-6.png}
+\begin{tikzpicture}[>=latex]
+\draw [->](-1,-.5)node[above]{$\alpha$}--(-0.025,-0.025);
+\draw [->](0,0)--node [below]{反冲核}(2,-.2);
+\draw [->](0,0)--(.2,2)node[above]{$\alpha$};
+\draw [->](0,0)--(1.25,1.25)node[below]{p};
+\draw (0,0) [fill=gray] circle (2.5pt);
+\node at (0,-1){甲};
+\end{tikzpicture}\qquad\qquad \begin{tikzpicture}[>=latex]
+    \draw [->](-1,-.5)node[above]{$\alpha$}--(-0.025,-0.025);
+    \draw [->](0,0)--node [below]{反冲核}(2,-.2);    \draw [->](0,0)--(1.25,1.25)node[below]{p};
+    \draw (0,0) [fill=gray] circle (2.5pt);
+    \node at (0,-1){乙};
+
+\end{tikzpicture}
 \caption{计数管}
 \end{figure}
 

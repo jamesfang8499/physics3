@@ -353,7 +353,54 @@ $$c=299792458\ms$$
 会出现一个很亮的光点。凹镜的焦点是反射光线的实际会聚
 点，是实焦点。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-14.png}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=1.5]
+            \fill [pattern=north east lines] (2,-1)--(2.2,-1) to [bend left=-30] (2.2,1) --(2,1) to [bend left=30](2,-1);
+            \draw [thick](2,1) to [bend left=30] (2,-1);
+        \foreach \x in {-.8,-.4,0,...,.8}
+        {
+            \draw[->] (0,\x)--(0.5,\x);
+        }    
+        \draw  (0,-.8)--(2.1,-.8)--(1,0)--(.95/2,.4);\draw  (0,.8)--(2.1,.8)--(1,0)--(.95/2,-.4);
+        \draw  (0,-.4)--(2.2,-.4)--(1,0)--(.9/2,.2);\draw  (0,.4)--(2.2,.4)--(1,0)--(.9/2,-.2);
+        \draw  (0,0)--(2.3,0);
+
+        \draw[->](2.1,-.8)--(3.1/2,-.4);  \draw[->](2.1,.8)--(3.1/2,.4);
+        \draw[->](2.2,-.4)--(3.2/2,-.2);   \draw[->](2.2,.4)--(3.2/2,.2);
+        \draw[->] (2.3,0)--(3.3/2,0);
+        \node at (1,0)[above]{$F$};      \node at (2.6,0){$P$};   
+        \draw (1,0)[ fill=black] circle (1pt);
+
+        \end{tikzpicture}
+\caption*{甲}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex,scale=1.5]
+    \fill [pattern=north east lines] (-2,-1)--(-2.2,-1) to [bend left=30] (-2.2,1) --(-2,1) to [bend left=-30]
+    (-2,-1);
+\draw [thick](-2.2,1) to [bend left=-30] (-2.2,-1);
+\foreach \x in {-.8,-.4,0,...,.8}
+        {
+            \draw[->] (-4,\x)--(-3.5,\x);
+        }    
+
+        \draw(-3.5,-.8)--(-2.3,-.8);\draw(-3.5,-.4)--(-2.45,-.4);
+        \draw(-3.5,.4)--(-2.45,.4);\draw(-3.5,.8)--(-2.3,.8);
+        \draw(-3.5,0)--(-2.5,0);  \draw[->](-2.5,0)--(-3.2,0);
+\draw[dashed] (-2.5,0)--(-1,0)node [below]{$F$}--(0,0)node [right]{$C$};
+\draw [dashed](-2.3,-.8)--(-1,0);\draw [dashed](-2.45,-.4)--(-1,0);
+\draw [dashed](-2.45,.4)--(-1,0);\draw [dashed](-2.3,.8)--(-1,0);
+
+\draw [->](-2.3,-.8)--(-2.95,-1.2);\draw [->](-2.45,-.4)--(-6.35/2,-.6);
+\draw [->](-2.45,.4)--(-6.35/2,.6);\draw [->](-2.3,.8)--(-2.95,1.2);
+\node at (-2.7,0)[above]{$P$};
+\draw (-1,0)[ fill=black] circle (1pt);
+
+\end{tikzpicture}
+\caption*{乙}
+\end{minipage}
     \caption{球面镜的焦点和焦距}
     \end{figure}
 
@@ -418,7 +465,22 @@ $P$的直线叫做主光轴，简称主轴。靠近主轴射向镜面的光线
 烛的实像，只能从镜中看到蜡烛的正立缩小的虚像
 （图5.17）。
    \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-17.png}
+\begin{tikzpicture}[>=latex, scale=1.5]
+    \fill [pattern=north east lines] (2,-1)--(2.2,-1) to [bend left=30] (2.2,1) --(2,1) to [bend left=-30]
+    (2,-1);
+\draw [thick](2,1) to [bend left=-30] (2,-1);
+\draw [dashed] (-3,0)--(4,0);
+\node at (3,0) [above]{$F$};
+\draw (3,0) [fill=black] circle (1.5pt);
+
+\draw (-2.5,0) rectangle (-2, .5);
+\draw (-2.25, .5) to [bend left=30] (-2.25,1) to [bend left=30]  (-2.25, .5);
+
+\draw [dashed](2.5,0) rectangle (2.75, .25);
+\draw [dashed](2.625, .25) to [bend left=30] (2.625, .5) to [bend left=30]  (2.625, .25);
+
+
+\end{tikzpicture}
         \caption{凸镜只能成正立缩小的虚像}
         \end{figure}
 
@@ -440,7 +502,18 @@ $P$的直线叫做主光轴，简称主轴。靠近主轴射向镜面的光线
 \end{enumerate}
 
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-18.PNG}
+\begin{tikzpicture}[>=latex]
+        \fill [pattern=north east lines] (-2,-1)--(-2.2,-1) to [bend left=30] (-2.2,1) --(-2,1) to [bend left=-30]
+        (-2,-1);
+\draw [thick](-2,1) to [bend left=-30] (-2,-1);
+ 
+\fill [pattern=north east lines] (2,-1)--(2.2,-1) to [bend left=-30] (2.2,1) --(2,1) to [bend left=30](2,-1);
+\draw [thick](2,1) to [bend left=30] (2,-1);
+\draw [dashed] (-2.3,0)--(2.3,0);
+\node at (-2.1,0)[below]{$P_1$};\node at (2.1,0)[below]{$P_2$};
+\node at (-2.2,1)[above]{$M_1$};\node at (2.2,1)[above]{$M_2$};
+\draw (-.5,.7)--node[above]{$a$}(2.15,.7);
+        \end{tikzpicture}
     \caption{}
     \end{figure}
  
@@ -478,7 +551,7 @@ $P$的直线叫做主光轴，简称主轴。靠近主轴射向镜面的光线
 入射角，积累了大量的数据。根据测量结果，托勒密认为折射
 角与入射角成正比。这个结论在入射角较小时大体上是正确
 的，入射角较大时就不成立了。下表是实验测得的光从空气
-射入玻璃时一组入射角与折射角的数据。从表中可以着出，
+射入玻璃时一组入射角与折射角的数据。从表中可以看出，
 当入射角大于20$^\circ$时，入射角$i$与折射角$r$的比值$i/r$
 随着入
 射角的增大有较大的变化，不是恒量。
@@ -914,7 +987,7 @@ i'&=i
 向底面偏折所造成的。偏折角度$\theta$跟棱镜材料的折射率有
 关\footnote{偏折角度$\theta$还跟入射角的大小有关系，这个问题高中不讨论。}，折射率越大，偏折角度越大。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-31.png}
+    \includegraphics[scale=1]{fig/5-31.PDF}
     \caption{光线通过棱镜后，向底面偏折}
     \end{figure}
 
@@ -1058,7 +1131,56 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
 在主轴上，叫做\textbf{凹透镜的焦点}。凸透镜的焦点是实焦点，凹透
 镜的焦点是虚焦点。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-36.png}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=1]
+    \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2) to [bend left=15](0,1.2);
+    \draw [dashed] (-2.5,0)--(3.2,0);
+    \draw (0,0)[fill=black] circle (1.5pt);
+    \draw (-2,0)[fill=black] circle (1.5pt);    \draw (2,0)[fill=black] circle (1.5pt);
+    \foreach \x in {-.8,-.4,.4,.8}
+    {
+        \draw[->] (-2.5,\x)--(-2,\x);
+    }    
+
+\draw[->] (-2,-.8)--(0,-.8)--(2,0)--(3, .4)   ;
+\draw[->] (-2,-.4)--(0,-.4)--(2,0)--(3, .2)   ;
+\draw[->] (-2,.4)--(0,.4)--(2,0)--(3, -.2)   ;
+\draw[->] (-2,.8)--(0,.8)--(2,0)--(3, -.4)   ;
+
+\node at (-2,0)[above]{$F$};
+\node at (2,0)[above]{$F'$};
+\node at (-.5,0)[above]{$O$};
+
+
+\end{tikzpicture}
+\caption*{甲}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex]
+    \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
+    \draw [dashed] (-2.5,0)--(3.2,0);
+\node at (-2,0) [above]{$F'$};
+\node at (2,0) [above]{$F$};
+\draw (-2,0)[fill=black] circle (1.5pt);    \draw (2,0)[fill=black] circle (1.5pt);
+
+\foreach \x in {-.8,-.4,.4,.8}
+    {
+        \draw[->] (-2.5,\x)--(-2,\x);
+        \draw[dashed](-2,0)--(0.25,\x);
+        \draw[->](0.25,\x)--(2.5,2*\x);
+    }  
+    \draw  (-2,-.8)--(0.25,-.8)    ;
+    \draw  (-2,-.4)--(0.25,-.4)    ;
+    \draw  (-2,.4)--(0.25,.4)    ;
+    \draw  (-2,.8)--(0.25,.8)    ;
+    \draw[->](0.25,0)--(2.5,0);
+   \node at (0,0)[above] {$O$};
+   \draw (0.25,0)[fill=black] circle (1.5pt); 
+\end{tikzpicture}
+\caption*{乙}
+\end{minipage}
     \caption{}
     \end{figure}
 
@@ -1074,10 +1196,55 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
     \item 在图5.37中，画出光线通过透镜后的传播方向。
 \end{enumerate}
 
-\begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-37.png}
-    \caption{}
-    \end{figure}
+\begin{figure}\centering
+\begin{tikzpicture}[>=latex]
+    \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2) to [bend left=15](0,1.2);
+    \draw [dashed] (-2,0)--(2,0);
+\node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
+\draw (-1.5,0) [fill=black]circle(1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
+\draw [->](-2,-.7)--(-1.5, -.7);
+\draw (-1.5,-.7)--(0, -.7);
+
+
+\end{tikzpicture}
+\begin{tikzpicture}[>=latex]
+    \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2) to [bend left=15](0,1.2);
+    \draw [dashed] (-2,0)--(2,0);
+    \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
+    \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
+    \draw (-1.5,0)--(0, .7);
+    \draw [->](-2,-.7/3)--(-1.5,0);
+\end{tikzpicture}
+
+
+    \begin{tikzpicture}[>=latex]
+        \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
+        \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
+        \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
+        \draw [dashed] (-2,0)--(2,0);
+        \draw [->](-2,.7)--(-1.5, .7);
+        \draw (-1.5,.7)--(0.25, .7);
+    \end{tikzpicture}
+    \begin{tikzpicture}[>=latex]
+        \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
+        \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
+        \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
+        \draw [dashed] (-2,0)--(2,0);
+        \draw [->](-2,.7)--(-1.75/2, .7/2);
+        \draw (-1.75/2, .7/2)--(0.25, 0);
+
+    \end{tikzpicture}
+    \begin{tikzpicture}[>=latex]
+        \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
+        \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
+        \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
+\draw [dashed] (-2,0)--(2,0);
+\draw[dashed](.25,.5)--(1.5,0);
+\draw (-1,1)--(.25,.5);
+\draw[->] (-1.625,1.25)--(-1,1);
+    \end{tikzpicture}
+\caption{}
+\end{figure}
 
  \section{透镜成像}
     利用透镜可以使物体成像，这是透镜的一个重要应用，透
@@ -1141,7 +1308,33 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
     所有光线经凸透镜折射后的会聚点（图5.39）。所以我们只要
     找出其中两条光线的会聚点，就可以确定像的位置。
     \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-39.png}
+    \begin{tikzpicture}[>=latex, scale=.8]
+    \draw [pattern=north east lines] (0,2) to [bend left=20] (0,-2) to [bend left=20](0,2);
+    \draw [dashed] (-5,0)--(5,0);
+    \node at (0,0)[fill=white, above]{$O$};
+    \draw[thick] (-4,1.5)node[left]{$S$}--(0,1.5)--(2,0)--(4,-1.5)node[right]{$S'$};
+    \draw[thick] (-4,1.5) --(0,-1.5)--(4,-1.5);
+    \draw[thick] (-4,1.5)--(0,.5)--(4,-1.5);
+    \draw[thick] (-4,1.5)--(0,-.5)--(4,-1.5);
+    \node at (2,0)[above]{$F'$};
+    \node at (-2,0)[below]{$F$};
+    \draw (-4,1.5) [fill=black] circle (1.5pt);
+    \draw (4,-1.5) [fill=black] circle (1.5pt);
+    \draw (0,0) [fill=black] circle (1.5pt);
+    \draw (-2,0) [fill=black] circle (1.5pt);
+    \draw (2,0) [fill=black] circle (1.5pt);
+    
+    \draw [->](-3,1.5)--(-1,1.5);
+    \draw [->](1,-1.5)--(3,-1.5);
+    \draw [->](-2,0)--(-1,-1.5/2);
+    \draw [->](2,0)--(3,-1.5/2);
+
+    \draw [->](0,.5)--(2,-.5);
+    \draw [>-](-2,1 )--(0,.5);
+    \draw [->](0,-.5)--(2,-1);
+    \draw [>-](-2,.5 )--(0,-.5);    
+    
+    \end{tikzpicture}
         \caption{像是通过凸透镜的所有光线的会聚点}
         \end{figure}
  
@@ -1157,7 +1350,30 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
     应用这三条光线中的任意两条，就可以求出发光点$S$的
     像$S'$（图5.40）。
     \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-40.png}
+\begin{tikzpicture}[>=latex,scale=.8]
+\draw [pattern=north east lines] (0,2) to [bend left=20] (0,-2) to [bend left=20](0,2);
+\node at (0,0)[fill=white, above]{$O$};
+\draw [dashed] (-5,0)--(5,0);
+\draw[thick] (-4,1.5)node[left]{$S$}--(0,1.5)--(2,0)--(4,-1.5)node[right]{$S'$};
+\draw[thick] (-4,1.5) --(0,-1.5)--(4,-1.5);
+\draw[thick] (-4,1.5)--(4,-1.5);
+\node at (2,0)[above]{$F'$};
+\node at (-2,0)[below]{$F$};
+\draw (-4,1.5) [fill=black] circle (1.5pt);
+\draw (4,-1.5) [fill=black] circle (1.5pt);
+\draw (0,0) [fill=black] circle (1.5pt);
+\draw (-2,0) [fill=black] circle (1.5pt);
+\draw (2,0) [fill=black] circle (1.5pt);
+
+\draw [->](-3,1.5)--(-1,1.5);
+\draw [->](1,-1.5)--(3,-1.5);
+\draw [->](-2,0)--(-1,-1.5/2);
+\draw [->](2,0)--(3,-1.5/2);
+\draw [->](0,0)--(2,-1.5/2);
+\draw [>-](-2,1.5/2)--(0,0);
+
+
+\end{tikzpicture}
         \caption{}
         \end{figure}
 
@@ -1170,10 +1386,21 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
     作图中，通常用一根两端带箭头的直线表示透镜，跟它垂
     直的直线表示主轴，交点$O$表示光心（图5.41）。
     \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-41.png}
+\begin{circuitikz}
+\draw[<->, very thick ] (0,1.2)--(0,-1.2);
+\draw [dashed](-1,0)--(1,0);
+\node at (-.2,-.2){$O$};
+\node at (0,-1.5){甲};
+\end{circuitikz}
+\qquad 
+\begin{circuitikz}
+\draw[>-<, very thick ] (0,1.2)--(0,-1.2);
+\draw [dashed](-1,0)--(1,0);
+\node at (-.2,-.2){$O$};
+\node at (0,-1.5){乙};
+\end{circuitikz}
         \caption{透镜的符号\\
-        甲：凸透镜\\
-        乙：凹透镜}
+        甲：凸透镜；        乙：凹透镜}
         \end{figure}
 
         图5.42是物体$AB$位于凸透镜二倍焦距以外时用作图法
@@ -1483,7 +1710,7 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 近的地方，以增大视角，使视网膜上成的像大些。
 
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-51.png}
+    \includegraphics[scale=.6]{fig/5-52.png}
     \caption{物体离眼睛近时视角大}
     \end{figure}
 
