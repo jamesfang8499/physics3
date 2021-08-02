@@ -53,7 +53,21 @@
 在自由振荡中，如果没有能量损失，振荡应该持续下去，振荡电流的振幅应该保持不变。这种振荡叫做\textbf{无阻尼振荡}（图4.3甲）。可是，实际上在电磁振荡中总要有能量损失，一部分能量由于电路中有电阻而转化为热，还有一部分能量辐射到周围空间中去。这样，振荡电路
 的能量逐渐损耗，振荡电流的振幅逐渐减小，直到最后停止下来．这种振荡叫做\textbf{阻尼振荡}（图4.3乙）．
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/4-3.png}
+\begin{tikzpicture}[>=latex, xscale=.6]
+\draw[->](0,0)node[left]{$O$}--(13,0);
+\draw[->](0,-1)--(0,1)node[right]{$i$};
+\draw [very thick] plot[domain=0:3.1416*4, samples=1000] function{0.5*cos(4.5*x)} ;
+\node at (6.5, -1.5){甲：无阻尼振荡};
+\end{tikzpicture}
+
+\begin{tikzpicture}[>=latex, xscale=.6]
+    \draw[->](0,0)node[left]{$O$}--(13,0);
+    \draw[->](0,-1)--(0,1)node[right]{$i$};
+    \draw [very thick] plot[domain=0:3.1416*4, samples=1000] function{.5*exp(-0.2*x)*cos(4.5*x)} ;
+    \node at (6.5, -1.5){乙：阻尼振荡};
+
+
+\end{tikzpicture}
 \caption{}
 \end{figure}
 

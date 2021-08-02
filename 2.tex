@@ -55,7 +55,7 @@
 \end{figure}
 
 1831年8月法拉第把两个线圈绕在一个铁环上（图2.4），线圈$A$接直流电源，线圈$B$接电流表，他发现，当线圈$A$中的电流接通或断开时，线圈$B$中就产生瞬时电流。法拉第
-发现，铁环并不是必须的，拿走铁环，再做这个实验，电磁感应现象仍然发生，只是线圆中的电流弱些。
+发现，铁环并不是必须的，拿走铁环，再做这个实验，电磁感应现象仍然发生，只是线圈中的电流弱些。
 
 法拉第怎样分析他的实验呢？他的思路大致如下：
 
@@ -83,12 +83,32 @@
 \centering
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/2-6.png}
+\begin{tikzpicture}[>=latex, scale=.8]
+\foreach \x in {1,2,...,5}
+{
+    \draw[->](\x, 5)--(\x, 0);
+}
+\draw [fill=white](1.8,3)--(4.8,3)--(4.2,2)--(1.2,2)--(1.8,3);
+\foreach \x in {2,3,4}
+{
+    \draw(\x, 5)--(\x, 2.5);
+}
+
+\end{tikzpicture}
 \caption{}
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[scale=.6]{fig/2-7.png}
+\begin{tikzpicture}[>=latex, scale=.8]
+\foreach \x in {-3,-2,...,2}
+\foreach \y in {-2,...,2}
+{
+    \node at (\x,\y){$\times$};
+}
+\draw [dashed](-.5,-2.5)node[below]{$O'$}--(-.5,3)node[above]{$O$};
+\draw[very thick] (-1.5,-1.5) rectangle (.5,1.5);
+\draw[->] (-.5+.25, 2.5) arc [start angle=10, end angle=360, x radius=.25,y radius=.125];
+\end{tikzpicture}
 \caption{}
 \end{minipage}
 \end{figure}
@@ -270,7 +290,14 @@
 \end{figure}
 
 \begin{figure}[htp]\centering
-\includegraphics[scale=.6]{fig/2-18.png}
+\begin{circuitikz}[>=latex]
+\ctikzset{inductors/scale=2.3,  inductors/coils=6}
+\draw (0,0)--(0,1) to [L] (2,1)--(2,0)--(0,0);
+\draw [fill=red!70!white](2.25, .8) rectangle (3.5, 1.4);
+\draw [fill=blue!70!white](3.5, .8) rectangle (4.75, 1.4);
+\node at (2.75, 1.1){$N$};
+\node at (4.25, 1.1){$S$};
+\end{circuitikz}
 \caption{}
 \end{figure}
 
@@ -400,7 +427,13 @@ $\mathcal{E}=B\ell v_1$
 
 但是，1931年，著名的英国物理学家狄拉克从理论上预言了存在着只有一个磁极的粒子——磁单极子。根据磁单极子的理论，电和磁之间的相似将更加完美。理论的动人前景，吸引了一批物理学家，用各种方法，在岩石中，在宇宙射线（即从字宙空间飞来的粒子）中，在加速器实验中，去寻找磁单极子。但是，半个世纪的时间过去了，并没有找到磁单极子。因此，人们推测，磁单极子可能是在宇宙形成初期产生的，残存下来的为数较少，而且分散在广漠的宇宙之中，要找到它不是很容易的。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.6]{fig/2-22.png}
+\begin{tikzpicture}[>=latex]
+    \draw [dashed](-2,2) --(2,-2) ;
+    \node at (-2.15,2.15){\Sun};    \node at (2.15,-2.15){\Sun};
+    \draw [fill=white] (0,0) ellipse [x radius=2.1, y radius=2.1*.4];
+\draw [fill=white] (0,0) ellipse [x radius=2, y radius=.8];
+\draw [dashed] (-2,2) --(0,0) ;
+\end{tikzpicture}
 \caption{}
 \end{figure}
 
