@@ -41,7 +41,7 @@ $\beta$射线，不发生偏转的射线叫
 
 \begin{figure}[htp]
     \centering
-    \includegraphics{fig/9-1.pdf}
+    \includegraphics[scale=1.4]{fig/9-1.pdf}
     \caption{}
 \end{figure}
 
@@ -461,7 +461,24 @@ $\alpha$粒子打进氮核后形成一个复核，这复核立即发生衰变放
 $\gamma$射线可以检查30厘米厚的钢铁部件，放射性同位素还可以
 放进器件的内部，操作很方便。
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/9-9.png}
+\begin{circuitikz}[>=latex]
+\draw (0,3)[pattern=north east lines] circle (10pt);
+\fill [white] (-.15,2.5) rectangle (.15, 3);
+\draw (-.15,2.7)--(-.15, 3)--(.15,3)--(.15,2.7);
+\draw [fill=black](0,2.85) circle (2pt);
+\node at (1.5,3){$\gamma$射线源};
+\node at (2.5,.125){钢板};
+\draw [->, thick](0,2.85)--(0,.8);
+\draw [pattern=north east lines] (-2, -.25) rectangle (2,0.5);
+
+\draw [pattern=north east lines] (-2, -1.5) rectangle (-.25,-1);
+\draw [pattern=north east lines] (.25, -1.5) rectangle (2,-1);
+\draw [fill=white] (0,.125) ellipse [x radius=.2, y radius=.1];
+\node at (0,-2.1){计数器};
+\draw (-.7, -1.8) rectangle (.7, -1.6);
+\draw (-.7,-1.7)--(.7,-1.7)--(2.5, -1.7)to [rmeter](2.5, -3) to [battery] (.7,-3)--(.7, -1.7);
+\draw [->](2.3, -2.6)--(2.7, -2.2);
+\end{circuitikz}
 \caption{$\gamma$射线探伤的示意图}
 \end{figure}
 
@@ -659,7 +676,7 @@ $\gamma$射线可以检查30厘米厚的钢铁部件，放射性同位素还可�
 的核子平均结合能约为8.7MeV。
 \begin{enumerate}
     \item 把U235分解为核子，要吸收多少能量？
-    \item 再使相应的核子分别结合成Xe136和St90，要放出多少能量？
+    \item 再使相应的核子分别结合成Xe136和Sr90，要放出多少能量？
     \item 在这个核反应中是吸收还是放出能量？这个能量大
 约是多大？
 \end{enumerate}

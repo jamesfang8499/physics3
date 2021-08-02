@@ -1114,7 +1114,31 @@ i'&=i
 半径小得多的透镜，叫做薄透镜。我们在后面讨论的都是薄
 透镜。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-35.png}
+\begin{tikzpicture}[>=latex, scale=.6]
+\draw [dashed](-3.5,0)--(5,0);
+\draw (-1,0) circle (1.5);
+\draw (1.6,0) circle(2);
+\node at (-1,0)[above]{$C_1$};
+\node at (1.6,0)[above]{$C_2$};
+\node at (-0.05,0)[below]{$O$};
+\draw [fill=black] (-1,0) circle (1.5pt);
+\draw [fill=black] (1.6,0) circle (1.5pt);
+\draw [fill=black] (-0.05,0) circle (1.5pt);
+\draw [pattern=north east lines](-0.05,1.15) to [bend right=32] (-0.05,-1.15) to [bend right=54](-0.05,1.15);
+\end{tikzpicture}
+\begin{tikzpicture}[>=latex, scale=.6]
+    \draw [dashed](-3,0)--(7,0);
+    \draw (-1,0) circle (2);
+    \draw (3.6,0) circle(2);
+    \node at (-1,0)[above]{$C_1$};
+    \node at (3.6,0)[above]{$C_2$};
+    \node at (1.3,0)[below]{$O$};
+    \draw [fill=black] (-1,0) circle (1.5pt);
+    \draw [fill=black] (3.6,0) circle (1.5pt);
+    \draw [fill=black] (1.3,0) circle (1.5pt);
+    \draw [pattern=north east lines](.65,1.15) to [bend left=32] (.65,-1.15) --(1.95,-1.15) to [bend left=32](1.95,1.15)--(.65,1.15);
+
+\end{tikzpicture}
     \caption{透镜的主轴}
     \end{figure}
 
@@ -1409,9 +1433,30 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
         二倍焦距处以及位于焦点以外、二倍焦距以内时的成像情况，
         请同学们自己练习用作图法来研究。
         \begin{figure}[htp]\centering
-            \includegraphics[scale=.6]{fig/5-42.png}
+\begin{tikzpicture}[scale=1]
+    \draw[<->, very thick ] (0,2)--(0,-2);
+\draw[dashed](-5,0)--(5,0);
+\node at (-1.5,0)[below]{$F$};\node at (1.5,0)[below]{$F'$};\node at (-.25,-.25){$O$};
+\draw [fill=black] (-1.5,0) circle (1.5pt);
+\draw [fill=black] (1.5,0) circle (1.5pt);
+\draw [fill=black] (-3,0) circle (1.5pt);
+\draw [fill=black] (3,0) circle (1.5pt);
+%\draw [fill=black] (0,0) circle (1.5pt);
+\draw [->, ultra thick, >=latex] (-4.5,-1)node[below]{$B$}--(-4.5,1)node[above]{$A$};
+\draw [thick](-4.5,-1)--(0,-1)--(1.5,0)--(3,1);  \draw[thick] (-4.5,1)--(0,1)--(1.5,0)--(3,-1);
+\draw[->,thick, >=latex] (-4.5,-1)--(-2,-1);  \draw[->,thick, >=latex] (-4.5,1)--(-2,1);
+\draw[->, thick, >=latex] (-4.5,1)--(0,0)--(4.5,-1);
+\draw[->, thick, >=latex] (-4.5,-1)--(0,0)--(4.5,1);
+\draw [->, ultra thick, >=latex] (4.5/2,1/2)node[above]{$B'$}--(4.5/2,-1/2)node[below]{$A'$};
+
+\draw[->, thick, >=latex] (-4.5,1)--(-4.5/2,0.5);
+\draw[->, thick, >=latex] (-4.5,-1)--(-4.5/2,-0.5);
+\draw[->, thick, >=latex] (0,1)--(1.5/2,0.5);
+\draw[->, thick, >=latex] (0,-1)--(1.5/2,-0.5);
+
+\end{tikzpicture}
             \caption{}
-            \end{figure}
+\end{figure}
 
             物体$AB$位于凸透镜的焦点以内时，各点射向透镜的光线
             通过透镜后呈发散状，不能会聚成实像，但是把这些光线沿反
@@ -1420,7 +1465,33 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
             物体位于透镜的同侧。
 
             \begin{figure}[htp]\centering
-                \includegraphics[scale=.6]{fig/5-43.png}
+\begin{tikzpicture}
+    \draw[<->, very thick ] (0,2)--(0,-2);
+    \draw[dashed](-5,0)--(5,0);
+    \node at (-1.5,0)[below]{$F$};\node at (1.5,0)[below]{$F'$};\node at (-.25,-.25){$O$};
+    \draw [thick](-1,.5)--(0,.5)--(1.5,0)--(4.5,-1); 
+    \draw [thick](-1,-.5)--(0,-.5)--(1.5,0)--(4.5,1); 
+    \draw [thick](-1,.5)--(0,0)--(4,-2);
+    \draw [thick](-1,-.5)--(0,0)--(4,2);
+    \draw [->, ultra thick, >=latex] (-1,-.5)node[below]{$B$}--(-1,.5)node[above]{$A$};
+
+    \draw[dashed] (0,.5)--(-4.5, 2);   \draw[dashed] (0,-.5)--(-4.5, -2);
+    \draw[dashed] (-1,.5)--(-4, 2);   \draw[dashed] (-1,-.5)--(-4, -2);
+
+    \draw [fill=black] (-1.5,0) circle (1.5pt);
+    \draw [fill=black] (1.5,0) circle (1.5pt);
+    \draw [fill=black] (-3,0) circle (1.5pt);
+    \draw [fill=black] (3,0) circle (1.5pt);
+
+    \draw [->, ultra thick, >=latex, dashed] (-3,-1.5)node[below]{$B'$}--(-3,1.5)node[above]{$A'$};
+
+
+    \draw [->,  thick, >=latex](-1,.5)--(-.5,.5);  \draw [->,  thick, >=latex](0,.5)--(3,-.5);
+    \draw [->,  thick, >=latex](-1,-.5)--(-.5,-.5); \draw [->,  thick, >=latex](0,-.5)--(3,.5);
+    \draw [->,  thick, >=latex](0,0)--(2,-1);    \draw [->,  thick, >=latex](0,0)--(2,1);
+
+    \draw [->,  thick, >=latex](-1,.5)--(-.5,.25);\draw [->,  thick, >=latex](-1,-.5)--(-.5,-.25);
+\end{tikzpicture}
                 \caption{}
                 \end{figure}
 
@@ -1430,7 +1501,30 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
                 求出的像与物体位于凹透镜的同侧，是正立、缩小的虚像。
 
                 \begin{figure}[htp]\centering
-                    \includegraphics[scale=.6]{fig/5-44.png}
+\begin{tikzpicture}
+    \draw[>-<, very thick ] (0,2)--(0,-2);
+    \draw[dashed](-5,0)--(5,0);
+    \node at (-1.5,0)[below]{$F$};\node at (-.25,-.25){$O$};
+    \draw [fill=black] (-1.5,0) circle (1.5pt);
+    \draw [fill=black] (1.5,0) circle (1.5pt);
+
+    \draw [->, ultra thick, >=latex] (-4,-1)node[below]{$B$}--(-4,1)node[above]{$A$};
+
+    \draw [->,  thick, >=latex](-4,1)--(0,1)--(3,3); 
+    \draw [->,  thick, >=latex](-4,-1)--(0,-1)--(3,-3); 
+    \draw [thick, dashed](-1.5,0)--(0,-1);
+    \draw [thick, dashed](-1.5,0)--(0,1);
+\draw[->,  thick, >=latex] (-4,1)--(0,0)--(4,-1);
+\draw[->,  thick, >=latex] (-4,-1)--(0,0)--(4,1);
+\draw[->,  thick, >=latex] (-4,1)--(-2,0.5);
+\draw[->,  thick, >=latex] (-4,-1)--(-2,-.5);
+\draw [->,  thick, >=latex](-4,1)--(-2,1);
+\draw [->,  thick, >=latex](-4,-1)--(-2,-1);
+\draw [->, ultra thick, >=latex, dashed ] (-1.1,-.3)node[below]{$B'$}--(-1.1,.3)node[above]{$A'$};
+
+
+
+\end{tikzpicture}
                     \caption{}
                     \end{figure}
 
@@ -1624,7 +1718,7 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 眼晴能看见物体，从物理方面
 来说跟凸透镜成像的道理是一样的。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-49.png}
+    \includegraphics[scale=1]{fig/5-49.pdf}
     \caption{眼睛构造简图}
     \end{figure}
 
