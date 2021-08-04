@@ -61,7 +61,16 @@
     \centering
     \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[scale=.6]{fig/5-2.png}
+\begin{tikzpicture}[>=latex]
+\node at (0,0){\Sun};
+\node at (-.5,0){$S$};
+\draw[dashed] (0,0)--(15:2)node[above]{$A$};
+\draw[dashed] (0,0)--(-15:2)node[below]{$C$};
+\draw[->](15:2)--(15:3.5)node[above]{$B$};
+\draw[->](-15:2)--(-15:3.5)node[below]{$D$};
+
+
+\end{tikzpicture}
     \caption{利用光线
     确定物体的位置}
     \end{minipage}
@@ -254,7 +263,7 @@ $$c=299792458\ms$$
     \centering
     \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[scale=.6]{fig/5-9.png}
+    \includegraphics[scale=1.4]{fig/5-9.pdf}
     \caption{漫反射}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
@@ -997,7 +1006,7 @@ i'&=i
 这表明各种色光通过棱镜后的偏折角度不同。红光的偏折角
 度最小，紫光的偏折角度最大。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-32.png}
+    \includegraphics[scale=1.2]{fig/5-32.pdf}
     \caption{棱镜使白光发生色散}
     \end{figure}
 
@@ -1334,7 +1343,7 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
     \begin{figure}[htp]\centering
     \begin{tikzpicture}[>=latex, scale=.8]
     \draw [pattern=north east lines] (0,2) to [bend left=20] (0,-2) to [bend left=20](0,2);
-    \draw [dashed] (-5,0)--(5,0);
+    \draw [dashdotted] (-5,0)--(5,0);
     \node at (0,0)[fill=white, above]{$O$};
     \draw[thick] (-4,1.5)node[left]{$S$}--(0,1.5)--(2,0)--(4,-1.5)node[right]{$S'$};
     \draw[thick] (-4,1.5) --(0,-1.5)--(4,-1.5);
@@ -1377,7 +1386,7 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
 \begin{tikzpicture}[>=latex,scale=.8]
 \draw [pattern=north east lines] (0,2) to [bend left=20] (0,-2) to [bend left=20](0,2);
 \node at (0,0)[fill=white, above]{$O$};
-\draw [dashed] (-5,0)--(5,0);
+\draw [dashdotted] (-5,0)--(5,0);
 \draw[thick] (-4,1.5)node[left]{$S$}--(0,1.5)--(2,0)--(4,-1.5)node[right]{$S'$};
 \draw[thick] (-4,1.5) --(0,-1.5)--(4,-1.5);
 \draw[thick] (-4,1.5)--(4,-1.5);
@@ -1435,7 +1444,7 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
         \begin{figure}[htp]\centering
 \begin{tikzpicture}[scale=1]
     \draw[<->, very thick ] (0,2)--(0,-2);
-\draw[dashed](-5,0)--(5,0);
+\draw[dashdotted](-5,0)--(5,0);
 \node at (-1.5,0)[below]{$F$};\node at (1.5,0)[below]{$F'$};\node at (-.25,-.25){$O$};
 \draw [fill=black] (-1.5,0) circle (1.5pt);
 \draw [fill=black] (1.5,0) circle (1.5pt);
@@ -1467,7 +1476,7 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
             \begin{figure}[htp]\centering
 \begin{tikzpicture}
     \draw[<->, very thick ] (0,2)--(0,-2);
-    \draw[dashed](-5,0)--(5,0);
+    \draw[dashdotted](-5,0)--(5,0);
     \node at (-1.5,0)[below]{$F$};\node at (1.5,0)[below]{$F'$};\node at (-.25,-.25){$O$};
     \draw [thick](-1,.5)--(0,.5)--(1.5,0)--(4.5,-1); 
     \draw [thick](-1,-.5)--(0,-.5)--(1.5,0)--(4.5,1); 
@@ -1503,7 +1512,7 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
                 \begin{figure}[htp]\centering
 \begin{tikzpicture}
     \draw[>-<, very thick ] (0,2)--(0,-2);
-    \draw[dashed](-5,0)--(5,0);
+    \draw[dashdotted](-5,0)--(5,0);
     \node at (-1.5,0)[below]{$F$};\node at (-.25,-.25){$O$};
     \draw [fill=black] (-1.5,0) circle (1.5pt);
     \draw [fill=black] (1.5,0) circle (1.5pt);
@@ -1539,7 +1548,17 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
     实像$A'B$，试画出从$A$、$B$两点射向凸透镜的任意两条光线
     $AE$、$BD$经过凸透镜折射后的传播方向。
     \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-45.png}
+\begin{tikzpicture}[xscale=1.5]
+    \draw[<->, very thick ] (0,2)--(0,-2);
+    \draw[dashdotted](-3,0)--(3,0);
+\draw[->, ultra thick, >=latex] (-1,0)node[below]{$B$}--(-1,1)node[above]{$A$};
+
+\draw[->,  thick, >=latex] (-1,0)--(0,-.5)node[right]{$D$};
+\draw[->,  thick, >=latex] (-1,1)--(0,1.2)node[right]{$E$};
+\node at (.25,.25){$O$};
+\draw[->, ultra thick, >=latex] (2,0)node[above]{$B'$}--(2,-2)node[below]{$A'$};
+
+\end{tikzpicture}
         \caption{}
         \end{figure}
 
@@ -1551,7 +1570,7 @@ $O$表示。透镜的中央部分相当于两面平行的薄玻璃板，通过
 经透镜所成的像。这个透镜是什么透镜？试用作图法求出透
 镜和它的焦点的位置。                    
 \begin{figure}[htp]\centering
-    \begin{tikzpicture}[>=stealth]
+    \begin{tikzpicture}[>=latex]
 \draw [dashdotted](0,0)node[left]{$O$}--(7,0)node[right]{$O'$};
 \draw [->, very thick](1,0)node[below]{$B$}--(1,1)node[above]{$A$};
 \draw [->, very thick](6,0)node[above]{$B'$}--(6,-1.5)node[below]{$A'$};
@@ -1766,7 +1785,38 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 所以近视眼的远点不在无限远处，不能看清远处的物体，只能
 看清一定距离内的物体。近视眼的近点也比正常眼的近。
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-50.png}
+\begin{tikzpicture}[>=latex]
+    % eye begin
+\draw (0,.5) arc (150:-150:1);
+\draw (0,.5) arc (120:240:.58);
+\draw (0.25,.5)to [bend left=35] (.25,-.5)to [bend left=35](0.25,.5) ;
+% eye end
+\draw[->] (-2,.3) to (-1.5,.3) ;
+\draw (-2,.3) --(.25,.3)--(2-.15, -.1);
+\draw[->] (-2,0) to (-1.5,0) ;
+\draw (-2,0) --(.25,0)--(2-.15, 0);
+\draw[->] (-2,-.3) to (-1.5,-.3) ;
+\draw (-2,-.3) --(.25,-.3)--(2-.15, .1);
+\node at (0,-1.5) {甲};
+\end{tikzpicture}
+\qquad \qquad 
+\begin{tikzpicture}[>=latex]
+    % eye begin
+    \draw (0,.5) arc (150:-150:1);
+    \draw (0,.5) arc (120:240:.58);
+    \draw (0.25,.5)to [bend left=35] (.25,-.5)to [bend left=35](0.25,.5) ;
+    % eye end
+    \draw[->] (-2,.2) to (-1.5,.2) ;
+    \draw (-2,.2) --(-1,.2)--(.25,.3)--(2-.15, 0);
+    \draw[->] (-2,0) to (-1.5,0) ;
+    \draw (-2,0) --(.25,0)--(2-.15, 0);
+    \draw[->] (-2,-.2) to (-1.5,-.2) ;
+    \draw (-2,-.2) --(-1,-.2)--(.25,-.3)--(2-.15, 0);
+\draw [pattern=north east lines] (-1.25, 1)--(-.75, 1)to [bend right=20]  (-.75, -1)-- (-1.25, -1)to [bend right=20]  (-1.25, 1);
+
+    \node at (0,-1.5) {乙};
+
+\end{tikzpicture}
     \caption{近视眼及其矫正方法}
     \end{figure}
 
@@ -1784,7 +1834,38 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 
 
     \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-51.png}
+\begin{tikzpicture}[>=latex]
+    % eye begin
+    \draw (0,.5) arc (150:-150:1);
+    \draw (0,.5) arc (120:240:.58);
+    \draw (0.25,.5)to [bend left=35] (.25,-.5)to [bend left=35](0.25,.5) ;
+    % eye end
+    \draw[->] (-2,.3) to (-1.5,.3) ;
+    \draw (-2,.3) --(.25,.3)--(2+.25, 0);
+    \draw[->] (-2,0) to (-1.5,0) ;
+    \draw (-2,0) --(.25,0)--(2+.25, 0);
+    \draw[->] (-2,-.3) to (-1.5,-.3) ;
+    \draw (-2,-.3) --(.25,-.3)--(2+.25, 0);
+    \node at (0,-1.5) {甲};
+
+\end{tikzpicture}\qquad \qquad 
+\begin{tikzpicture}[>=latex]
+    % eye begin
+    \draw (0,.5) arc (150:-150:1);
+    \draw (0,.5) arc (120:240:.58);
+    \draw (0.25,.5)to [bend left=35] (.25,-.5)to [bend left=35](0.25,.5) ;
+    % eye end
+    \draw[->] (-2,.4) to (-1.5,.4) ;
+    \draw (-2,.4) --(-1,.4)--(.25,.3)--(2-.15, 0);
+    \draw[->] (-2,0) to (-1.5,0) ;
+    \draw (-2,0) --(.25,0)--(2-.15, 0);
+    \draw[->] (-2,-.4) to (-1.5,-.4) ;
+    \draw (-2,-.4) --(-1,-.4)--(.25,-.3)--(2-.15, 0);
+\draw [pattern=north east lines] (-1, 1)to [bend right=-20]  (-1, -1)to [bend right=-20]  (-1, 1);
+
+    \node at (0,-1.5) {乙};
+
+\end{tikzpicture}
         \caption{远视眼及其矫正方法}
         \end{figure}
 
@@ -1804,14 +1885,43 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 近的地方，以增大视角，使视网膜上成的像大些。
 
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-52.png}
+\begin{tikzpicture}[>=latex, scale=1.2]
+    % eye begin
+    \draw (0,.5) arc (150:-150:1);
+    \draw (0,.5) arc (120:240:.58);
+    \draw (0.25,.5)to [bend left=35] (.25,-.5)to [bend left=35](0.25,.5) ;
+    % eye end
+
+\draw[->, ultra thick] (-6,-1)node[below]{$B$}--(-6,1)node[above]{$A$};
+\draw[->, ultra thick] (-3,-1)node[below]{$B$}--(-3,1)node[above]{$A$};
+
+\draw (-3,-1)--(0.25,0)--(1.7, .582)node[right]{$B''$};
+\draw (-3, 1)--(0.25,0)--(1.7, -.582)node[right]{$A''$};
+\draw (-6,-1)--(0.25,0)--(1.85, .278)node[right]{$B'$};
+\draw (-6,1)--(0.25,0)--(1.85, -.278)node[right]{$A'$};
+
+\draw [->, thick](1.7, .582)to [bend right=-26] (1.7, -.582);
+\draw [->,  thick](1.85, .278)to [bend right=-11] (1.85, -.278);
+
+\node at (0.25,0)[above]{\small $O$};
+
+\draw[->] (-3,-1)--(-2.75/2,-.5);
+\draw[->] (-3, 1)--(-2.75/2,.5);
+\draw[->] (-6,-1)--(-4.4375,-.75);
+\draw[->] (-6,1)--(-4.4375,.75);
+
+\draw [<->, >=stealth](-1.2, .45)to [bend left=-35]node[left]{$\beta$} (-1.2, -.45);
+\draw [<->, >=stealth](-.8, .17)to [bend left=-35]node[left]{$\alpha$} (-.8, -.17);
+
+
+\end{tikzpicture}
     \caption{物体离眼睛近时视角大}
     \end{figure}
 
 如果物体在视网膜上的像小到只落在一个感光细胞上，
 那么眼睛看到的就只是一个点。要使眼睛把物体上的两个点
 区分开，必须使这两个点在视网膜上的像落在不同的感光细
-胞上，这样，这两个点的视角就必须大于某一数值才行。根
+胞上。这样，这两个点的视角就必须大于某一数值才行。根
 据实验知道，正常眼的这一数值约等于1分（$1'$），大小为0.1
 毫米的物体，在离眼睛25厘米的明视距离处，所成的视角大
 约就是$1'$。
@@ -1965,12 +2075,12 @@ $A'B'$对目镜$L_2$来说是物体，使$A'B'$位于目镜的焦点$F_2$以内�
 \item 什么叫光的折射？光的折射定律的内容是什么？什么
 叫媒质的绝对折射率？什么叫一种媒质对另一种媒质的相对
 折射率？它们跟光速的关系是怎样的？
-\item 什么叫全反射現象？付么叫临界角？举两个全反射现
+\item 什么叫全反射现象？付么叫临界角？举两个全反射现
 象的例子。
 \item 射向玻璃棱镜侧面的光线，通过棱镜后，为什么向底
 面偏折？什么现象表明在同种媒质中各种色光的折射率不
 同？紫光的折射率大，还是红光的折射率大？
-\item 凸透镜为什么能使光线会聚？凹迸镜为什么能使光
+\item 凸透镜为什么能使光线会聚？凹透镜为什么能使光
 线发散？为什么说凸透镜的焦点是实焦点，而凹透镜的是虚焦
 点？
 \item 说明凸透镜和凹透镜的成像规律。用作图法求像时
