@@ -263,12 +263,12 @@ $$c=299792458\ms$$
     \centering
     \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[scale=1.4]{fig/5-9.pdf}
+    \includegraphics[scale=1]{fig/5-9.pdf}
     \caption{漫反射}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[scale=.6]{fig/5-10.png}
+    \includegraphics[scale=.8]{fig/5-10.PDF}
     \caption{平面镜成虚像}
     \end{minipage}
     \end{figure}
@@ -307,7 +307,7 @@ $$c=299792458\ms$$
     中用平面镜来改变光线的行进
     方向（图5.11）．
     \begin{figure}[htp]\centering
-        \includegraphics[scale=.6]{fig/5-11.png}
+        \includegraphics[scale=1]{fig/5-11.pdf}
         \caption{潜望镜示意图}
     \end{figure}
 
@@ -332,19 +332,50 @@ $$c=299792458\ms$$
     \item 图5.13中，$M$是一个平面镜，$S$是光源，通过狭缝使
     光线射到镜面上，$M$的位置，最初是与$S$射来的光线垂直，这
     时反射光线射在标尺的零刻度上；当$M$转动一角度后，反射光
-    线射到标尺的$n$刻度上．如果标尺到镜$M$的距离为$\ell$，且$\ell\gg on$，
+    线射到标尺的$n$刻度上．如果标尺到镜$M$的距离为$\ell$，且$\ell\gg On$，
     求$M$转动的角度是多大．
     \item 有的镜子照出的像会变形，这是什么原因？
     \begin{figure}[htp]
         \centering
         \begin{minipage}[t]{0.48\textwidth}
         \centering
-        \includegraphics[scale=.6]{fig/5-12.png}
+\begin{tikzpicture}[>=latex ]
+
+
+\fill  [pattern=vertical lines, rotate=50] (-4,0)--(0,0)--(0,4)--(.2,4)--(.2,-.2)--(-4,-.2)--(-4,0);
+\draw [rotate=50](-4,0)--(0,0)--(0,4);
+\draw[thick] (-4,1.25)node[left]{$A$}--(-1.5,1.25)node[above]{$B$}--(-1,-1.2)node[above]{$C$}--(-4,-1.2)node[left]{$D$}  ;
+\draw[thick, ->] (-4,1.25)--(-5.5/2,1.25);
+\draw[thick, <-] (-2.5,-1.2)--(-4,-1.2);
+
+
+\end{tikzpicture}
         \caption{}
         \end{minipage}
         \begin{minipage}[t]{0.48\textwidth}
         \centering
-        \includegraphics[scale=.6]{fig/5-13.png}
+\begin{tikzpicture}[>=latex]
+\fill [pattern=north east lines] (-3.2,-.5) rectangle (-3, .5);
+\draw (-3,-.5)node[below]{$M$}--(-3,.5);
+\draw (0,-2)--(0,2);
+\draw[->](2,0)--(1,0);
+\foreach \x in {-2,-1.8,...,2}
+{
+    \draw (0,\x)--(.1,\x);
+}
+\draw (-3,0)--(2,0)node[right]{\Sun};
+\node at (2.75,0){$S$};
+\node at (0,0.2) [right] {$O$};
+\draw (-3,0)--(0,1);
+\draw[dashed, very thick] (-3+.15,-.5)--(-3-.15,.5);
+\node at (0.2, 1.75){$n$};
+\draw [very thick] (1.5, .5)--(1.5, .1);
+\draw [very thick] (1.5, -.5)--(1.5, -.1);
+\node at (-1.5,-.2){$\ell$};
+\draw [<-](-1.5,0)--(0,0);
+\draw [<-](-1.5,0.5)--(-3,0);
+
+\end{tikzpicture}
         \caption{}
         \end{minipage}
         \end{figure}
@@ -442,7 +473,7 @@ $P$的直线叫做主光轴，简称主轴．靠近主轴射向镜面的光线
 凸镜．
 
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-15.png}
+    \includegraphics[scale=1]{fig/5-15.pdf}
     \caption{}
     \end{figure}
 
@@ -451,7 +482,48 @@ $P$的直线叫做主光轴，简称主轴．靠近主轴射向镜面的光线
 的距离不同，所成的像也不同．我们可以用下面的实验来观
 察球面镜的成像情况．
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-16.png}
+\begin{tikzpicture}[>=latex, scale=1.4]
+    \fill [pattern=north east lines] (2,-1)--(2.2,-1) to [bend left=-30] (2.2,1) --(2,1) to [bend left=30](2,-1);
+    \draw [thick](2,1) to [bend left=30] (2,-1);
+\node at (0,0)[above]{$F$}; \draw [fill=black] (0,0) circle(1.5pt);
+\node at (-2,0)[above]{$C$}; \draw [fill=black] (-2,0) circle(1.5pt);
+\node at (-5,0){甲};
+\draw (-4,0) rectangle (-3.6,.4); \draw (-3.8, .4) to [bend left=-30](-3.8, .8)to [bend left=-30] (-3.8,.4) ;
+\draw [fill=gray] (-1, .5)--(-1,-1.25)--(0, -1.75)--(0, 0)--(-1, .5);
+\draw [fill=white](-.5-.1,0) rectangle (-.5+.1,-.2); \draw [fill=white] (-.5, -.2) to [bend left=-30](-.5, -.4)to [bend left=-30] (-.5, -.2) ;
+\draw[dashdotted] (-4.5,0)--(3,0);
+
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[>=latex, scale=1.4]
+    \fill [pattern=north east lines] (2,-1)--(2.2,-1) to [bend left=-30] (2.2,1) --(2,1) to [bend left=30](2,-1);
+    \draw [thick](2,1) to [bend left=30] (2,-1);
+\node at (0,0)[above]{$F$}; \draw [fill=black] (0,0) circle(1.5pt);
+\node at (-2,0)[above]{$C$}; \draw [fill=black] (-2,0) circle(1.5pt);
+\node at (-5,0){乙};
+\draw (-.6,0) rectangle (-.2,.4); \draw (-.4, .4) to [bend left=-30](-.4, .8)to [bend left=-30] (-.4,.4) ;
+\draw [fill=gray] (-4, .5)--(-4,-1.25)--(-3, -1.75)--(-3, 0)--(-4, .5);
+\draw [fill=white](-4+.2,0) rectangle (-4+.8,-.6); 
+\draw [fill=white] (-3.5, -.6) to [bend left=-30](-3.5,-1.2)to [bend left=-30] (-3.5, -.6) ;
+
+
+
+    \draw[dashdotted] (-4.5,0)--(3,0);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[>=latex, scale=1.4]
+    \fill [pattern=north east lines] (1.5,-1)--(1.7,-1) to [bend left=-30] (1.7,1) --(1.5,1) to [bend left=30](1.5,-1);
+    \draw [thick](1.5,1) to [bend left=30] (1.5,-1);
+\node at (0,0)[above]{$F$}; \draw [fill=black] (0,0) circle(1.5pt);
+\node at (-2,0)[above]{$C$}; \draw [fill=black] (-2,0) circle(1.5pt);
+\node at (-3,0){丙};
+\draw[dashdotted] (-2.5,0)--(5,0);
+\draw (.8,0) rectangle (.4,.4); \draw (.6, .4) to [bend left=-30](.6, .8)to [bend left=-30] (.6,.4) ;
+\draw[dashed] (4.2,0) rectangle (3.4,.8); \draw[dashed] (3.8, .8) to [bend left=-30](3.8, 1.6)to [bend left=-30] (3.8,.8) ;
+
+\end{tikzpicture}
     \caption{凹镜成像\\
     甲：物体位于二倍焦距以外时，成倒立缩小的实像；\\
     乙：物体位于二倍焦距和焦点之间时，成倒立放大的实像；\\
@@ -617,7 +689,7 @@ $P$的直线叫做主光轴，简称主轴．靠近主轴射向镜面的光线
 经验，就觉得它们是从$A'$点发出的．$A'$在$A$的上方，所以看
 到容器的底部上升，水变浅了．
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-20.png}
+    \includegraphics[scale=1.2]{fig/5-20.pdf}
     \caption{水的视深比实深浅}
     \end{figure}
 
