@@ -264,7 +264,16 @@ $LC$回路的周期和频率跟哪些因素有关呢？让我们改变
 频率公式$f=\dfrac{1}{2\pi\sqrt{LC}}$知道，要提高振荡频率，必须降低振荡
 电路的电感和电容．上面讲的具有天线和地线的开放电路，不但形式开敞，同时它的电感和电容都很小，有很高的固有频率，这对于发射电磁波是很有利的．
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/4-12.png}
+\begin{circuitikz}[>=latex]
+\draw (0,3)-- (2,3) to [american inductor] (2,0)-- (0,0)  ;
+\draw (2.5, -.5) node [ground]{地线} to(2.5,0) to [american inductor] (2.5,3)to (2.5,3.5)node[bareantenna]{天线} ;
+\draw (-.2, .5) rectangle (.2,2.5);
+\draw (0,0)--(0,.5);
+\draw (0,2.5)--(0,3);
+\node [rotate=90]at (-.5,1.5){振荡器};
+\node at (1.75,1.5){$L_2$};
+\node at (2.75,1.5){$L_1$};
+\end{circuitikz}
 \caption{感应耦合}
 \end{figure}
 
@@ -302,19 +311,37 @@ $LC$回路的周期和频率跟哪些因素有关呢？让我们改变
 无线电技术中发射信号，先把要传递的信号转变为电信号，这种电信号频率比较低，不能直接用来发射电磁波，如果把这种电信号“加”到高频等幅振荡电流上，那么，载有信号的高频振荡电流产生的电磁波就载着要传递的信号一起发射出去，把要传递的电信号“加”到高频等幅振荡电流上叫做\textbf{调制}．进行调制的装置叫做\textbf{调制器}．要传递的电信号叫做调制信号．
 
 常用的调制方法有\textbf{调幅}和\textbf{调频}，调幅是使高频振荡电流的振幅随着调制信号而改变，调频是使高频振荡电流的频率随着调制信号而改变．
-\begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/4-13.png}
-\caption{调制}
-\end{figure}
 
-图4.13是调幅装置的示意图，接在振荡器和线圈$L_2$之间的话筒就是一个最简单的调制器．由声源发出的声音振动使话筒里的碳粒发生时松时紧的变化，它的电阻也发生时大时小的变化，所以，虽然振荡器产生的是高频等幅振荡电流
-（图4.14乙），但在线圈$L_2$中通过的却是振幅随声音而改变的高频调幅电流（图4.14丙）．由于$L_2$和$L_1$的互感作用，通过开放电路中的也是这种高频调幅电流，于是从开放电路就发射出振幅随声音面改变的电磁波．这种电磁波叫做\textbf{调幅波}．
-\begin{figure}[htp]\centering
+\begin{figure}[htp]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{circuitikz}[>=latex]
+\draw (0,3)to  (2,3) to [american inductor] (2,0) to [mic] (0,0)  ;
+\node [waves,rotate=90] at(1,-1.75) {};
+\draw (2.5, -.5) node [ground]{} to(2.5,0) to [american inductor] (2.5,3)to (2.5,3.5)node[bareantenna]{} ;
+\draw (-.2, .5) rectangle (.2,2.5);
+\draw (0,0)--(0,.5);
+\draw (0,2.5)--(0,3);
+\node [rotate=90]at (-.5,1.5){振荡器};
+\node at (1.75,1.5){$L_2$};
+\node at (2.75,1.5){$L_1$};
+
+\end{circuitikz}
+\caption{调制}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
 	\includegraphics[scale=1.2]{fig/4-14.pdf}
 	
 	甲：高频等幅振荡电流的波形；乙：声音信号的波形；丙：经过调幅的高频振荡电流的波形
 	\caption{调幅的作用}
-	\end{figure}
+\end{minipage}
+\end{figure}
+
+
+图4.13是调幅装置的示意图，接在振荡器和线圈$L_2$之间的话筒就是一个最简单的调制器．由声源发出的声音振动使话筒里的碳粒发生时松时紧的变化，它的电阻也发生时大时小的变化，所以，虽然振荡器产生的是高频等幅振荡电流
+（图4.14乙），但在线圈$L_2$中通过的却是振幅随声音而改变的高频调幅电流（图4.14丙）．由于$L_2$和$L_1$的互感作用，通过开放电路中的也是这种高频调幅电流，于是从开放电路就发射出振幅随声音面改变的电磁波．这种电磁波叫做\textbf{调幅波}．
 
 根据这节和前节所讲的，我们看到，在电磁波的发送中必须有振荡器、调制器、天线和地线．振荡器产生高频等幅振荡电流，经过调制器后，成为被调制的高频振荡电流，于是开放电路就发射出带有调制信号的电磁波．为了使电磁波能传得
 很远，还需要用放大器把被调制的高频振荡电流加以放大，以增强开放电路发射电磁波的功率，整个发送装置的方框图如图4.15所示．
@@ -346,7 +373,13 @@ $LC$回路的周期和频率跟哪些因素有关呢？让我们改变
 
 使接收电路产生电谐振的过程叫做\textbf{调谐}，能够调谐的接收电路叫做调谐电路．
 \begin{figure}[htp]\centering
-	\includegraphics[scale=1.2]{fig/4-17.pdf}
+\begin{circuitikz}[>=latex]
+    \draw (0,0) to [vC] (0,3) --(2,3)to  [american inductor](2,0)--(0,0);
+    \draw (1, 3) to(1,4) node [bareantenna]{} ;
+    \draw (1, 0) to(1,-.5) node [ground]{} ;
+    \draw (1, 0) [fill=black] circle (1.5pt);
+    \draw (1, 3) [fill=black] circle (1.5pt);
+\end{circuitikz}
 	\caption{调谐电路}
 	\end{figure}
 
@@ -358,7 +391,20 @@ $LC$回路的周期和频率跟哪些因素有关呢？让我们改变
 
 从经过调制的高频振荡电流中取出调制信号的过程，叫做\textbf{检波}．检波是调制的逆过程，也叫做解调．由于调制的方法不同，检波的方法也不同，下面介绍收音机中对调幅波的检波．
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/4-18.png}
+\begin{circuitikz}[>=latex]
+\draw (0,0) to [vC] (0,3)--(1.8,3) to [american inductor] (1.8,0)--(0,0);
+\draw (.9, 0) to(.9,-.5) node [ground]{} ;
+\node at (-.75,1.5){$C_1$};\node at (1.6,1.5){$L_1$}; \node at (2.8,1.5){$L_2$};
+\ctikzset{diodes/scale=0.6}  \draw (2.6,0) to  [american inductor] (2.6,3) to [full diode=$D$](5,3)--(6,3)to [mic=耳机](6,0) -- (0,0) ;
+\draw (5,0)to [C=$C_2$, *-*] (5,3);
+\draw (.9, 3) to(.9,3.9) node [bareantenna]{} ;
+
+\draw[dashed](2.2, 0)--(2.2,3.5);\draw[dashed](3.2, -.5)--(3.2,3.5);
+\draw (2.6,0) [fill=black] circle (1.5pt);
+\draw (1.8,0) [fill=black] circle (1.5pt);
+\draw (.9, 0) [fill=black] circle (1.5pt);
+\draw (.9, 3) [fill=black] circle (1.5pt);
+\end{circuitikz}
 \caption{}
 \end{figure}
 
@@ -515,7 +561,6 @@ $LC$回路的周期和频率跟哪些因素有关呢？让我们改变
 电子技术的发展是世界范围的新技术革命的重要组成部分，以电子计算机为代表的电子技术水准已成为衡量一个国家现代化水平的重要标志．
 
 我国的电子技术现在已经有了相当的发展．
-
 在通讯方面，我国的广播和电视事业发展很快．广播已基本普及．到1983年底，全国拥有广播电台122座，发射的总功率是解放初期的250倍．全国拥有电视台52座，省以下的电视专业微波线路14156千米，电视覆盖地区的人口约占总人口的60\%.我国已经成功地发射了通信广播卫星，成为世界上少数几个能独立发射这种卫星的国家之一，这标志着我国卫星通信技术已接近世界先进水平．
 
 我国于1958年就研制成功了第一台电子管元件计算机．此后陆续又研制出一批大、中、小型集成电路计算机，近年来，我国在集成电路的研制和生产、计算机的推广和应用等方面都取得了很大成绩．1983年我国成功地研制成每秒运算一亿次的“银河”巨型机．1984年我国在研制超大规模集成电路上取得了新的突破，我国的微电脑已批量定型生产．

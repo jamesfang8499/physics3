@@ -288,7 +288,14 @@
 \section{直线电流的磁场}
 前面我们已经介绍了直线电流磁场的磁力线分布（图1.6），从磁力线的分布就可以知道磁场中各点的磁感应强度的方向．那么，直线电流磁场中各点的磁感应强度的大小又是怎样的呢？实验表明，磁感应强度的大小跟导线中的电流强度$I$有关系，也跟离开导线的距离$r$有关系．
 \begin{figure}[htp]\centering
-	\includegraphics[scale=.75]{fig/1-20.png}
+\begin{tikzpicture}[>=latex, xscale=.6, yscale=.4]
+\draw (-2,2)--(2,2)--(2.2, -2)--(-2.2,-2)--(-2,2);
+\fill[white](-.1,0) rectangle (.1,5);
+\draw (-0.1,0)--(-0.1,5); \draw (0.1,0)--(0.1,5);
+\draw (-0.1,-2)--(-0.1,-3);
+\draw (0.1,-2)--(0.1,-3);
+\draw[->] (-.5, 3)--(-.5,4)node[above]{$I$};
+\end{tikzpicture}
 	\caption{ }
 \end{figure}
 
@@ -315,7 +322,25 @@
 严格说来，这个公式只适用于一小段通电导线的情形；导
 线较长时，导线所在处各点的磁感应强度矢量一般并不相同，不能应用这个公式．如果磁场是匀强磁场，这个公式就适用于长的通电导线了．
 \begin{figure}[htp]\centering
-	\includegraphics[scale=.75]{fig/1-21.png}
+\begin{tikzpicture}[>=latex]
+
+\draw (0,6)--(0,0);
+\draw (.2,6)--(.2,0);
+\draw[->] (.5,5.5)--(.5,5)node[right]{$I$};
+\foreach \x in {0,1,...,4}
+{
+    \draw[->](-4,6-\x*.7)--(1,3-\x*.7);
+}
+\node at (1.5, 2){$B$};
+\draw (0,2.9-.5) arc (-90:-30:.5)node[below]{$\theta$};
+\draw[->, very thick] (-3,5.3-.6)--(-2,5.3-.6)node[right]{$B_2$};
+\draw[->, very thick] (-3,5.3-.6)--(-3,5.3-.6-.6)node[below]{$B_1$};
+\draw[->, very thick] (-3,5.3-.6)--(-2,5.3-.6-.6)node[right]{$B$};
+\draw[dashed] (-3,5.3-.6-.6)--(-2,5.3-.6-.6);
+\draw[dashed] (-2,5.3-.6)--(-2,5.3-.6-.6);
+\draw (-3,5.3-.6-.2) arc (-90:-30:.2)node[below]{$\theta$};
+
+\end{tikzpicture}
 	\caption{ }
 \end{figure}
 
