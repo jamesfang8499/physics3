@@ -252,7 +252,7 @@
 引入了磁通量这个概念，反过来我们也可以把磁感应强
 度看作是通过单位面积的磁通量，因此磁感应强度也常叫做\textbf{磁通密度}，并且用${\rm Wb}/{\rm m^2}$作单位．
 
-\subsection*{练习ニ}
+\subsection*{练习二}
 \begin{enumerate}
     \item 有人根据$B=F/I\ell$提出：磁场中某处的磁感应强度$B$跟磁场力$F$成正比，跟电流强度$I$和导线长度$\ell$的乘积$I\ell$成反比．这种提法有什么问题？错在哪里？
     \item 能不能用一小段通电导线在磁场中所受磁场力的方向来定义磁感应强度的方向？讨论一下这个问题．
@@ -449,7 +449,7 @@
     	\caption{ }
     \end{figure}
     \item 试解释为什么两根平行直导线中通以相反方向电流时，它们互相推斥．
-    \item 如图1.25所示，把一根通电的直导线放在蹄形磁铁的两个磁极上方．导钱可以自由移动和转动，如果电流的方向如图所示，导线将产生怎样的运动？
+    \item 如图1.25所示，把一根通电的直导线放在蹄形磁铁的两个磁极上方．导线可以自由移动和转动，如果电流的方向如图所示，导线将产生怎样的运动？
         \begin{figure}[htp]\centering
     	\includegraphics[scale=.75]{fig/1-25.png}
     	\caption{ }
@@ -1054,13 +1054,30 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 
 磁流体发电是一项新兴技术，报纸、杂志上常有文章介
 绍，希望有兴趣的同学找来看看，以扩展自己的知识面．
-\item  图1.48表示两个平行金属板，它们之间的距离为$d$，分别接在电源的两极上．在两平行金属板当中的空间存在着彼此垂直的电场和磁场，电场强度为$E$，磁感应强度为$B$． 从负极板的小孔射入一个电子，经过有电场和磁场同时存在的空间，并打在正极板上，射入电子的初速度为$v0$，方向跟竖直方向成$\theta$角．求电子打在正极板上的速度的大小．
 
 \begin{figure}[htp]\centering
 	\includegraphics[scale=.75]{fig/1-47.png}
 	\caption{ }
-\end{figure}\begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/1-48.png}
+\end{figure}
+
+\item  图1.48表示两个平行金属板，它们之间的距离为$d$，分别接在电源的两极上．在两平行金属板当中的空间存在着彼此垂直的电场和磁场，电场强度为$E$，磁感应强度为$B$． 从负极板的小孔射入一个电子，经过有电场和磁场同时存在的空间，并打在正极板上，射入电子的初速度为$v_0$，方向跟竖直方向成$\theta$角．求电子打在正极板上的速度的大小．
+
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[>=latex, scale=.6]
+	\draw[very thick](-4.5,2)--(-.2,2);
+	\draw[very thick](.2,2)--(4.5,2)node[right]{$-$};
+	\draw[very thick](-4.5,-2)--(4.5,-2)node[right]{$+$};
+	\draw[dashed](0,2.5)--(0,0);
+	\draw[->, thick](0,2)--+(-60:2.5)node[right]{$v_0$};
+	\foreach \x in {.8,-.8,2.4,-2.4,4,-4}
+	\foreach \y in {1,-1}
+	{
+		\node at (\x,\y){$\times$};
+	}
+	\draw[|<->|](-5,2)--node[fill=white]{$d$}(-5,-2);
+	\draw(0,1.5) arc (-90:-60:.5)node[below]{$\theta$};
+	
+\end{tikzpicture}
 \caption{ }
 \end{figure}
 \end{enumerate}
