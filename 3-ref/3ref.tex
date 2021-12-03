@@ -1475,97 +1475,1348 @@ $I_1:I_2=n_2:n_1$. 计算$U_1I_1$与$U_2I_2$值，求出变压器效率$n$.
 亮？这个问题可启发学生从人体与大地间是一个电容器，而测
 试的又是交流电这一点上进行思考。
 
+\section{习题解答}
+\subsection{练习－}
+\begin{enumerate}
+    \item 有人说线圈平面转到中性面的瞬间，穿过线圈的磁通量最大，因而线圈中的感生电动势最大；线圈平面跟中性面垂直的瞬间，穿过线圈的磁通量为零，因而线圈中的感生电动势为零，这种说法对不对？为什么？
+
+
+    \begin{solution}
+        这种说法是错误的。根据法拉第电磁感应定律，感
+        生电动势的大小与穿过闭合回路的磁通量变化率成正比，而
+        与磁通量大小无关。当线圈平面转到中性面时，虽然磁通量
+        最大，但磁通量变化率为零，线圈中感生电动势也为零；而当
+        线圈平面转到与中性面垂直位置时，虽然磁通量为零，但磁
+        通量变化率最大，因而线圈中感生电动势最大。
+    \end{solution}
+    
+    \item 在课本图3.1所示的实验中，在不改变$B$、$\ell$和$v$的数值的情况下，你有什么办法来提高电动势的最大值？并说明所依据的原理．
+
+
+    \begin{solution}
+        可以通过增加线圈匝数来提高电动势的最大值。因
+        为线圈在切割磁力线的过程中，每匝线圈的感生电动势都相
+        同，$n$匝线圈是$n$个单匝线圈的串联，产生的感生电动势是单
+        匝线圈的$n$倍。
+    \end{solution}
+    
+    \item 在课本图3.1所示的实验中，设$AB$边的长度为20厘米，线圈的宽$AD$为10厘米，磁感应强度$B$为0.01特，线圈的转数为50转/秒，求电动势的最大值，如果从线圈平面转过中性面30$^\circ$角的瞬时开始计时，经过0.01秒时电动势的瞬时值是多大？
+
+
+    \begin{solution}
+        用$\ell$和$\ell'$分别表示$ab$和$ad$的长度。当线圈平面
+        与中性面垂直时，电动势最大，这时的电动势
+    \[\mathcal{E}_m=2B\ell v\]
+    因为
+\[v=\omega r=2\pi n\frac{\ell'}{2}\qquad \text{（$n$为转速）}\]
+所以
+\[\mathcal{E}_m=2B\ell2\pi n\cdot \frac{\ell'}{2} \]
+代入数值得
+\[\mathcal{E}_m=2\x3.14\x50\x0.01\x20\x10^{-2}\x10\x10^{-2}=0.06{\rm V}\]
+若从线圈平面转过中性面$30^{\circ}$角瞬时开始计时，那么该
+交流电表达式
+\[\begin{split}
+   e&= \mathcal{E}_m \sin(\omega t+\phi_0)\\
+   &=0.06\sin\left(2\pi \x50\x t+\frac{\pi}{6}\right)\\
+   &=0.06\sin\left(100\pi  t+\frac{\pi}{6}\right)
+\end{split}\]
+因此经0.01秒时电动势瞬时值为
+\[\begin{split}
+    e &=0.06\sin\left(100\pi  0.01+\frac{\pi}{6}\right)\\
+    &=0.06\sin\left(\pi +\frac{\pi}{6}\right)\\
+    &=-0.06\sin\frac{\pi}{6}=-0.06\x \frac{1}{2}= -0.03{\rm V}
+ \end{split}\]
+    \end{solution}
+    
+    \item 画出$u=30\sin(\omega t+\pi/2)$伏的电压图象和$i=2\sin(\omega t-\pi/4)$安的电流图象，以$\omega t$为横轴．
+
+    \begin{solution}
+        所求图象如图3.48甲、乙所示．
+\begin{figure}[htp]
+    \centering
+\begin{tikzpicture}[>=latex, scale=.7]
+\begin{scope}
+\draw[->](-2,0)--(7,0)node[right]{$\omega t$};
+\draw[->](0,-4)--(0,4)node[right]{$u({\rm V})$};
+\draw[very thick, domain=-pi/2:2*pi, samples=300]plot(\x,{3*cos(\x r)});
+\foreach \x/\xtext in {0.5*pi/\frac{\pi}{2}, pi/\pi, 1.5*pi/\frac{3}{2}\pi, 2*pi/2\pi}
+{
+    \draw(\x,0)node[below]{$\xtext$}--(\x,.2);
+}
+\draw[dashed](0,3)node[left]{30}--(2*pi,3)--(2*pi,0);
+\draw[dashed](0,-3)node[left]{$-30$}--(pi,-3)--(pi,0);
+\node at (-.3,-.3){$0$};
+\node at (pi,-5){甲};
+\end{scope}
+\begin{scope}[xshift=11cm]
+    \draw[->](-2,0)--(8,0)node[right]{$\omega t$};
+    \draw(0,3)node[left]{2}--(.2,3);
+\draw[->](0,-4)--(0,4)node[right]{$i({\rm A})$};
+\draw[very thick, domain=-pi/2:2.25*pi, samples=300]plot(\x,{3*sin(\x r -.25*pi r)});
+\foreach \x/\xtext in {0.5*pi/\frac{\pi}{2}, pi/\pi}
+{
+    \draw(\x,0)node[below]{$\xtext$}--(\x,.2);
+}
+\foreach \x/\xtext in {1.5*pi/\frac{3}{2}\pi, 2*pi/2\pi}
+{
+    \draw(\x,0)--(\x,.2)node[above]{$\xtext$};
+}
+\draw[dashed](0,2.121)node[left]{$1.41$}--(pi,2.121)--(pi,0);
+\draw[dashed] (.5*pi,2.121)--(.5*pi,0);
+\draw[dashed](0,-3)node[left]{$-2$}--(1.75*pi,-3)--(1.75*pi,0);
+\draw[dashed](0,-2.121)node[left]{$-1.41$}--(2*pi,-2.121)--(2*pi,0);
+\draw[dashed](1.5*pi,-2.121)--(1.5*pi,0);
+\node at (pi,-5){乙}; 
+\node at (-.3,-.3){$0$};
+\end{scope}
+\end{tikzpicture}
+    \caption{}
+\end{figure}
+    \end{solution}
+    
+    \item 课本图3.1是一个发电机模型，只能供课堂演示之用，如果你有兴趣，可约请几位同学，共同研究一下怎样在此模型的	
+	基础上加以改进，设计一个小发电机，如果感到知识不足，可自学或查阅有关电工学的书籍．
+
+
+    \begin{solution}
+        说明：此题有关制作可参考前面实验指导部分有关
+        内容。
+    \end{solution}
+\end{enumerate}
+
+\subsection{练习二}
+\begin{enumerate}
+    \item 有一个电容器，能耐压250伏，是否能接在220伏的交流电路上？为什么？
+
+
+    \begin{solution}
+        耐压250伏的电容器不允许接在220伏的交流电路上．这是由于220伏交流电路上电压的最大值可达到有效值
+        的$\sqrt{2}$倍，即
+        \[U_m=\sqrt{2}U=\sqrt{2}\x220=310{\rm V}\]
+        把耐压
+        250伏的电容器接入这个电路就有击穿并引起短路的可能。
+    \end{solution}
+    
+    \item 线圈转动的角速度$\omega$也叫角频率（或圆频率），试就课本图3.1导出角频率$\omega$跟周期$T$或频率$f$的关系式．
+
+
+    \begin{solution}
+        线圈从课本图3.1中甲图位量匀速转到乙图所示位
+        置，转过角度为$\pi$, 经历时间为$T/2$, 故由角速度定义式可得
+\[\omega=\frac{\theta}{t}=\frac{\pi}{T/2}=\frac{2\pi}{T}\]
+又因$f=1/T$，所以
+\[\omega=\frac{2\pi}{T}=2\pi f\]
+    \end{solution}
+    
+    \item 已知：$u_1=220\sqrt{2}\sin(100\pi t+\pi /6)$伏，$u_2=380\sqrt{2}\sin(100\pi t+\pi /3)$伏，求这两个交流电压的最大值、有效值、周期、频率、角频率和初相．这两个电压哪个超前？相差是多大？
+
+
+    \begin{solution}
+        由题目可知，$U_{m_1}=220\sqrt{2}$伏，
+        $U_{m_2}=380\sqrt{2}$伏。
+\[        U_1=\frac{U_{m_1}}{\sqrt{2}}=220{\rm V},\qquad U_2=
+ \frac{V_{m_2}}{\sqrt{2}}=380{\rm V}\]
+    \[\omega_1=100\pi {\rm rad/s},\qquad \omega_2=100\pi {\rm rad/s}\]
+\[f_1=\frac{\omega_1}{2\pi}=\frac{100\pi}{2\pi}=50{\rm Hz},\qquad f_2=\frac{\omega_2}{2\pi}=\frac{100\pi}{2\pi}=50{\rm Hz}\]
+\[T_1=\frac{1}{f_1}=\frac{1}{50}=0.02{\rm s},\qquad T_2=\frac{1}{f_2}=\frac{1}{50}=0.02{\rm s}\]
+\[\phi_1=\frac{\pi}{6},\qquad \phi_2=\frac{\pi}{3}\]
+因$\phi_2>\phi_1$，所以$u_2$超前$u_1$, 相差
+$$\Delta\phi=\frac{\pi}{6}-\frac{\pi}{3}=-\frac{\pi}{6}$$
+即$u_2$超前$u_1$ $\pi/6$
+    \end{solution}
+    
+    \item 有一正弦交流电，频率是50赫，有效值是5安，初相
+    是$-\pi/2$．写出瞬时值的表达式，并画出图象．
+
+    \begin{solution}
+\[\begin{split}
+    I_m&=\sqrt{2}I=\sqrt{2}\x 5=7.07{\rm A}\\
+    \omega&=2\pi f=2\pi\x 50=100\pi {\rm rad/s}\\
+    \phi_0&=-\frac{\pi}{2}
+\end{split}\]
+瞬时值表达式为
+\[i=7.07\sin\left(100\pi t-\frac{\pi}{2}\right){\rm A}\]
+其图象如3.49图。
+    \end{solution}
+
+
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\begin{tikzpicture}[>=latex, scale=.6]
+    \draw[->](-1,0)--(9,0)node[above]{$\omega t$};
+\draw[->](0,-4)--(0,4)node[right]{$i({\rm A})$};
+\draw[very thick, domain=0:2.5*pi, samples=300]plot(\x,{3*sin(\x r -.5*pi r)});
+\foreach \x/\xtext in {0.5*pi/\frac{\pi}{2}, pi/\pi}
+{
+    \draw(\x,0)node[below]{$\xtext$}--(\x,.2);
+}
+\foreach \x/\xtext in {1.5*pi/\frac{3}{2}\pi, 2*pi/2\pi}
+{
+    \draw(\x,0)--(\x,.2)node[above]{$\xtext$};
+}
+\draw[dashed](0,-3)node[left]{$-0.707$}--(2*pi,-3)--(2*pi,0);
+\draw[dashed](0,3)node[left]{$0.707$}--(pi,3)--(pi,0);
+\node at (-.25,-.25){$0$};
+    \end{tikzpicture}
+    \caption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}[>=latex, yscale=1.4, xscale=.8]
+       \draw [->](-.5,0)--(8.5,0)node[above]{$t$(s)};
+    \draw [->](0,-1.5)--(0,2)node[right]{$i$(A)};
+    \draw [ultra thick] plot[domain=0:3.14*2.5, samples=1000] function{cos(x)};
+    \draw [dashed](0,1)--(2*3.1416,1);
+    \draw [dashed](0,-1)--(3.1416,-1);
+    \node at (0,1) [left]{$+10$};
+    \node at (0,-1) [left]{$-10$};
+    \foreach \x in {0.05,0.1,0.15,0.2,0.25}
+    {
+        \node at (\x*31.416, 0)[below]{$\x$};
+        \draw(\x*31.416, 0)--(\x*31.416, .1);
+    }
+    \node at (-.25,-.25){$0$};
+    \end{tikzpicture}
+    \caption{}
+    \end{minipage}
+    \end{figure}
+
+    \item 图3.50是某一正弦交流电的图象．根据图象求出最大值、有效值、周期、角频率和初相，并写出瞬时值的表达式．
+
+    \begin{solution}
+$I_m=10$安；$I=I_m/\sqrt{2}=0.707\x10=7.07$安；
+$T=0.2$秒；
+
+$\omega=\dfrac{2\pi}{T}=\dfrac{2\pi}{0.2}=10\pi{\rm rad/s}$；$\phi_0=-\dfrac{\pi}{2}$。
+
+该交流电流瞬时值表达式为：
+\[i=10\sin\left(10\pi t -\frac{\pi}{2}\right){\rm A}\]
+    \end{solution}
+    
+    \item 课本图3.10是两个正弦交流电的图象，哪个超前，哪个落后？超前或落后的角度是多大？其中$\phi_1$和$\phi_2$的绝对值都是60$^\circ$．
+    
+\begin{solution}
+$i_1$超前$i_2$ $120^{\circ}$, $i_2$落后$i_1$ $120^{\circ}$.
+\end{solution}
+
+\end{enumerate}
+
+
+\subsection{练习三}
+\begin{enumerate}
+    \item 把“220V,40W”的灯泡接到照明电路中，通过灯泡的电流的最大值是多大？
+
+
+    \begin{solution}
+        因为$P=UI$, 所以在额定电压220V情况下，通过灯泡的电流有效值
+ \[I=\frac{P}{U} =\frac{40}{220}=0.18{\rm A}\]
+        因此电流的最大值
+        $$I_m=\sqrt{2}\cdot I=\sqrt{2}\x0.18=0.25{\rm A}$$
+    \end{solution}
+    
+    \item 在电阻$R$的两端加交变电压$u=220\sqrt{2}\sin(\omega t+\phi)$伏，$R=110$欧，写出电流瞬时值的表达式．
+
+
+    \begin{solution}
+    \[i=\frac{u}{R}=\frac{220\sqrt{2}}{110}\sin(\omega t+\phi)=2\sqrt{2}\sin(\omega t+\phi){\rm A}\]
+    \end{solution}
+    
+    \item 在电阻为500欧的电阻丝中通以交流电，每秒钟产生5焦的热．求电流和电压的有效值和最大值，交流电的功率是多大？
+
+
+    \begin{solution}
+        由焦耳定律$\theta=I^2Rt$可得：交流电电流有效值
+    \[I=\sqrt{\frac{\theta}{Rt}}=\sqrt{\frac{5}{500\x 1}}=0.1{\rm A}\]
+电流最大值
+\[i_m=\sqrt{2}I=0.14{\rm A}\]
+        所以电压有效值
+$$U=I\cdot R=0.1\x500=50{\rm V}$$
+电压最大值
+\[u_m=\sqrt{2}U=1.4\x50=70{\rm V}\]
+交流电功率
+\[P=\frac{W}{t}=\frac{5}{1}=5{\rm W}\]
+    \end{solution}
+    
+    \item 把一个电热器接到10伏的直流电路中，每秒钟产生的热量为$Q$．现在把它改接到交流电路中，每秒钟产生的热量为$Q/2$，求交流电压的最大值．
+
+    \begin{solution}
+        对纯电阻电路而言，电路产生的热$$Q=\frac{U^2}{R}t$$
+        接入直流电路时
+        \[Q=\frac{U^2}{R}\x 1\]
+        接入交流电路时
+     \[\frac{Q}{2}=\frac{(U_m/\sqrt{2})^2}{R}t=\frac{U^2_m}{2R}\]
+        两式相除可得：$U^2_m=U^2$, 
+        所以
+   \[     U_m=U=10{\rm V}\]
+        即交流电压的最大值为10伏．
+    \end{solution}
+    
+\end{enumerate}
+
+\subsection{练习四}
+\begin{enumerate}
+    \item 一个线圈的自感系数为0.6亨，电阻只有几欧姆，把这个线圈接到50赫的交流电路中，它的感抗是多大？比较感抗和电阻的大小，说明为什么可以略去电阻，而认为它只有电感．
+
+
+    \begin{solution}
+        这个线圈对50赫交流电的感抗
+    \[    X_L=2\pi fL=2\pi \x50\x0.6=188\Omega\]
+        由于$X_L\gg R$, 因此在电路中起主要作用的是感抗而不是
+        电阻，因而通常可以忽略电阻的作用而认为它只有电感。
+    \end{solution}
+    
+    \item 有一个高频扼流圈，自感系数是25毫亨，对于1兆赫的交流电，它的感抗是多大？对于1千赫的交流电，它的感抗又是多大？
+
+
+    \begin{solution}
+        对1兆赫交流电的感抗
+        \[X_{L_1}=2\pi f_1L=2\pi\x10^6\x25\x10^{-3}=157\x10^3\Omega\]
+        对1千赫交流电的感抗
+        \[X_{L_2}=2\pi f_2L=2\pi\x10^3\x25\x10^{-3}=157\Omega\]
+    \end{solution}
+    
+    \item 一线圈的自感系数为0.5亨，电阻可以忽略．把它接到频率为50赫，电压为220伏的交流电路中，求通过线圈的电流．
+
+
+    \begin{solution}
+ \[I=\frac{U}{X_L}=\frac{U}{2\pi fL}=\frac{220}{2\x 3.14\x 50\x 0.5}=1.4{\rm A}\]   
+    \end{solution}
+    
+    \item 有一线圈，电阻可略去不计．把它接到220伏、50赫的交流电路中，测得通过线圈的电流为2安．求线圈的自感系数．
+
+
+    \begin{solution}
+    因为\[I=\frac{U}{X_L}=\frac{U}{2\pi fL }\]
+    所以
+    \[L=\frac{U}{2\pi fI}=\frac{220}{2\pi\x 50\x 2}=0.35{\rm H}\]
+    \end{solution}
+    
+\end{enumerate}
+
+
+\subsection{练习五}
+\begin{enumerate}
+    \item 电容是100皮法的电容器，对频率是$10^8$赫的高频电流和频率是$10^3$赫的音频电流，容抗各是多大？
+
+
+    \begin{solution}
+对$10^6$赫高频电流，电容容抗
+\[X_{C_1}=\frac{1}{2\pi f_1C}=\frac{1}{2\x3.14\x10^6\x100\x10^{-12}}=1.59\x10^3\Omega\]
+对$10^3$赫音频电流，容抗
+\[X_{C_2}=\frac{1}{2\pi f_2C}=\frac{1}{2\x3.14\x10^3\x100\x10^{-12}}=1.59\x10^6\Omega\]
+    \end{solution}
+    
+    \item 把电容为5微法的电容器接到220伏、50赫的交流电路中，通过电容器的电流是多少？把电容器换为0.05微法的，通过的电流是多少？
+
+    \begin{solution}
+电容为5微法时，通过电容器的电流
+\[\begin{split}
+    I=\frac{U}{X_C}=\frac{U}{\dfrac{1}{2\pi fC}}&=U\cdot 2\pi fC\\
+    &=220\x 2\pi\x 50\x 5\x 10^{-6}=0.345{\rm A}
+\end{split}\]
+当电容器电容为0.05微法时，通过电流
+\[\begin{split}
+    I'=\frac{U}{X'_C}=\frac{U}{\dfrac{1}{2\pi fC'}}&=U\cdot 2\pi fC'\\
+    &=220\x 2\pi\x 50\x 0。05\x 10^{-6}\\
+    &=3.45\x 10^{-3}{\rm A}=3.45{\rm mA}
+\end{split}\]
+    \end{solution}
+    
+    \item 在有220伏、50赫交流电源的地方，使用一个交流电流表可以测定电容器（耐压在311伏以上）的电容，说明测定的方法和原理．
+
+
+    \begin{solution}
+        根据$I=\dfrac{U}{X_C}$及$X_C=\frac{1}{2\pi fC}$可得：
+\[        I=U\cdot 2\pi fC\]
+        式中，$U$、$f$已知，$I$为通过电容器的电流，可用交流电流
+        表测出，因而$C$可由下式求出：
+        \[C=\frac{1}{2\pi f\cdot U}\]
+    \end{solution}
+    
+    \item 线圈的自感系数为$L$，电容器的电容为$C$．要使感抗和容抗相等，交流电的频率应该满足什么条件？
+
+
+    \begin{solution}
+对同一电源要使线圈感抗和电容容抗相等，应满足
+的关系是$X_L=X_C$, 即
+\[2\pi fL=\frac{1}{2\pi fC}\]
+因此电源频率应满足条件是
+\[f^2=\frac{1}{4\pi^2 LC}\]
+即
+\[f=\frac{1}{2\pi\sqrt{LC}}\]
+    \end{solution}
+    
+\end{enumerate}
 
 
 
 
+\subsection{练习六}
+\begin{enumerate}
+    \item 变压器能不能改变直流电的电压？说明理由．
+
+
+    \begin{solution}
+变压器是利用交流电通过线圈在铁心中产生交变磁
+通，从而使副线圈中引起感生电动势而完成变压作用的，对于
+稳恒电流，由于不会引起磁通变化，也就无法完成变压作用。
+因此，变压器不能改变直流电压。    
+    \end{solution}
+    
+    \item 收音机中的变压器，原线圈有1210匝，接在220伏
+的交流电源上，要得到5伏、6.3伏和350伏三种输出电压，
+三个副线圈的匝数各是多少？
+
+
+\begin{solution}
+根据变压比公式可得
+\[n_{\text{次}}=\frac{U_{\text{次}}}{U_{\text{初}}}\cdot n_{\text{初}}\]
+
+5伏绕组匝数
+\[n_1=\frac{U_1}{U_{\text{初}}}\cdot n_{\text{初}}=\frac{5}{220}\x 1210\approx 28\text{（匝）}\]
+6.3伏绕组匝数
+\[n_2=\frac{U_2}{U_{\text{初}}}\cdot n_{\text{初}}=\frac{6.3}{220}\x 1210\approx 35\text{（匝）}\]
+350伏绕组匝数
+\[n_3=\frac{U_3}{U_{\text{初}}}\cdot n_{\text{初}}=\frac{350}{220}\x 1210\approx 1925\text{（匝）}\]
+\end{solution}
+
+\item 为了安全，机床上照明电灯用的电压是36伏，这个
+电压是把220伏的电压降压后得到的，变压器的原线圈是
+1140匝，副线圈是多少匝？用这台变压器给40瓦的电灯供
+电，原副线圈中的电流强度各是多大？
+
+
+\begin{solution}
+由变压比公式$\dfrac{U_1}{U_2}=\dfrac{n_1}{n_2}$，
+可得副线圈匝数
+\[n_2=\frac{U_2}{U_1}\cdot n_1=\frac{36}{220}\x 1140=187\text{（匝）}\]
+
+当变压器副线圈向40瓦电灯供电时，通过副线圈的电流
+\[I_2=\frac{P}{U}=\frac{40}{36}\approx 1.1{\rm A}\]
+因为变压器的输出功率和输入功率相等，即$P_{\text{原}}=P_{\text{副}}=40$瓦，所以通过原线圈的电流
+\[I_1=\frac{P_{\text{原}}}{U_{\text{原}}}=\frac{40}{220}=0.18{\rm A}\]
+或：由$\dfrac{I_1}{I_2}=\dfrac{n_2}{n_1}$，可得：
+\[I_1=\dfrac{n_2}{n_1}\cdot I_2=\frac{187}{1140}\x 1.1=0.18{\rm A}\]
+\end{solution}
+
+\item 利用变压器的原理可以测量线圈的匝数；用被测线
+圈作原线圈，用一个匝数已知的线圈作副线圈，通入交流电，
+测出两线圈的电压，就可以求出被测线圈的匝数，已知副线
+圈有400匝，把原线圈接到220伏的线路中，测得副线圈的电
+压是55伏，求原线圈的匝数．
+
+
+\begin{solution}
+    设原线圈匝数为$n_1$, 副线圈匝数为$n_2$, 原线圈电压
+    为$U_1$, 副线圈电压为$U_2$. 根据变压比公式$\dfrac{U_1}{U_2}=\dfrac{n_1}{n_2}$，
+    可得
+\[n_1=\frac{U_1}{U_2}\cdot n_2=\frac{220}{55}\x 400=1600\text{（匝）}\]
+
+\end{solution}
+
+\item 在图3.28所示的电压互感器的电路中，为什么副线
+圈的匝数比原线圈的少？在图3.29所示的电流互感器的电路
+中，为什么副线圈的匝数比原线圈的多？
+
+
+\begin{solution}
+使用电压互感器是为了将被测的高电压转化成低电
+压，根据变压器变压比公式可知，副线圈匝数要比原线圈少
+得多。而使用电流互感器是为了将被测的强电流转化为弱电
+流，根据变流比公式$I_1:I_2=n_2:n_1$可知，副线圈匝数比原线圈
+多得多（事实上电流互感器的初级线圈只有一、二匝）。
+\end{solution}
+
+\end{enumerate}
+
+
+
+\subsection{练习七}
+\begin{enumerate}
+    \item 在课文所给的例子中，用110伏和11千伏的电压输
+电，分别要用96000${\rm mm}^2$和9.6${\rm mm}^2$的铝导线．如果不用铝
+导线，而用铜导线，导线的横截面积分别要多大？
+
+\begin{solution}
+根据题意，导线的长度和电阻仍应与原来铝导线的
+相同。根据电阻定律有：
+\[R_{\text{铜}}=\rho_{\text{铜}}\cdot \frac{\ell_{\text{铜}}}{S_{\text{铜}}},\qquad R_{\text{铝}}=\rho_{\text{铝}}\cdot \frac{\ell_{\text{铝}}}{S_{\text{铝}}}\]
+两式相除可得
+\[\frac{S_{\text{铜}}}{S_{\text{铝}}}=\frac{\rho_{\text{铜}}}{\rho_{\text{铝}}}\]
+所以，
+\[S_{\text{铜}}=\frac{\rho_{\text{铜}}}{\rho_{\text{铝}}}\cdot S_{\text{铝}}\]
+查课本第二册第180页电阻率表可知：
+\[\rho_{\text{铜}}=1.7\x 10^{-8}\Omega\cdot {\rm m},\qquad   \rho_{\text{铝}}=2.9\x 10^{-8}\Omega\cdot {\rm m}\]
+
+所以，用110伏输电时，使用铜导线截面积应为：
+\[S_1=\frac{1.7\x 10^{-8}}{2.9\x 10^{-8}}\x 96000=56640{\rm mm^2}\]
+用11千伏输电时，使用的铜导线截面积为：
+\[S_2=\frac{1.7\x 10^{-8}}{2.9\x 10^{-8}}\x 9.6=5.7{\rm mm^2}\]
+\end{solution}
+
+\item 从发电站输出的功率为200千瓦，输电线的总电阻
+为0.05欧，用110伏和11千伏的电压输电，在这两种情况
+下，在输电线上损失的电压各是多少伏？输送到用户的电压各
+是多少伏？在输电线上损失的功率各是多少千瓦？
+
+\begin{solution}
+输电线电阻与用户负载构成串联电路，电路消耗功
+率为电站输出功率200千瓦．
+
+因为$P=U\cdot I$, 所以$I=P/U$。
+用110伏电压送电时，电路电流
+\[I_1=\frac{200\x 10^3}{110}=1.82\x 10^3{\rm A}\]
+用11千伏电压送电时，电路电流
+\[I_2=\frac{200\x 10^3}{11\x 10^3}=18.2{\rm A}\]
+\begin{enumerate}
+    \item 用110伏电压送电时，输电线上损失电压
+\[U_{\text{损}1}=I_1\cdot R=1.82\x10^3\x0.05=91{\rm V}\]
+用户电压
+\[U_{\text{用}1}=U_1-U_{\text{损}1}=110-91=19{\rm V}\]
+输电线损失功率 
+\[P_{\text{损}1}=I^2_1\cdot R=(1.82\x10^3)^2\x0.05{\rm W}=166{\rm kW}\]
+\item 用11千伏电压送电时，输电线上损失电压
+\[U_{\text{损}2}=I_2\cdot R=1.82\x 0.05=0.91{\rm V}\]
+用户电压
+\[U_{\text{用}2}=U_2-U_{\text{损}2}=11\x 10^3-0.91 {\rm V}\approx 11{\rm kV}\]
+输电线损失功率 
+\[P_{\text{损}2}=I^2_2\cdot R=1.82^2\x0.05{\rm W}\approx 0.017 {\rm kW}\]
+\end{enumerate}
+\end{solution}
+
+\item 用220伏和11千伏两种电压来输电，输送的功率相
+同，在输电线上损失的功率相同，导线的长度和电阻率也相
+同，求导线的横截面积之比．
+
+\begin{solution}
+本题应根据损失功率列式进行比较。设输送端电压
+为$U$, 输送功率为$P$, 导线电阻为$R$, 导线长度为$\ell$, 电阻率为
+$\rho$、横截面积为$S$. 由输送电压与输送功率求出通过导线
+电流：$I=P/U$。
+
+由于导线上损失功率$P=I^2R$, 式中$R=\rho\cdot\dfrac{\ell}{S}$。
+故损失功率可表示为
+\[P=I^2R=\left(\frac{P}{U}\right)^2\cdot \rho\frac{\ell}{S}\]
+若分别以220伏和11千伏输电，有
+\[P_{\text{损1}}=\left(\frac{P}{U_1}\right)^2\cdot \rho\frac{\ell}{S_1},\qquad P_{\text{损2}}=\left(\frac{P}{U_2}\right)^2\cdot \rho\frac{\ell}{S_2}\]
+因为$P_{\text{损1}}=P_{\text{损2}}$, 所以
+\[\left(\frac{P}{U_1}\right)^2\cdot \rho\frac{\ell}{S_1}=\left(\frac{P}{U_2}\right)^2\cdot \rho\frac{\ell}{S_2}\]
+整理后可得：
+\[\frac{S_1}{S_2}=\frac{U^2_2}{U^2_1}=\frac{(11\x 10^3)^2}{220^2}=\frac{2.5\x 10^3}{1}\]
+即：用220伏和11千伏输电两种情况导线横截面积之比
+为$2.5\x10^3:1$.
+\end{solution}
+
+\end{enumerate}
 
 
 
 
+\subsection{练习八}
+\begin{enumerate}
+	\item 图3.33中变压器副线圈$aO$间和$bO$间的交变电压都是6伏特．当$D_1$导通而$D_2$截止时，加在$D_2$上的反向电压的最大值是多大？
 
+    \begin{solution}
+设图3.51中的$O$点为零电势点．当变压器输出电
+压处于正半周最大值时，$a$点电势为$+6\sqrt{2}$伏，$b$点电势为
+$-6\sqrt{2}$伏，由于$D_1$处于正向电压作用而导通，$c$点和$a$点
+电势接近相同，亦为$+6\sqrt{2}$伏．对二极管$D_2$而言，其正极
+电势为$b$点电势为$-6\sqrt{2}$伏，而负极电势为$c$点电势$+6\sqrt{2}$伏，处于反向电压而截止，这个反向电压为$12\sqrt{2}\approx 17$伏（$U_{cb}\approx 17$伏）．因此加在$D_2$上反向电压最大值可达
+17伏．
+    \end{solution}
+
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.8]{fig/3-51.png}
+    \caption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.8]{fig/3-52.png}
+    \caption{}
+    \end{minipage}
+    \end{figure}
+
+	\item 课本图3.40是哪一种整流电路？试用带箭头的线画出当$a$正$b$负时电流的通路．
+
+    \begin{solution}
+        这是桥式整流电路，$a$正$b$负时电流通路如图3.52
+        所示。
+    \end{solution}
+    
+	\item 课本图3.41中的信号是正弦交流电，最大值为1伏，直流电源的电动势为4.5伏．画出负载$R$两端的电压波形，如果二极管$D$反接，负载$R$两端的电压又怎样？直流电源的内电阻略去不计．
+
+\begin{solution}
+    由于正弦交流电电压最大值为1伏，而电源电动势
+为4.5伏，因此无论正弦交流信号处于正半周还是负半周，加
+在二极管两端的电压始终是正向电压，处于导通状态。$R$两
+端电压变化范围为3.5伏至5.5伏，$R$两端电压波形如图
+3.53所示，如果二极管反接，则无论是交流信号的正半周还
+是负半周，对二极管来说始终处于反向截止状态，通过$R$的电
+流可认为是零，$R$两端电压也是零。
+\begin{figure}[htp]
+    \centering
+\begin{tikzpicture}[>=latex, xscale=1, yscale=.6]
+\draw[<->](0,7)node[right]{$u$(V)}--(0,0)--(8,0)node[right]{$t$};
+\foreach \x in {0,1,2,...,6}
+{
+    \draw(0,\x)node[left]{\x}--(.1,\x);
+}
+\foreach \x in {4,5,6}
+{
+    \draw[dashed](0,\x)--(8,\x);
+}
+\draw[domain=0:2*pi+.3, samples=100, very thick] plot(\x, {sin(\x r)+5});
+
+\foreach \x/\xtext in {1/\dfrac{T}{4},2/\dfrac{T}{2},3/\dfrac{3}{4}T,4/T}
+{
+    \draw(\x*pi/2,0)node[below]{$\xtext$}--(\x*pi/2,0.2);
+}
+
+\end{tikzpicture}
+    \caption{}
+\end{figure}
+    \end{solution}
+    
+	\item 在课本图3.35所示的桥式整流电路中，如果二极管$D_1$的极性接反，会发生什么现象？如果二极管$D_1$已被击穿，又会发生什么现象？说明理由，并画出负载电阻上的电压波形．
+
+    \begin{solution}
+        二极管$D_1$极性接反电路如图3.54所示，当交流电
+压处于正半周时，$a$正$b$负，由于$D_1$和$D_4$均处于反向电压
+作用之下，各二极管与负载电阻$R$上都没有电流通过。而当
+交流电压处于负半周时，即$a$负$b$正，此时$D_2$与$D_1$都处于正
+向电压作用之下导通，造成$ab$两点短路，因而将造成$D_2$与
+$D_1$因通过较大短路电流而烧毁，严重时将烧毁变压器，$R$上
+也没有电流。
+
+
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\begin{circuitikz}[>=latex, scale=1]
+
+        \draw (-3,.25)--(-3,1)--(-2,1) to [american inductor] (-2,-1)--(-3,-1)--(-3,-.25);
+        \draw (1,-1)--(1,-1.5)--(-1.25,-1.5) to [american inductor] (-1.25,1.5)--(1,1.5)--(1,1);
+        \draw [ultra thick] (-1.6, -.5)--(-1.6, .5);
+      \ctikzset{diodes/scale=0.6}  
+      \draw (0,0) to [full diode] (1,1) ;
+      \draw (2,0) to [full diode] (1,1) ;
+     \ctikzset{diodes/scale=0.6}  \draw (0,0) to [full diode] (1,-1) to [full diode] (2,0) ;
+        \draw (2,0)--(2.5,0) to [european, R=$R$] (2.5,-2) --(-.5,-2)--(-0.5,0)--(0,0);
+        
+        \draw [fill=white] (-3,.25) circle (1pt);
+        \draw [fill=white] (-3,-.25) circle (1pt);
+        \draw [fill=black] (0,0) circle (1pt);
+        \draw [fill=black] (2,0) circle (1pt);\draw [fill=black] (1,-1) circle (1pt);
+        \draw [fill=black] (1,1) circle (1pt);
+        \node at (-3,0){$\sim $};
+        \node at (1.5,1){$D_1$};        \node at (1.5,-1){$D_2$};
+        \node at (.5,-1){$D_3$};        \node at (.5,1){$D_4$};
+        \node at (-1.1,.5){$a$};        \node at (-1.1,-.5){$b$};
+        \end{circuitikz}
+
+    \caption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\begin{tikzpicture}[>=latex, xscale=1, yscale=1.2]
+\draw[<->](0,1.7)node[right]{$U_R$}--(0,0)--(5.75,0)node[right]{$t$};
+\draw(0,0)--(0,-1);
+\foreach \y in {0,2,4}
+{
+    \draw[domain=0:1, samples=50, very thick] plot(\x+\y, {sin(\x*pi r)});
+}
+\foreach \x/\xtext in {1/\dfrac{T}{2},2/T,3/\dfrac{3}{2}T,4/2T,5/\dfrac{5}{2}T}
+{
+    \draw(\x,0)node[below]{$\xtext$}--(\x,0.1);
+}
+\draw(0,1)node[left]{$U_m$}--(.1,1);
+\end{tikzpicture}
+    \caption{}
+    \end{minipage}
+    \end{figure}
+
+如果$D_1$被击穿，相当于$D_1$被短路．在交流电正半周，即
+$a$正$b$负时，$R$上将有电流通过。而当交流电负半周，即$a$负$b$
+正时，$D_2$处于正向导通，直接将$ab$两点短路．$R$因两端电势相
+同，而没有电流通过．因此仍将出现烧毁$D_2$现象，并有烧毁
+变压器可能．负载$R$上的电压波形如图3.55所示。
+    \end{solution}
+\end{enumerate}
+
+
+\subsection{练习九}
+\begin{enumerate}
+    \item 根据课本图3.49写出三相负载相同时的相电流的瞬时值的表达式，并利用数学中学过的三角知识证明：三个相电流之和在任何时刻都等于零．
+
+    \begin{proof}
+        相电流的瞬时值表达式分别为
+        \[\begin{split}
+        i_a&=I_m\sin \omega t\\
+        i_b&=I_m\sin(\omega t-120^{\circ})\\
+        i_c&=I_m\sin(\omega t-240^{\circ})        
+        \end{split}\]
+        三个相电流之和
+       \[ i_a+i_b+i_c=I_m\sin \omega t+I_m\sin(\omega t-120^{\circ})+I_m\sin(\omega t-240^{\circ})  \]
+        根据三角函数和差化积公式
+\[\sin A+\sin B=2\sin\frac{A+B}{2}\cdot\cos\frac{A-B}{2}\]
+        可得：
+\[\begin{split}
+    i_a+i_b+i_c&=I_m\sin \omega t+I_m\left[\sin(\omega t-120^{\circ})+\sin(\omega t-240^{\circ}) \right]\\
+    &=I_m\sin \omega t+2I_m\sin\frac{(\omega t-120^{\circ})+(\omega t-240^{\circ})}{2}\cdot \cos\frac{(\omega t-120^{\circ})-(\omega t-240^{\circ})}{2}\\
+    &=I_m\sin \omega t+2I_m\cdot \sin(\omega t-180^{\circ})\cdot \cos 60^{\circ}\\
+    &=I_m\sin \omega t+2I_m\cdot (-\sin \omega t)\cdot \frac{1}{2}\\
+    &=I_m\sin \omega t - I_m\sin\omega t=0 
+\end{split}\]
+    \end{proof}
+    
+    \item 在课本图3.46所示的三相四线制电路中，相电压是220伏．现有“220V,100W”的灯泡90盏，第一相安装40盏，第二相安装30盏，第三相安装20盏．求灯泡全接通时，各个相电流和线电流．
+
+    \begin{solution}
+        在三相四线制电路中，相电流和线电流相同。
+        因此，第一相电流
+\[I_{\text{相1}}=I_{\text{线1}}=\frac{P}{U}\cdot n_1=\frac{100}{220}\x 40=18.2{\rm A}\]
+第二相电流
+\[I_{\text{相2}}=I_{\text{线2}}=\frac{P}{U}\cdot n_2=\frac{100}{220}\x 30=13.6{\rm A}\]
+第三相电流
+\[I_{\text{相3}}=I_{\text{线3}}=\frac{P}{U}\cdot n_3=\frac{100}{220}\x 20=9.1{\rm A}\]
+    \end{solution}
+    
+    \item 如果电源采用课本图3.53所示的三角形连接，线电压和相电压的关系是怎样的？设各相线圈的情况相同．
+
+    \begin{solution}
+这种情况下两根端线间电压和直接与这两端线相连
+的那一相电压相同（图3.56甲）．即线电压和相电压相同．
+\begin{figure}[htp]\centering
+    \begin{circuitikz}[scale=1.2]
+\begin{scope}
+    \draw (0,0) to [american inductors, L=3] (-1.5, -2);
+        \draw (0,0) to [american inductors, L=1] (1.5, -2);	
+            \draw (1.5, -2) to [american inductors, L=2] (-1.5, -2);
+        \draw (0,0)-- (2.5,0)node [right]{$A$};
+        \draw (1.5, -2)-- (2.5,-2)node [right]{$B$};	
+        \draw (-1.5, -2)--(-1.5, -3)-- (2.5,-3)node [right]{$C$};	
+        \foreach \x in {-2,-3,0}
+        {
+            \draw[fill=white] (2.5,\x) circle({1.5pt});
+        }
+        \draw [fill=black](0,0) circle(1.5pt);
+        \draw [fill=black](1.5, -2) circle(1.5pt);
+        \draw [fill=black](-1.5, -2) circle(1.5pt);
+        \node at (0.5,-3.5){甲};
+\node at (0,0)[above left]{尾};
+\node at (0,0)[below right]{头};
+\node at (-1.5, -2)[above left]{头};
+\node at (-1.5, -2)[below right]{尾};
+\node at (1.5, -2)[above right]{尾};
+\node at (1.5, -2)[below left]{头};
+
+\end{scope}
+       \begin{scope}[xshift=6cm]
+    \draw (0,0) to [american inductors, L=3] (-1.5, -2);
+
+        \draw (1.5,-.25)node[right]{$A'$}--(.25,-.25) to [american inductors, L=1] (1.25, -1.75)--(2,-1.75)node[right]{$B'$};	
+
+
+            \draw (1.5, -2) to [american inductors, L=2] (-1.5, -2);
+        \draw (0,0)-- (2.5,0)node [right]{$A$};
+        \draw (1.5, -2)-- (2.5,-2)node [right]{$B$};	
+        \draw (-1.5, -2)--(-1.5, -3)-- (2.5,-3)node [right]{$C$};	
+        \foreach \x in {-2,-3,0}
+        {
+            \draw[fill=white] (2.5,\x) circle({1.5pt});
+        }
+
+        \node at (0.5,-3.5){乙};
+
+        \node at (0,0)[above left]{尾};
+        \node at (.25,-.25)[below]{头};
+        \node at (-1.5, -2)[above left]{头};
+        \node at (-1.5, -2)[below right]{尾};
+        \node at (1.25, -1.75)[above right]{尾};
+        \node at (1.5, -2)[below left]{头};
+
+        \draw[fill=white] (1.5,-.25) circle({1.5pt});
+        \draw[fill=white] (2,-1.75) circle({1.5pt});
+\end{scope} 
+    \end{circuitikz}
+    \caption{}
+    \end{figure}
+
+
+说明：能否这样连接取决于能否证明任一时刻$u_{AB}=u_{AC}+u_{CB}$。
+实际上三角形连接是将各相线圈头尾相接的，
+为证明方便，我们先假定将第一相头尾与电路脱离开。如
+图3.56乙所示，那么
+
+第一相头尾电压瞬时值为：$u_{AB}=U_m\sin\omega t$.
+
+第二相与第三相头尾相接后$BA$两点电压（注意顺序）瞬
+时值为：
+\[\begin{split}
+    u_{BA}&=u_{BC}+u_{CA}\\
+&=U_m\sin (\omega t-120^{\circ})+U_m\sin (\omega t-240^{\circ})\\
+&=U_m[\sin (\omega t-120^{\circ})+\sin (\omega t-240^{\circ})]\\
+&=U_m\cdot 2\sin(\omega t-180^{\circ})\cdot \cos 60^{\circ}\\
+&=U_m\cdot 2\cdot (-\sin\omega t)\cdot \frac{1}{2}\\
+&=-U_m\sin\omega t
+\end{split}\]
+\[u_{AB}=-u_{BA}=U_m\sin\omega t=U_{A'B'}\]
+上式表明$AB$两点电压变化与$A'B'$两点电压变化是完全
+相同的，即任一时刻$AB$两点电压与$A'B'$两点电压相同，因
+此可以将$A$与$A'$点相接，$B$与$B'$相接而形成电源的三角形
+连接。
+    \end{solution}
+    
+\end{enumerate}
+
+
+
+\subsection{练习十}
+\begin{enumerate}
+    \item 有一台感应电动机，铭牌上标有“220/380”“$\triangle$/Y”的字祥．这表示这台电动机每相定于线圈的额定电压是 220伏，如果线电压是220伏，定子线圈要连成三角形；如果线电压是380伏，定子线圈要连成星形，为什么？
+
+
+    \begin{solution}
+当定子线圈接成三角形时，加在每相定子线圈上的
+电压与供电电路的线电压相同，所以供电电路的线电压为
+220伏时，加在每相线圈上的电压也是220伏，就可使电机正
+常运转．如果供电电路的线电压是380伏，就需要把电动机定
+子线圈连成星形。这是因为，星形连接时，每相线圈的电压与
+供电电路线电压关系为$U_{\text{线}}=\sqrt{3}U_{\text{相}}$. 所以$U_{\text{相}}=380/\sqrt{3}=220$伏，才可使电机正常运转．
+    \end{solution}
+    
+    \item 实验表明：只要把定子上任意两组线圈的电流互换一下，旋转磁场就向相反方向旋转．画出类似于课本图3.56的
+    图，并加以分析说明．
+
+
+    \begin{solution}
+    课本图3.56中，$AX$绕组通以$i_{AX}$, $BY$通以$i_{BY}$,
+$CZ$通以$i_{CZ}$. 那么产生磁场将沿逆时针方向旋转。现在，将
+某两个组定子绕组中通过的电流互换，例如将$BY$绕组中通
+以$i_{CZ}$电流，而$CZ$绕组中通以$i_{BY}$电流，则其旋转磁场情况
+如下：
+\begin{itemize}
+\item 在$t=0$时刻，$AX$中电流为零；$BY$中电流$i_{CZ}$, 由$B$端流
+入、$Y$端流出；$CZ$中电流$i_{BY}$, 由$Z$端流入、$C$端流出。合成
+磁场方向如图3.57甲中虚线所示，其方向指向$X$.
+
+\item 在$t=T/3$时刻，$CZ$中电流为$i_{BY}=0$; $AX$中电流$i_{AX}$, 
+由$A$端流入、$X$端流出；$BY$中电流$i_{CZ}$由$Y$端流入、$B$端流
+出，合成磁场方向如图3.57乙中虚线所示，其方向指向$Z$.
+\end{itemize}
+
+显然经过$T/3$, 合成磁场方向指向沿顺时 针方向由$X$移
+至$Z$, 转过$120^{\circ}$. 图3.57丙和丁中虚线分别表示在$2T/3$及$T$
+时刻合成磁场情况，可以看出经过一个周期$T$, 合成磁场也相
+应沿顺时针方向转过一圈。因此任意对调两个绕组中的电流，
+就可使旋转磁场方向改变转向。
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.7]{fig/3-57.png}
+    \caption{}
+\end{figure}
+    \end{solution}
+    
+    \item 在课本图3.54所示的实验中，铝框总要比磁铁转得慢，即比旋转磁场转得慢，而不能跟磁场转得一样快，即不能同步旋转，因此感应电动机也叫异步电动机，试说明铝框为什么不能跟磁铁同步旋转．
+
+    \begin{solution}
+使铝框转动的旋转力矩，是由于在铝框中产生的感
+生电流受到磁场力而引起的。因此，铝框与磁铁间有相对运
+动而发生切割磁力线现象是铝框转动的前提。如果某一瞬间
+铝框与旋转磁场同步转动，那么，铝框就不切割磁力线，感生
+电流也就消失了，所受磁场力矩随之消失。在阻力矩作用下，
+铝框转速会减小，铝框转速减小了，又会切割磁力线产生感
+生电流，且随着转速减小，电流逐步增大，铝框所受磁场力矩
+也将增大，直至转速减小到一定程度，使电磁力矩和阻力矩平
+衡，而使铝框维持匀速转动为止。这就是铝框转速永远小于
+磁场转速，不能同步旋转的道理。 
+    \end{solution}
+    
+\end{enumerate}
+
+
+
+
+\subsection{习题}
+\begin{enumerate}
+    \item 把电阻和电容器串联在交流电路中，测得电阻上的电压为30伏，电容器上的电压为40伏．已知电阻的阻值为200欧，交流电的频率为50赫，求电容器的电容，这道题提供了一种用伏特表测定电容的方法．
+
+
+    \begin{solution}
+在交流电路中，任一瞬间通过串联电路各处的电流
+都是相同的。电路中电流的有效值为
+\[I=\dfrac{U_R}{R}=\frac{30}{200}=0.15{\rm A}\]
+对于电容器部分，可以看成一个纯电容电路，因而有：
+\[I=\frac{U_C}{X_C}=\frac{U_C}{\dfrac{1}{2\pi fC}}=U_C\cdot 2\pi fC\]
+\[C=\frac{I}{U_C\cdot 2\pi f}=\frac{0.15}{40\x 2\pi\x 50}=12\x ^{-6}{\rm F}=12{\rm mF}\]
+    \end{solution}
+    
+    \item 把电阻和电容器并联在交流电路中，已知电阻的阻值是500欧，电容器的电容是30微法．当交流电的频率为50赫时，通过电阻和电容器的电流之比是多大？当交流电的频率是500赫时，电流之比又是多大？
+
+
+    \begin{solution}
+在交流电路中，并联各支路两端电压在任一瞬间都
+是相同的，因此设电阻与电容器两端电压为$U$. 因为
+\[I_R=\frac{U}{R},\qquad I_C=U\cdot 2\pi fC\]
+所以
+\[\frac{I_R}{I_C}=\frac{U/R}{U\cdot 2\pi fC}=\frac{1}{R\cdot 2\pi fC}\]
+当电源频率为50赫时
+\[\frac{I_R}{I_C}=\frac{1}{R\cdot 2\pi fC}=\frac{1}{500\x 2\pi\x 50\x 30\x 10^{-6}}\approx 0.21\]
+当电源频率为500赫时
+\[\frac{I_R}{I_C}=\frac{1}{R\cdot 2\pi fC}=\frac{1}{500\x 2\pi\x 500\x 30\x 10^{-6}}\approx 0.021\]
+    \end{solution}
+    
+    \item 变压器的原线圈为1100匝，副线圈为180匝，原线圈接到220伏的交流电路中，副线圈上并联了3个阻值都是90欧的用电器．如果原线圈允许通过的最大电流为0.9安，副线圈上最多还可以并联多少个阻值为60欧的用电器？
+
+
+    \begin{solution}
+根据变压比公式$\dfrac{U_1}{U_2}=\dfrac{n_1}{n_2}$
+可得：
+副线圈电压
+\[U_2=\frac{n_2}{n_1}\cdot U_1=\frac{180}{1100}\x220=36{\rm V}\]
+根据变流比公式$\dfrac{I_1}{I_2}=\dfrac{n_2}{n_1}$
+可得：
+副线圈允许通过的最大电流为
+\[I_2=\frac{n_1}{n_2}\cdot I_1=\frac{1100}{180}\x 0.9=5.5{\rm A}\]
+3个90欧的用电器并联在副线圈上，副线圈上通过的
+电流为：
+\[I=\frac{U_2}{R_{\text{并}}}=\frac{36}{90/3}=1.2{\rm A}\]
+副线圈还可增加负载电流 
+\[I'=I_2-I=5.5-1.2=4.3{\rm A}\]
+设还可并联$m$个60欧用电器，其总电流不超过4.3安．即
+\[m\cdot\frac{U_2}{60\Omega}\le I'\]
+所以
+\[m\cdot \frac{36}{60}{\rm A}\le 4.3{\rm A}\]
+即：$m\le 7.17$.
+
+因此，最多还可并联7个60欧的用电器．
+    \end{solution}
+    
+    \item 有一个教学用的可拆变压器，它的原副线圈外部还可绕线，现在要测定原副线圈的匝数．现有一根足够长的绝缘导线，还需要什么器材？简要说明实验原理．
+
+    \begin{solution}
+还需一块能测较高电压的交流电压表和一块可测几
+伏特的小量程电压表，将绝缘导线在副线圈（或原线圈）外部
+绕几十匝，将变压器重新组装好后，按原线圈规定电压接入电
+源，分别实测原线圈两端、副线圈两端和加绕线圈两端电压
+值，根据变压比公式就可以计算出原副线圈匝数。
+
+由$\dfrac{U_1}{U_2}=\dfrac{n_1}{n_2}$可得$n_1=\dfrac{U_1}{U_2}\cdot n_2$. 其中$U_1$、$U_2$可实测，$n_2$
+为加绕线圈匝数，便可求出原副线圈匝数。
+
+注意：实际上进行这个实验时，需要根据所给变压器的
+－具体情况和要求测量的准确程度进行测量，所用伏特计一般
+采用多量程的，如万用表交流电压挡。实验电源也可以用低
+压电源，将低电压加在加绕线圈上进行测量，如果仅有一块
+单量程较高电压的电压表，也可以用如下方法测量：
+
+将加绕线圈与原线圈（或副线圈）串联起来。测出原线圈
+两端电压和串联绕组总电压，由下式求出原线圈匝数。
+\[\frac{U_{\text{原}}}{U_{\text{总}}-U_{\text{原}}}=\frac{n_{\text{原}}}{n_{\text{加}}}\]
+    \end{solution}
+    
+    \item 课本图3.59是电工常用的钳形电流表，可以用来测定交变电流，把钳口打开，把被测的通电导线放在钳口中间（右图），交流电表就可以测出导线中的电流强度．试说明钳形电流表的工作原理．
+
+\begin{solution}
+    钳形电流表实际上是一种电流互感器，用以测定强
+    交流电电流。当导线中有交变电流通过时，在环绕导线的铁
+    心中有变化磁通，从而使绕在铁心上的线圈产生感生电流，接
+    在绕组两端的电流表即可读出读数。通电导线中电流越大，
+    在铁心中磁通变化率就越大，感生电流也就越大，电流表的读
+    数相应就越大，这就是钳形电流表的工作原理。
+\end{solution}
+
+    \item 在课本图3.35所示的桥式整流电路中，变压器原副线圈的匝数比等于8，原线圈接在220伏的交流电路中，能不能选用最高反向工作电压为50伏的晶体二极管进行整流？为什么？
+
+\begin{solution}
+    副线圈两端电压
+    \[U_{\text{副}}=\frac{n_{\text{副}}}{n_{\text{原}}} \cdot U_{\text{原}}= \frac{1}{8}\x220=27.5{\rm V}\]
+在课本图3.35所示桥式整流电路中，每个二极管承受的反向
+电压可从面分析得知：
+
+在交流电压正半周时，$D_1$与$D_3$导通，这两个二极管两端
+电势可认为相同（忽略二极管自身压降），而$D_2$与$D_4$反向截
+止，相当于跨接在$a,b$两点间，因而其反向承受最大电压为
+变压器次级电压最大值．同理可知$D_1$与$D_4$情况，即
+\[U_{km}=U_m=\sqrt{2}\cdot U_{\text{副}}=\sqrt{2}\x27.5=38.9{\rm V}<50{\rm V}\]
+因此可以选
+用最高反向工作电压为50伏的晶体二极管进行整流。
+    \end{solution}
+    
+    \item 课本图3.60是电子技术中用到的限幅电路，电池组的电动势都为$\mathcal{E}$，左端输入的是正弦交流电，电压$u_1$的最大值为$2\mathcal{E}$．试画出右端输出的电压$u_2$的图象，并分析说明理由．电池组的内电阻略去不计．
+
+\begin{solution}
+右端输出电压$u_2$的图象如图3.58乙所示．图甲表
+示输入端$u_1$的图象。
 
 \begin{figure}[htp]
     \centering
-%\includegraphics[scale=.7]{fig/3-48.png}
+\begin{tikzpicture}[>=latex, xscale=1.7, yscale=1.3]
+\begin{scope}
+    \draw[->](0,-1.5)--(0,1.5)node[right]{$u_1$};
+    \draw[->](0,0)node[left]{0}--(3.5,0)node[right]{$t$};
+\draw[very thick, domain=0:3, samples=500] plot(\x,{sin(\x*pi r)});
+\draw[dashed](0,1)node[left]{$2\mathcal{E}$}--(2.8,1);
+\draw[dashed](0,-1)node[left]{$-2\mathcal{E}$}--(1.8,-1);
+\node at (1.5,-1.5){甲};
+\draw(0,-.5)node[left]{$-\mathcal{E}$}--(.1,-.5);
+\draw(0,.5)node[left]{$\mathcal{E}$}--(.1,.5);
+\node at (1,0)[below left]{$\dfrac{T}{2}$};\node at (2,0)[below right]{$T$};
+\end{scope}
+\begin{scope}[xshift=4.5cm]
+    \draw[->](0,-1.5)--(0,1.5)node[right]{$u_2$};
+    \draw[->](0,0)node[left]{0}--(3.5,0)node[right]{$t$};
+\draw[very thick, domain=0:1/6, samples=50] plot(\x,{sin(\x*pi r)});
+\draw[very thick](1/6,.5)--(5/6,.5);
+\draw[very thick, domain=5/6:7/6, samples=50] plot(\x,{sin(\x*pi r)});
+\draw[very thick](7/6,-.5)--(11/6,-.5);
+\draw[very thick, domain=11/6:13/6, samples=50] plot(\x,{sin(\x*pi r)});
+\draw[very thick](13/6,.5)--(17/6,.5);
+\draw[very thick, domain=17/6:3, samples=50] plot(\x,{sin(\x*pi r)});
+\node at (1,0)[below left]{$\dfrac{T}{2}$};\node at (2,0)[below right]{$T$};
+\draw[dashed](0,.5)node[left]{$\mathcal{E}$}--(2.8,.5);
+\draw[dashed](0,-.5)node[left]{$-\mathcal{E}$}--(1.8,-.5);
+\draw(0,-1)node[left]{$-2\mathcal{E}$}--(.1,-1);
+\draw(0,1)node[left]{$2\mathcal{E}$}--(.1,1);
+\node at (1.5,-1.5){乙};
+\end{scope}
+\end{tikzpicture}
     \caption{}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+当$u_1$处于正半周时，如果$u_1<\mathcal{E}$, 对$D_2$所在支路来说，由
+于$D_2$始终处于反向电压作用，因此$D_2$截止，该支路被视为断
+路状态，对于$D_1$所在支路来说，由于$D_1$正极电势仍低于负极
+电势，因而也处于截止状态，所在支路也可视为断路状态，因
+此$R$上几乎没有压降，$u_2$与$u_1$电压变化相同．如果$u_1$增大
+至$u_1>\mathcal{E}$, $D_2$仍然受反向电压的作用，$D_2$所在支路仍可视为断
+路状态，而对$D_1$所在支路，由于$D_1$正极电势大于负极电势，
+$D_1$导通．$R$两端电压为$u_1-\mathcal{E}$, $R$中有电流通过．而输出端电
+压由于电池组作用而基本维持与电动势$\mathcal{E}$相同。换言之，当
+正半周$u_1<\mathcal{E}$时，输出与输入相同，当$u_1>\mathcal{E}$时，输出端电压
+维持$\mathcal{E}$不变，从而起到限幅作用，同理可分析负半周情况。
+\end{solution}
+
+    \item 在课本图3.46所示的三相四线制照明电路中，设$A$相接通了8盏“220V,100W”的灯泡，$B$相接通了2盏“220V,100W”的灯泡，$C$相中没有接通灯泡，这时接通的灯泡都正常发光，因某种原因中性线断开了（在该图中$O$处断开），将会发生什么现象？说明理由．
+ 
+    \begin{solution}
+如果中性线断开，$A$相与$B$相灯泡串联起来，串联
+电路两端电压将是线电压380伏，由于两组灯泡是串联，其电
+阻之比为
+\[R_A:R_B=\frac{R}{8}:\frac{R}{2}=1:4\]
+式中$R$表示每一灯泡电阻，因而这两组灯泡电压分配之比
+\[U_A:U_B=R_A:R_B=1:4\]
+所以$A$相灯泡两端电压为\[U_A=\frac{1}{5}\x 380=76{\rm V}\]
+$B$相灯泡两端电压为\[U_B=\frac{4}{5}\x 380=304{\rm V}\]
+因此，$B$相灯泡将因电压过高而烧毁。
+
+由此可见，在三相四线制供电电路中，中性线在任何情
+况下不允许断开，以免造成用电器因电压变高而烧毁的现象
+发生。这也是中性线不允许安装开关和保险丝的原因。
+    \end{solution}
+    
+    \item 如课本图3.61所示，电源采用星形连接，负载采用三角形连接．电源的相电压是220伏，各相负载相同，阻值都是110欧，求通过各相负载的相电流和线电流．
+
+\begin{solution}
+    电源部分的线电压
+   \[ U_{\text{线}}=\sqrt{3}U_{\text{相}}=\sqrt{3}\x220=380{\rm V}\]
+   负载电路是三角形连接，其相电压与线电压相同，
+\[  U'_{\text{相}}=U'_{\text{线}}=220\sqrt{3}=380{\rm V}\]
+   负载相电流
+   \[I_{\text{相}}=\frac{U'_{\text{相}}}{R}=\frac{220\sqrt{3}}{110}=3.46{\rm A}\]
+   负载线电流 
+\[I_{\text{线}}=\sqrt{3} I_{\text{相}}=\sqrt{3}\x\frac{220}{110}\sqrt{3}=6.00{\rm A}\]
+\end{solution}
+
+    \item 每一台电动机都有一定的额定功率．在实际中要根据负载的功率来选择电动机的功率，使电动机的额定功率等于或稍大于负载的功率，有一台水泵，抽水量$Q=0.03{\rm m^3}/{\rm s}$，抽水高度$h=20{\rm m}$，效率$\eta_1=0.55$，用一台感应电动机道过皮带传动来带动，皮带传动的效率$\eta_2=0.8$．现有三台感应电动机，额定功率分别是14千瓦、20千瓦、28千瓦，应当选择哪一台？计算时取$g=10\msq$．
+
+    \begin{solution}
+设电动机的功率为$P$. 那么根据效率的意义可知有
+用功率
+\[P_{\text{有}}=\eta_1\cdot \eta_2\cdot P\]
+由于有用功率在单位时间内使一定量的水抽至高处增加
+水势能，因此
+\[P_{\text{有}}=\frac{mgh}{t}=\frac{\rho V\cdot gh}{t}=\rho gh\cdot Q\]
+所以
+\[\eta_1\cdot \eta_2\cdot Ρ=\rho \cdot g\cdot h\cdot Q\]
+\[P=\frac{\rho \cdot g\cdot h\cdot Q}{\eta_1\cdot \eta_2}=\frac{1.0\x 10^3\x 10\x 20\x 0.03}{0.55\x 0.8}=13.6\x 10^3{\rm W}=13.6{\rm kW}\]
+所以应选用14千瓦的电动机来带动这台水泵。
+    \end{solution}    
+\end{enumerate}
+
+
+
+\section{参考资料}
+\subsection{我国电力工业发展的一些资料}
+
+旧中国的电力工业极端落后．中国的火力发电始于
+1882年，在外国人建立的上海电光公司中安装了一台供应16
+盏弧光灯的发电机，水力发电始于1912年，在距云南昆明40
+公里的螳螂川上建成石龙坝水电站．从1882年到1949年的
+68年中，电力工业发展十分缓慢，到1949年全国发电量才达
+43亿千瓦时，均每人每年仅8.6千瓦时，全国发电设备容
+量仅185万千瓦，多数设备还残缺不全，不能正常运转，而且
+分布极不均衡，80\%以上集中在沿海省市。
+
+建国以后，在党和政府的领导下，我国电力工业得到迅速
+发展．1986年全年发电量达4455亿千瓦时，为1949年的
+103.6倍．现在每四天发电量就超过1949年一年的发电量。
+110千伏以上高压输电线路1949年为1937公里，1983年增
+加到11.6万公里，增长59倍，这在世界先进国家电力工业
+发展史上也是少有的。截止到1983年，我国现有发电设备容
+量达7644千瓦，相当于1949年的41.3倍，由建国初期居世界
+第21位跃升到第八位；发电量由第25位跃升到第六位，仅次
+于美国、苏联、日本、联邦德国和加拿大，大体达到了美国
+1949年、苏联1963年和日本1970年的水平。
+
+1983年全国水电装机容量已达2416万千瓦，是1949年
+16万千瓦的151倍。1986年，全国水电发电量已达932亿千
+瓦时，是1949年7.1亿度的131倍。
+
+截止到1983年，全国已有500千瓦以上的电厂4315
+座，其中装机容量在10万千瓦以上的水力发电厂42座，火力
+发电厂128座，全国形成六大电网（见后）．我国高压远距离
+输电从解放初的35千伏线路发展到大量建设110千伏、220
+千伏、330千伏超高压线路．近年又发展到500千伏超高压
+线路，建成总长度1594公里。直流输电在我国过去是个空
+白，七十年代在上海市内进行了31千伏直流输电试验，八十
+年代开始在舟山建造100千伏直流输电试验工程，并着手兴
+建葛洲坝至上海的正负500千伏超高压工程。
+
+多年来，我国为发展核电创造了必要的条件。目前正在
+兴建广东大亚湾核电站（装机容量为180万千瓦）和浙江秦山
+核电站（装机容量30万千瓦）．
+
+在我国第七个五年计划（1986年—1990年）中，电力工
+业是能源工业发展的中心，要积极发展火电，大力开发水电，
+有步骤有计划地建设核电站．争取到1990年全国发电量达到
+5500亿千瓦时．
+
+我国年发电量发展情况：
+\begin{center}
+\begin{tabular}{c|ccccc}
+    \hline
+   & 1949年&    1952年&    1978年&    1983年&    1986年\\
+   \hline
+   发电量  &43.1&   72.6 &  2565.5  & 3514   &    4455\\
+   （亿千瓦时）&  其中水电7.1 &    &    &   其中水电864 &    其中水电932\\
+   \hline
+\end{tabular}
+\end{center}
+
+1985年若干省市发电量情况：
+\begin{center}
+\begin{tabular}{c|cccccc}
+    \hline
+   & 北京&   河北&   河南&   山西&   辽宁&   湖北\\
+   \hline
+   发电量 （亿千瓦时） &103.3&   262.9&   208.45&   184.6&   352.1&   220.54\\
+   \hline
+\end{tabular}
+\end{center}
+
+我国七大电网：
+目前我国六大电网已初具规模，这六大电网是：
+\begin{enumerate}
+\item 华北电网 由京津唐、石邯、山西和内蒙呼包电网组成。
+“七五”计划期间，华北、西北电网将并联，再与东北电网并联，
+形成我国北部跨越九省两市的大型电网。
+西北电网 由陕西、甘肃、天水、西宁地区电网合并成的
+陕甘青、宁夏石银青电网组成，这两个电网的装机容量均超
+过500万千瓦．1983年初，西北电网和西南电网以22万伏线
+路并联。
+\item 东北电网 由原东电网主网发展而成．1981年装机
+容量达880万千瓦，并人黑龙江东部及吉林延边的“佳鸡牡
+延”电后，容量可达1000万千瓦．
+\item 华东电网 在上海电网基础上发展起来的，由上海、江
+苏、安徽、浙江电网组成，已装机990多万千瓦，还将与山东电
+网、福建电网并联，“七五”计划期间，华东电网、华中电网将以
+50万伏线路并联，形成我国中部东西大跨区电网．
+\item 华中电网 由湖北、河南、湖南、江西电网组成，这四个电
+网装机容量均超过1000万千瓦．
+\item 西南电网 由四川、贵州、云南电网组成。
+\item 另外，华南电网正在建设之中，它由广东、广西电网组成。
+目前已装机300多万千瓦．红水河梯级电站投产后，将形成
+近2000万千瓦电网．
+\end{enumerate}
+
+根据“七五”计划，华中与华东，西南与华南，西北、华北
+和华中将在“七五”期间实行联网，到2000年，全国将实现大
+联网。
+
+西藏、新疆与台湾在较长时间内仍将单独发供电。
+
+我国已建和在建的装机容量超过100万千瓦的大型
+水电站有三个：黄河上游的龙羊峡水电站，装机容量达128
+万千瓦，年发电量60亿千瓦时，坝高达175米，刘家峡水电
+站，装机容量达116万千瓦，年发电量57亿千瓦时，坝高达
+147米，正在兴建的我国最大水电站长江中游葛洲坝水电
+站，装机容量达271.5万千瓦，由2台17万千瓦与19台12.5
+万千瓦的发电机组组成，年发电量可达140亿千瓦时．
+
+
+\subsection{交流电的平均值与有效值}
+交流电的平均值与有效值概念在教学中易造成混淆。一
+个变化的物理量对时间取平均值究竟有没有意义，要看实际
+而定。对正弦交流电来说，其电流（或电压、电动势）按正弦规
+律变化，在一个周期内取平均值，显然为零，就失去其意义了。
+但在考虑电流的热效应时，由于瞬时功率$P_i=i^2R$, 因而产生
+热量不是与电流平均值有关，而是与电流平方的平均值有关
+的，因此，交流电热功率的平均值是有意义的，它相当于某一
+直流电通电阻时产生热功率。由于
+\[\sin^2\omega t=\frac{1}{2}-\frac{1}{2}\cos2\omega t\]
+所以交流电瞬时功率为：
+\[\begin{split}
+    P_i=i^2R &=I^2_m\cdot  R\cdot \sin^2 \omega t\\
+    &=I^2_m\cdot  R\cdot \left(\frac{1}{2}-\frac{1}{2}\cos2\omega t\right)\\
+    &=\frac{I_m^2 R}{2}-\frac{I_m^2 R}{2}\cdot \cos2\omega t
+\end{split}\]
+上式中，后一项在一个周期内平均值为零，因此，在一个周期
+内，交流电平均功率为：
+\[\bar P=\frac{I_m^2 R}{2}\qquad (\text{最大瞬时功率的一半})\]
+如果考虑一个直流电与其等效，即$P=I^2\cdot R$, 就有$P=\bar P$
+即：
+\[I^2\cdot R=\frac{I^2_m\cdot R}{2}\]
+所以
+\[I=\frac{I_m}{\sqrt{2}}\approx 0.707I_m\]
+这个与交流电通过电阻时产生热功率等效的直流电流值
+$I$, 称为交流电的有效值，同样可知电压有效值与电动势有效
+值分别为：
+\[U=\frac{U_m}{\sqrt{2}},\qquad \mathcal{E}=\frac{\mathcal{E}_m}{\sqrt{2}}\]
+
+从上面讨论知道，交流电有效值概念是从交流电热功率
+平均值与直流电热功率等效角度引入的。在另外一些场合
+下，例如整流电路中，交流电经过半波整流或全波整流，其电
+流变为单向波形，这时，交流电流（或电压）在$T/2$时间内的平
+均值就显得很有意义了，这个平均值应为$T/2$时间内通过的
+总电量与时间$T/2$的比值，即
+\[\begin{split}
+\bar i=\frac{2Q}{T}&=\frac{2}{T}\cdot \int^{T/2}_0 I_m Sm\frac{2\pi t}{T}\dd t\\
+&=\frac{2}{T}\cdot \frac{I_m T}{2\pi} \left[-\cos\frac{2\pi t}{T}\right]^{T/2}_0\\
+&=\frac{I_m}{\pi}\cdot (1+1)=\frac{2}{\pi}\cdot I_m
+\end{split}
+    \]
+相应电压平均值为：
+\[\bar u=\frac{2}{\pi}U_m\]
+
+在讨论整流电路及有关计算时经常运用交流电电流平均
+值与电压平均值，由于日常情况下交流电均用有效值，这两个
+值的关系是：
+\[\bar i=\frac{2\sqrt{2}}{\pi}I\approx 0.90I,\qquad \bar u=\frac{2\sqrt{2}}{\pi}U\approx 0.90U\]
+
+从以上讨论可知，需根据实际物理意义来理解交流电的
+平均值与有效值的具体含义。
+
+\subsection{变压器匝数的问题}
+变压器的铁心截面与初级匝数都是有一定要求的，不能
+简单地根据变压比公式随意选择．如果要将220伏市电变为
+110伏电压输出，可否用初级线圈为2匝，次级线圈为1匝的
+变压器呢？下面简单地作一讨论：
+
+对变压器初级线圈来说，当外加电压$U$为正弦交流电时，
+线圈中的电流为正弦交流电流，这个电流将激起变压器铁心
+中的磁通变化。由于磁通变化又产生自感电动势$E$, 它是一
+个反电动势，始终与外加电压相平衡，即$E=U$.
+
+设$\phi=\Phi_m\sin\omega t$（不考虑漏磁通），
+若初级线圈有$N$匝，则自感电动势即时值
+\[\begin{split}
+    e=-N\cdot \frac{\dd\phi}{\dd t}&=-N\frac{\dd}{\dd t}\Phi_m\sin\omega t\\
+&=-N\Phi_m\omega \cos\omega t\\
+&=N\cdot \Phi_m\omega \sin(\omega t-90^{\circ})\\
+&=2\pi f N \Phi_m \sin(\omega t-90^{\circ})
+\end{split}\]
+
+式中$2\pi f N \Phi_m$为自感电动势最大值，记作$E_m$, 则自感电
+动势有效值为
+\[E=\frac{E_m}{\sqrt{2}}=\frac{2\pi}{\sqrt{2}}f N \Phi_m\approx 4.44 f N \Phi_m\]
+
+故外加电压有效值与频率$f$、匝数$N$、铁心中最大磁通
+$\Phi_m$关系为
+\[U=E\approx 4.44fN\Phi_m=4.44fNB_mS\]
+上式是电工计算时的一个重要关系式，由上式可以看到，
+当初级线圈所加电压$U$一定、频率$f$一定时，匝数$N$与$B_mS$
+成反比，对各种材料的铁心，为防止磁饱和，$B_m$有一定允许值，
+例如优质热轧硅钢片可取到1.0—1.2特，因此在铁心材料与
+截面$S$选定的情况下，初级线圈匝数可由上式计算出来，而并
+不是根据变压比公式随意选取的。
+
+设计小型变压器要进行计算，计算主要依据以下三个
+公式：
+
+铁心截面：由铁心材料、铁心形状及变压器设计功率
+决定，一般用下式计算：
+\[S=\frac{K}{\sqrt{P_0}}\]
+式中，$K$根据铁心材料形状而定，数值一般取1—2. 对于热
+轧硅钢片，$K$值取1.25至1.5, 对于冷轧硅钢片，质量好的可取
+小些，对于一般黑铁片$K$值可取为2左右．式中$P_0$单位为
+瓦，$S$单位为${\rm cm^2}$.
+
+初级线圈每伏匝数：由$U=4.44fNB_mS$，得：
+\[N=\frac{U}{4.44fB_mS}\]
+取$f=50{\rm Hz}$，
+\[N\approx \frac{0.0045}{B_mS}\cdot U \text{(匝)}\]
+每伏匝数
+\[N_0=\frac{N}{U}=\frac{0.0045}{B_mS}(\text{匝/伏})\]
+式中，$B_m$单位为T，$S$单位为${\rm m^2}$.
+
+根据每伏匝数计算初次级线圈应绕匝数，但次级线圈匝
+数要加5\%, 用来抵消阻抗损失。
+
+导线截面直径
+\[d=1.13\sqrt{\frac{I}{j}}\]
+式中$I$为通过该绕组电流强度，单位为安，$j$为导线单位
+截面上允许通过的电流强度，称电流密度，一般100瓦以下变
+压器，$j$取$2.5{\rm A/mm^2}$, 100瓦以上小型变压器$j$取$2{\rm A/mm^2}$。由上式求得导线直径$d$的单位为毫米。
+
+不能根据变压比公式随意选取匝数，还可以从另外一个
+角度进行粗浅解释。对于理想变压器，根据变流比公式可知，
+次级电流越小，初级电流也越小，次级空载时，初级电流并不
+为零，这时相当一个自感线圈，正是存在这个初级电流，才能
+产生自感电动势（反电动势）与外电压平衡，我们当然希望这
+个电流越小越好，这样损失就少，由纯电感电路$I=\dfrac{U}{2\pi fL}$可知，这需要线圈有足够大的自感系数，并且满足$X_L\gg R$的关
+系，而自感系数$L$的大小是与铁心、匝数有关的。匝数越多，铁
+心越大，自感系数越大。因而变压器初级匝数铁心不是随意选
+取的。另一方面也不是匝数越多越好，铁心越大越好，这是因
+为还有一个经济原则，具体选择，需根据理论作出计算。
+
+\subsection{特斯拉（1856—1943）}
+
+特斯拉是美国的发明家，1856年7月10日生于南斯拉
+夫克罗地亚的斯米良，1880年毕业于布拉格大学，1884年在
+美国定居。
+
+特斯拉在科学技术上的最大贡献是开创了交流电体系，
+他发现了旋转磁场，被称为迎来电力时代的天才．1883年在
+斯特拉斯堡工作时，利用业余时间制成了第一台感应电动机。
+十九世纪八十年代在爱迪生的推动下，直流电已普遍使用。但
+直流电动机价格昂贵、使用麻烦，每1平方英里的范围内，需
+要一个单独的发电机供电，很不经济．1885年，特斯拉出 售
+了他的多相交流发电机、变压器和电动机的专利权，触发了交
+流电体系和直流电体系的激烈竞争。由于交流电既安全可靠，
+又能用细导线实现远距离输电，使交流电的应用得到了迅速
+发展。
+
+特斯拉一生的发明很多：发明了电话系统的增音器，提
+出了无线电通讯的基本要素是天线、发射回路和接收回路。他
+发明的特斯拉线圈，广泛用于无线电、电视机中．1900年，他
+还证明了大地能作导体。他还发明了供医疗用的高频电热疗
+法，等等，总共获得112项美国专利．他把出售专利获得的资
+金用于研究技术，表现了科学家的良好品格。他设想过科学
+的某些未来课题，如对其他行星的通讯等，在他留下来的笔
+记中，有大量创造性的天才设想。
+
+特斯拉在晚年经济上经常处于困境，1943年1月7日，
+他孤独地在旅馆里去世。有三位诺贝尔奖获得者在给他的祭
+文中说：“这位世上显赫的智者之一，为现代技术发展的许多
+方面铺平了道路。”
+
+南斯拉夫人民为纪念他，在贝尔格莱德修建了“特斯拉纪
+念馆”。在他诞生百年纪念时（1956年），国际电气技术协会
+将M.K.S制系统中的磁通量密度命名为“特斯拉”。
 
 
 
