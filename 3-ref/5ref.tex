@@ -1356,11 +1356,17 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
     镜面垂直的平面内，有一条入射光线$AB$，经两个镜面反射后，
     沿$CD$方向射出，试证明不论光线$AB$以多大的入射角射入，反射光线$CD$都平行于$AB$射出．
 
-
-
-    \begin{solution}
-
-    \end{solution}
+    \begin{proof}
+过$B$、$C$分别做镜面的法线$BN$、$CN$, 如图5.23所
+示。根据反射定律，
+\[\angle ABN=\angle NBC,\qquad \angle BCN=\angle NCD\]
+因为两镜面互相垂直，所以
+\[\angle OBC+\angle BCO=90^{\circ}\]
+因此，
+\[\angle NBC+\angle BCN=90^{\circ},\qquad 
+\angle ABC+\angle BCD=180^{\circ}\]
+所以，$AB\parallel CD$.
+    \end{proof}
     \item 课本图5.13中，$M$是一个平面镜，$S$是光源，通过狭缝使
     光线射到镜面上，$M$的位置，最初是与$S$射来的光线垂直，这
     时反射光线射在标尺的零刻度上；当$M$转动一角度后，反射光
@@ -1381,7 +1387,11 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
         \end{figure}
 
     \begin{solution}
-
+        $M$转过角度$\alpha$后，镜面的法线相对于$PO$转过的角
+        度也是$\alpha$, 光线$SP$经$M$反射后照到$N$(图5.24), 则
+\[\angle SPN=2\alpha,\qquad \tan2\alpha=\frac{ON}{L}\] 
+当$\ell\gg ON$时，$\tan 2\alpha\approx 2\alpha=\dfrac{ON}{L}$. 所以，
+\[\alpha=\dfrac{ON}{L}\text{（弧度）}\]
     \end{solution}
 
     \item 有的镜子照出的像会变形，这是什么原因？
@@ -1402,21 +1412,27 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
         测量的方法来．
 
     \begin{solution}
-
+        由于太阳光平行于主光轴，把凹镜的反射面对准太
+        阳光时，光线经镜面反射后会聚于一点，这点就是焦点。测出焦点和凹镜顶点的距离，就测出了焦距。
     \end{solution}
     \item 比较凹镜和凸镜的成像情况有什么不同．
 
     \begin{solution}
+实物通过凹镜可以成放大或缩小的倒立实像，也可
+以成放大的正立虚像。
 
+实物通过凸镜只能成缩小的正立虚像。
     \end{solution}
     \item 有一个凹镜，把它放在你的面前，如果能从镜中看到
         你自己的正立的像，这时凹镜顶点到你的距离是20厘米，那
         么这个凹镜的焦距至少有多大？
 
     \begin{solution}
-
+人从凹镜中看到自己正立的像，是凹镜所成正立虚
+像。这时人到凹镜顶点的距离一定小于焦距。所以凹镜的焦
+距至少是20厘米．
     \end{solution}
-    \item 如图5.18所示，$M_1$和$M_2$是两个焦距相等的凹镜，
+    \item 如课本图5.18所示，$M_1$和$M_2$是两个焦距相等的凹镜，
     其焦距为$f$．要想使平行于主轴的光线$a$能在$M_1$和$M_2$之
     间来回反射，两凹镜的顶点$P_1$
     和$P_2$应相距多远？在图中标出
@@ -1425,25 +1441,32 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
     光路图．
 
     \begin{solution}
-
-    \end{solution}
-\end{enumerate}
-
+两凹镜的顶点$P_1$和$P_2$应相距$f$、$2f$、$3f$, 相距$2f$时
+光线$a$被两凹镜反射的光路图如图5.25所示。
 \begin{figure}[htp]\centering
-\begin{tikzpicture}[>=latex]
+\begin{tikzpicture}[>=latex, yscale=1.3, xscale=.8]
         \fill [pattern=north east lines] (-2,-1)--(-2.2,-1) to [bend left=30] (-2.2,1) --(-2,1) to [bend left=-30]
         (-2,-1);
 \draw [thick](-2,1) to [bend left=-30] (-2,-1);
  
 \fill [pattern=north east lines] (2,-1)--(2.2,-1) to [bend left=-30] (2.2,1) --(2,1) to [bend left=30](2,-1);
 \draw [thick](2,1) to [bend left=30] (2,-1);
-\draw [dashed] (-2.3,0)--(2.3,0);
+\draw [dashdotted] (-3,0)--(3,0);
 \node at (-2.1,0)[below]{$P_1$};\node at (2.1,0)[below]{$P_2$};
 \node at (-2.2,1)[above]{$M_1$};\node at (2.2,1)[above]{$M_2$};
-\draw (-.5,.7)--node[above]{$a$}(2.15,.7);
+\draw (-2.15,.7)--node[above]{$a$}(2.15,.7)--(-2.15,-.7)--(2.15,-.7)-- (-2.15,.7);
+\node at (0,0)[above]{$F_1$};
+\node at (0,0)[below]{$F_2$};
+\draw[->] (-2.15,.7)--(0,.7);
+\draw[->] (-2.15,-.7)--(0,-.7);
+\draw[<->](-1.075,.35)--(0,0)--(-1.075,-.35);
         \end{tikzpicture}
     \caption{}
     \end{figure}
+    \end{solution}
+\end{enumerate}
+
+
 
 
 
@@ -1453,42 +1476,35 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
 璃中，折射角是多大？
 
 \begin{solution}
-
+    因为$\dfrac{\sin i}{\sin r}=n$
+    所以，
+\[r=\arcsin\left(\frac{1}{n}\sin i\right)=27.1^{\circ}\]
 \end{solution}
 \item 光线从空气射入水中，要想使折射角等于30$^\circ$，入射
 角应为多大？
 
 \begin{solution}
-
+\[\sin i=n\cdot \sin r=1.33\cdot \sin 30^{\circ}=0.665\]
 \end{solution}
 \item 根据水和岩盐的折射率，分别算出它们中的光速，水
 中的光速大约是真空中光速的几分之几？
 
 \begin{solution}
-
+\[\begin{split}
+    v_{\text{水}}&=\frac{c}{n}=\frac{3.0\x 10^8}{1.33}=2.26\x 10^8\ms\\
+    v_{\text{岩}}&=\frac{c}{n}=\frac{3.0\x 10^8}{1.54}=1.95\x 10^8\ms\\
+    \frac{v_{\text{水}}}{c}&=\frac{1}{n}=\frac{2.26\x 10^8}{3.00\x 10^8}\approx \frac{3}{4}
+\end{split}\]
 \end{solution}
-\item 图5.22是光线由空气进入某种媒质时的折射情况．
+\item 课本图5.22是光线由空气进入某种媒质时的折射情况．
 试由图中所给的数据求出这种媒质的折射率和这种媒质中的
 光速．
-\begin{figure}[htp]
-	\centering
-	\begin{tikzpicture}[>=latex]
-\fill [cyan!20] (-3,-2) rectangle (3,0);
-\node at (1,1){空气};
-	\draw[dashed] (0,-1)--(0,1);
-\draw(-3,0)--(3,0);
-\draw[->, very thick] (0,0)--(-55:1.5); \draw[very thick] (0,0)--(-55:2);
-\draw[->, very thick] (150:3)--(150:1.5); \draw[very thick] (0,0)--(150:3);
-\draw (.5,0) arc (0:-55:.5) node [right] {$55^\circ$};
-\draw (-1,0) arc (180:150:1) node [below] {$30^\circ$};
-
-	\end{tikzpicture}
-	\caption{}
-\end{figure}
-
 
 \begin{solution}
-
+\[\begin{split}
+    n&=\frac{\sin i}{\sin r}=\frac{\sin(90^{\circ}-30^{\circ})}{\sin(90^{\circ}-55^{\circ})}=1.51\\
+v&=\frac{c}{n}=1.99\x 10^8\ms
+\end{split}\]
 \end{solution}
     \item 根据上节表中给出的折射率填空：
     \begin{enumerate}
@@ -1507,21 +1523,36 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
     
 
     \begin{solution}
-
+\begin{enumerate}
+    \item 等；大；小；等。
+    \item 小；密；疏。
+\end{enumerate}
     \end{solution}
     \item 你在池边沿斜线向水面下看去，看到水中有一条鱼，
     你所看到的鱼的位置比实际的深还是浅？如果鱼也看到了你，
     鱼所看到的你的头的位置比实际的高还是低？
 
     \begin{solution}
-
+人看到鱼的虚像$P'$位置比实际位置$P$浅，如图5.26
+甲所示，鱼看到人头的虚像位置$Q'$比实际位置$Q$高，如图
+5.26乙所示．
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.6]{fig/5-26.png}
+    \caption{}
+\end{figure}
     \end{solution}
     \item 把一块厚玻璃板压在书上，透过玻璃板看书上的字
     跟拿走玻璃板直接看，感觉有什么不同？做做看，并解释看到
     的现象．
 
     \begin{solution}
-
+透过玻璃板看书，看到字的虚像位置比它的实际位置高（图5.27），这是由于光通过玻璃板发生折射的缘故。
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.6]{fig/5-27.png}
+    \caption{}
+\end{figure}
     \end{solution}
 \end{enumerate}
 
@@ -1533,9 +1564,12 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
     \item 水和金刚石的临界角各是多大？
 
     \begin{solution}
-
+水对空气的临界角
+\[C_{\text{水}}=\arcsin\frac{1}{n_{\text{水}}}=\arcsin\frac{1}{1.33}=48.8^{\circ}\]
+金刚石对空气的临界角
+\[C_{\text{金}}=\arcsin\frac{1}{n_{\text{金}}}=\arcsin\frac{1}{2.42}=24.4^{\circ}\]
     \end{solution}
-    \item 图5.29表示一个横
+    \item 课本图5.29表示一个横
 截面为等腰直角三角形的玻璃
 棱镜．当光从它的一个直角边垂直射入时，就从另一个直角
 边垂直射出来，而没有光从斜
@@ -1544,32 +1578,64 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
 道理．
 \begin{figure}[htp]
 	\centering
-\begin{tikzpicture}[>=latex]
-  \draw [fill=cyan!20](0,0)--(2,0)--(0,2)--(0,0);
+\begin{tikzpicture}[>=latex, scale=1.4]
+  \draw (0,0)node[left]{$C$}--(2,0)node[right]{$B$}--(0,2)node[above]{$A$}--(0,0);
     \draw[ thick] (-1,1)--(1,1)--(1,-1);
-\draw[->,  thick](-1,1)--(.5,1); \draw[->,  thick](1,1)--(1,-.5); 
+\draw[->,  thick](-1,1)--(.5,1); 
+\draw[->,  thick](1,1)--(1,-.5); 
+\draw[dashed](.5,.5)--(1.5,1.5);
 \end{tikzpicture}
 	\caption{}
 \end{figure}
 
 
 \begin{solution}
-
+    光垂直于界面$AC$进入玻璃棱镜中后到达界面$AB$, 入射角$i$为$45^{\circ}$（图5.28），已知玻璃对空气的折射率$n>1.5$,
+    所以玻璃对空气的临界角
+    \[C<\arcsin\frac{1}{1.5}=41.8^{\circ}\]
+    由此可知
+    $i>C$, 光在界面$AB$发生全反射，没有光线从斜边$AB$射出，光
+    线垂直界面$BC$进入空气，从而使光的传播方向改变$90^{\circ}$.
 \end{solution}
 \item 光线从空气射入水中时，光线在水中的折射角最大为多少度？
 
 \begin{solution}
-
+因为$\dfrac{\sin i}{\sin r}=n$，所以
+\[r=\arcsin\left(\frac{1}{n}\sin i\right)\]
+当$i=90^{\circ}$时入射角最大，因此折射角的最大值为
+\[r=\arcsin\frac{1}{1.33}=48.75^{\circ}\]
 \end{solution}
 \item 潜水的人在水面下能看到水面上的全部景象，因为
-水面上180$^\circ$范围内射入水中的光线全部集中在水下97.5$^\circ$的视野内（图5.30），试说明它的道理．
-\begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/5-30.png}
-    \caption{}
-    \end{figure}
+水面上180$^\circ$范围内射入水中的光线全部集中在水下97.5$^\circ$的视野内（课本图5.30），试说明它的道理．
 
     \begin{solution}
+根据临界角的定义可知，光线从水中射向空气时发生
+全反射的临界角与入射角以及折射率的关系是
+\[\frac{\sin i}{\sin r}=\frac{1}{1.33}\]
+所以，$i=\arcsin\left(1/1.33\right)=48.75^{\circ}$
 
+\begin{figure}[htp]\centering
+    \begin{tikzpicture}[>=latex]
+    \draw(-4,2)--(4,2);
+    \draw[<->](-3.5,2)--(3.5,2);
+    \draw(-2.28,2)--(0,0)node[below right]{$O$}--(2.28,2);
+    \draw[<->](-1.14,1)--(0,0)--(1.14,1);
+    \node at (3.5,2.5){空气};
+    \node at (3.5,1.5){水};
+    \draw[dashdotted](0,-.5)--(0,3);
+    \draw[dashed](2.28,2-1)--(2.28,2+1);
+    \draw(0,.5) arc (90:41.25:.5)node[above=3pt]{$48.75^{\circ}$};
+    \draw(2.28,1.5) arc (-90:-138.75:.5)node[below]{$i$};
+    \end{tikzpicture}
+        \caption{}
+        \end{figure}
+
+设想在水面下潜水人的眼睛处有一个点光源$O$, 由点光
+源发出的光到达水面时，入射角在$0^{\circ}$—$48.75^{\circ}$（临界角）的范围
+内的光都能透过水面进入空气中，相应的折射角是$0^{\circ}$—$90^{\circ}$, 
+如图5.29所示．根据光路的可逆性，在水面上$180^{\circ}$范围内
+的光线都能折射进入水中，到达人眼。这些光线都集中在水下
+$97.5^{\circ}$的视野范围内。
     \end{solution}
 \end{enumerate}
 
@@ -1577,33 +1643,102 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
 
 \subsection{练习六}
 \begin{enumerate}
-    \item 说明图5.31中，光线通过棱镜的$AB$和$AC$两个侧
+    \item 说明课本图5.31中，光线通过棱镜的$AB$和$AC$两个侧
 面时，为什么都向底面偏折，如果这个棱镜的里面是空气，周
 围是水，当光线通过这个空气棱镜时，射出的光线是否还向底
 面偏折？画出这种情况下的光路图来．
 
 \begin{solution}
+由于棱镜玻璃的折射率$n>1$, 所以光由空气进入棱
+镜时，折射角小于入射角；而光由棱镜进入空气时，是入射角
+小于折射角，如图5.30所示。因此在棱镜的$AB$侧面，光由空
+气进入玻璃靠近法线偏折；在$AC$侧面，光由玻璃进入空气远
+离法线方向偏折。两次偏折都是偏向底面方向。
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.6]{fig/5-30.png}
+    \caption{}
+\end{figure}
 
+如果棱镜里面是空气周围是水，即棱镜相对于周围媒质
+是光疏媒质，根据折射定律可知，当入射角$i$较小时，在$AB$
+和$AC$面上的折射与上述情况相反，出射光线将向顶部方向
+偏折如图5.31所示。当入射角较大时，光在$AB$侧面向顶部
+方向偏折，而在$AC$侧面则可能向底部方向偏折（或不偏折），
+但出射光线$GH$相对于入射光线$EF$仍然是向顶部方向偏
+折，如图5.32所示．
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.6]{fig/5-31.png}
+    \caption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.6]{fig/5-32.png}
+    \caption{}
+    \end{minipage}
+    \end{figure}
 \end{solution}
 \item 冕牌玻璃对紫光的折射率为1.532，对红光的折射率
 为1.513．紫光和红光在这种玻璃中的速度各是多大？
 
 \begin{solution}
-
+因为$v=c/n$，所以
+\[\begin{split}
+    v_{\text{紫}} &=\frac{3.00\x 10^8}{1.532}=1.96\x 10^8\ms\\
+    v_{\text{红}} &=\frac{3.00\x 10^8}{1.513}=1.98\x 10^8\ms\\
+\end{split}\]
 \end{solution}
 \item 什么形状的全反射棱镜可以使光线改变180$^\circ$？这时
 光线应从哪边射入？画出光路图来．
 
 \begin{solution}
-
+    等腰直角三棱镜可以使光线改变180$^\circ$. 光应垂直
+    于跟直二面角相对的棱镜面射入，光路如图5.33所示．
+    \begin{figure}[htp]\centering
+        \begin{minipage}[t]{0.48\textwidth}
+        \centering
+    \includegraphics[scale=.6]{fig/5-33.png}
+        \caption{}
+        \end{minipage}
+        \begin{minipage}[t]{0.48\textwidth}
+        \centering
+    \includegraphics[scale=.6]{fig/5-34.png}
+        \caption{}
+        \end{minipage}
+        \end{figure}
 \end{solution}
 \item 光线通过棱镜时，偏折角度$\theta$跟棱镜材料的折射率
-有关．设图5.31中光线对棱镜的侧面$AB$的入射角以及棱
+有关．设课本图5.31中光线对棱镜的侧面$AB$的入射角以及棱
 镜的顶角$A$的大小保持不变．试定性地讨论：棱镜材料的折
 射率越大，偏折角度也越大．
 
 \begin{solution}
+    光线通过棱镜发生偏折的角度为$\theta$(图5.34),
+\[  \theta=(i_1-i_1')+(i_2-i_2')\]
+    它表示光线通过棱镜向底面偏折的角度等于光线分别在两个
+    侧面发生的向底面偏折的角度之和。在$AB$侧面，折射率$n$越
+    大，从空气进入棱镜的光线向法线方向的偏折越大，即偏折角
+    度$i_1-i_1'$越大；在$AC$侧面，$n$越大从棱镜射入空气的光线
+    远离法线方向的偏折越大，即$i_2-i'_2$越大．因此当入射角
+    以及棱镜的顶角$A$保持不变时，折射率$n$越大，偏折角度$\theta$也越大。
 
+说明：在图5.34中，$A=i'_1+i'_2$, $\theta=i_1+i_2-A$. 又因为
+\[\frac{\sin i_1}{\sin i_1'}=n,\qquad \frac{\sin i_2}{\sin i_2'}=n\]
+所以
+\[\sin i_1=n\sin i'_1,\qquad \sin i_2=n\sin i_2'\]
+因此：
+\[\begin{split}
+    \sin i_2=n\sin i_2'&=n\sin (A-i'_1)\\
+    &=n\left[\sin A\cos i'_1-\cos A\sin i'_1\right]\\
+    &=\sin A\sqrt{n^2-n^2\sin^2 i'_1}-\cos A\sin i_1\\
+    &=\sin A\sqrt{n^2-\sin^2 i_1}-\cos A\sin i_1
+\end{split}\]
+
+由上式可以明显看出，当入射角$i_1$和棱镜顶角$A$保持不
+变时，折射率$n$越大，$i_2$就越大，偏折角$\theta=i_1+i_2-A$也
+越大。
 \end{solution}
 \end{enumerate}
 
@@ -1613,69 +1748,29 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
     \item 有一个不知焦距的凸透镜，用什么办法可以粗略地测出它的焦距？
 
     \begin{solution}
-
+使太阳光沿主轴方向照到凸透镜上，在凸透镜的另
+一侧可以见到一个十分亮的光点，这就是平行光会聚的焦点，
+测出这一点到凸透镜的距离也就测出了凸透镜的焦距。
     \end{solution}
     \item 利用点光源和凸透镜如何能得到平行光线？
 
     \begin{solution}
-
+把点光源置于凸透镜的焦点处，它发出的光经凸透
+镜折射后即成平行光。
     \end{solution}
-    \item 在图5.37中，画出光线通过透镜后的传播方向．
+    \item 在课本图5.37中，画出光线通过透镜后的传播方向．
 
     \begin{solution}
-
+        见图5.35.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.6]{fig/5-35.png}
+    \caption{}
+\end{figure}
     \end{solution}
 \end{enumerate}
 
-\begin{figure}\centering
-\begin{tikzpicture}[>=latex]
-    \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2) to [bend left=15](0,1.2);
-    \draw [dashed] (-2,0)--(2,0);
-\node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
-\draw (-1.5,0) [fill=black]circle(1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
-\draw [->](-2,-.7)--(-1.5, -.7);
-\draw (-1.5,-.7)--(0, -.7);
 
-
-\end{tikzpicture}
-\begin{tikzpicture}[>=latex]
-    \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2) to [bend left=15](0,1.2);
-    \draw [dashed] (-2,0)--(2,0);
-    \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
-    \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
-    \draw (-1.5,0)--(0, .7);
-    \draw [->](-2,-.7/3)--(-1.5,0);
-\end{tikzpicture}
-
-
-    \begin{tikzpicture}[>=latex]
-        \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
-        \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
-        \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
-        \draw [dashed] (-2,0)--(2,0);
-        \draw [->](-2,.7)--(-1.5, .7);
-        \draw (-1.5,.7)--(0.25, .7);
-    \end{tikzpicture}
-    \begin{tikzpicture}[>=latex]
-        \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
-        \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
-        \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
-        \draw [dashed] (-2,0)--(2,0);
-        \draw [->](-2,.7)--(-1.75/2, .7/2);
-        \draw (-1.75/2, .7/2)--(0.25, 0);
-
-    \end{tikzpicture}
-    \begin{tikzpicture}[>=latex]
-        \draw [pattern=north east lines] (0,1.2) to [bend left=15] (0,-1.2)--(.5,-1.2) to [bend left=15](.5,1.2)--(0,1.2);
-        \node at (-1.5,0)[below] {$F$};\node at (1.5,0)[below] {$F'$};
-        \draw (-1.5,0) [fill=black]circle (1.5pt); \draw (1.5,0) [fill=black]circle(1.5pt);
-\draw [dashed] (-2,0)--(2,0);
-\draw[dashed](.25,.5)--(1.5,0);
-\draw (-1,1)--(.25,.5);
-\draw[->] (-1.625,1.25)--(-1,1);
-    \end{tikzpicture}
-\caption{}
-\end{figure}
 
 
 
@@ -1686,21 +1781,27 @@ $${A'B'}^2=10^2=100{\rm cm^2}$$
 最大不能超过多少？
 
 \begin{solution}
-
+放大镜所成的放大正立的像是虚像。放大镜应是凸
+    透镜。凸透镜成放大、正立的虚像时，物距最大不能超过焦
+    距，即$u<f$.
 \end{solution}
 \item 幻灯机所成的像是什么像？它的镜头应该是什么透
 镜？如果镜头的焦距为8厘米，镜头到幻灯片的距离只能在什
 么范围内变化？
 
 \begin{solution}
-
+    幻灯机在屏幕上所成的像是放大的倒立的实像，它
+    的镜头是凸透镜，幻灯片到镜头的距离只能在$f$和$2f$之间变
+    化，即$f<u<2f$, 也就是$8{\rm cm}<u<16{\rm cm}$．
 \end{solution}
 \item 照相机所成的像是什么像？它的镜头应该是什么透
 镜？如果镜头的焦距为7.5厘米，镜头到底片的距离最短不能
 小于多少？
 
 \begin{solution}
-
+照相机成缩小倒立实像。它的镜头是凸透镜。凸透
+镜成缩小倒立实像时，$f<v<2f$, 因此底片（即像的位置）到镜
+头的距离最短不能小于焦距，即7.5厘米。
 \end{solution}
 \end{enumerate}
 
@@ -1978,41 +2079,19 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 
 
 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[scale=.6]{fig/5-21.png}
-    \caption{}
-\end{figure}
-
-
-
-
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[scale=.6]{fig/5-25.png}
-    \caption{}
-\end{figure}
-
-
-
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[scale=.6]{fig/5-26.png}
-    \caption{}
-\end{figure}
 
 
 
 
 
 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[scale=.6]{fig/5-27.png}
-    \caption{}
-\end{figure}
+
+
+
+
+
+
+
 
 
 
