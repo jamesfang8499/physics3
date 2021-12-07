@@ -1813,7 +1813,7 @@ $97.5^{\circ}$的视野范围内。
 
 \subsection{练习九}
 \begin{enumerate}
-    \item 如图5.45所示，已知物体$AB$通过凸透镜后所成的
+    \item 如课本图5.45所示，已知物体$AB$通过凸透镜后所成的
     实像$A'B$，试画出从$A$、$B$两点射向凸透镜的任意两条光线
     $AE$、$BD$经过凸透镜折射后的传播方向．
     \begin{figure}[htp]\centering
@@ -1822,45 +1822,72 @@ $97.5^{\circ}$的视野范围内。
     \draw[dashdotted](-3,0)--(3,0);
 \draw[->, ultra thick, >=latex] (-1,0)node[below]{$B$}--(-1,1)node[above]{$A$};
 
-\draw[->,  thick, >=latex] (-1,0)--(0,-.5)node[right]{$D$};
+\draw[->,  thick, >=latex] (-1,0)--(0,-.5)node[below right]{$D$};
 \draw[->,  thick, >=latex] (-1,1)--(0,1.2)node[right]{$E$};
 \node at (.25,.25){$O$};
 \draw[->, ultra thick, >=latex] (2,0)node[above]{$B'$}--(2,-2)node[below]{$A'$};
-
+\draw[->](0,1.2)--(2,-2);
+\draw[->](0,-.5)--(2,0);
 \end{tikzpicture}
         \caption{}
         \end{figure}
 
 
     \begin{solution}
-
+物点发出的光经凸透镜折射后都经过对应的像点。
+从$A$点发出的光线$AE$经凸透镜折射后一定过像点$A'$, 折射
+光线为$EA'$, 从$B$点发出的光线$BD$经凸透镜折射后一定过
+像点$B'$, 折射光线为$DB'$, 如图5.36所示。
     \end{solution}
     \item 一物体位于凸透镜前15厘米，凸透镜的焦距为10厘
 米，用作图法求出像到凸透镜的距离．
 
 \begin{solution}
-
+    透镜成像的光路如图5.37所示，量得$OB'=2BO$, 
+    所以像到凸透镜的距离为$2\x15=30$厘米．
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.6]{fig/5-37.png}
+        \caption{}
+    \end{figure}
 \end{solution}
 \item 焦距为10厘米的凹透镜前有一物体，物到镜的距离
 为20厘米，用作图法求像到镜的距离．
 
 \begin{solution}
-
+    透镜成像光路如图5.38所示．量得物距$BO$为像
+    距$B'O$的3倍，所以像到凹透镜的距离为$\dfrac{20}{3}=6.7$厘米。
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.6]{fig/5-38.png}
+        \caption{}
+    \end{figure}
 \end{solution}
-\item 在图5.46中，$OO'$为透镜的主轴，$A'B'$为物体$AB$
+\item 在课本图5.46中，$OO'$为透镜的主轴，$A'B'$为物体$AB$
 经透镜所成的像．这个透镜是什么透镜？试用作图法求出透
 镜和它的焦点的位置．                    
+
+    \begin{solution}
+由题可知，像$A'B'$是物$AB$的倒立实像，所以透镜是
+凸透镜。成像光路图、透镜位置以及焦点位置，如图
+5.39所示。
 \begin{figure}[htp]\centering
-    \begin{tikzpicture}[>=latex]
-\draw [dashdotted](0,0)node[left]{$O$}--(7,0)node[right]{$O'$};
-\draw [->, very thick](1,0)node[below]{$B$}--(1,1)node[above]{$A$};
-\draw [->, very thick](6,0)node[above]{$B'$}--(6,-1.5)node[below]{$A'$};
+    \begin{tikzpicture}
+        \draw[<->, very thick ] (3,2)--(3,-2);
+\draw [dashdotted](0,0)--(7,0);
+\draw [->, very thick, >=latex](1,0)node[below]{$B$}--(1,1)node[above]{$A$};
+\draw [->, very thick, >=latex](6,0)node[above]{$B'$}--(6,-1.5)node[below]{$A'$};
+
+\draw[->, >=latex](1,1)--(3,1);  \draw[->, >=latex](3,1)--(6,-1.5);
+\draw[->, >=latex](1,1)--(3,-1.5);  \draw[->, >=latex](3,-1.5)--(6,-1.5);
+\draw[->, >=latex](1,1)--(6,-1.5);
+\node at (4.3,0)[above]{$F'$};
+\node at (1.6,0)[below]{$F$};
+\node at (3,0)[below left]{$O$};
+
     \end{tikzpicture}
     \caption{}
     \end{figure}
-
-    \begin{solution}
-
     \end{solution}
 \end{enumerate}
 
@@ -1876,9 +1903,26 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$也
 适用于凹透镜成像．（提示：
 对于凹透镜$f$和$v$应取负值）
 
-\begin{solution}
-
-\end{solution}
+\begin{proof}
+    物体经凹透镜成缩小虚像，光路如图5.40所示．焦
+距$f$和虚像像距$v$都是负值。用$-f$和$-v$分别表示图中的
+几何线段$FO$和$B'O$的大小。
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.6]{fig/5-40.png}
+        \caption{}
+    \end{figure}
+    
+因为$\triangle OA'B\backsim \triangle OAB$, 所以
+\[\frac{OB'}{OB}=\frac{A'B'}{AB},\qquad \frac{-v}{u}=\frac{y'}{y}\]
+又因为$\triangle F'A'B'\backsim \triangle FEO$, 所以
+\[\frac{F'B'}{F'O}=\frac{F'O-B'O}{F'O}=\frac{A'B'}{AB}\]
+即\[\frac{(-f)-(-v)}{(-f)}=\frac{y'}{y}\]
+因此：
+\[\frac{-v}{u}=\frac{v-f}{-f}\]
+即$fv=uv-uf$. 整理后得
+\[\frac{1}{u}+\frac{1}{v}=\frac{1}{f}\]
+\end{proof}
 \item  利用公式
 $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 试讨论：
@@ -1889,34 +1933,73 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 \end{enumerate}
 
 \begin{solution}
-
+    \begin{enumerate}
+        \item 由$\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，可得
+    \[v=\frac{u\cdot f}{u-f}\]
+    实物通过凸透镜成像，$u>0$, $f>0$.
+    \begin{itemize}
+        \item     当$u-f>0$，即 $u>f$时，$v>0$成实像．
+        \item  当 $u-f<0$，即$u<f$时，$v<0$成虚像．
+    \end{itemize}
+\item 由于实物通过凹透镜成像时，$u>0$, $f<0$, 所以总有
+    $u\cdot f<0$, $u-f>0$. 因此
+    \[v=\frac{u\cdot f}{u-f}<0\]
+    即$v$不能为正值．
+    \end{enumerate}
 \end{solution}
 \item 一支蜡烛，距凸透镜24厘米，在离凸透镜12厘米的
 屏上得到清晰的像．这个凸透镜的焦距是多长？像是放大的
 还是缩小的？画出成像光路图．
 
 \begin{solution}
-
+\[\begin{split}
+    f&=\frac{u\cdot v}{u+v}=\frac{24\x 12}{24+12}=8{\rm cm}\\
+    m&=\frac{v}{u}=\frac{12}{24}=\frac{1}{2}
+\end{split}\]
+像是缩小的实像，成像光路图如图5.41所示。
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.6]{fig/5-41.png}
+    \caption{}
+\end{figure}
 \end{solution}
 \item 照相机的镜头相当于一个凸透镜，如果镜头的焦距
 为10厘米，底片长3.6厘米，要想给身高1.8米的人拍一张全
 身像，人到镜头的距离至少为多少米？
 
 \begin{solution}
+\[m'=\frac{A'B'}{AB}=\frac{3.6\x 10^{-2}}{1.8}=2\x 10^{-2}\]
+将数值代入$m=v/u$和$\dfrac{1}{v}+\dfrac{1}{u}=\dfrac{1}{f}$
+两公式，可得
+\[\begin{cases}
+    \dfrac{v}{u}=2\x 10^{-2}\\
+    \dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{10{\rm cm}}
+\end{cases}\]
+解得$u=5.1$米。
 
+为了照全身像，人到镜头的距离至少为5.1米。
 \end{solution}
 \item 用焦距为10厘米的凸透镜作放大镜来看微小的物
 体，要想使像成在离镜25厘米的地方，镜到物的距离应为多
 少？这时看到的像放大了多少倍？
 
 \begin{solution}
+用凸透镜作放大镜时成的是虚像，所以$v$为$-25$厘
+米。由透镜成像公式可得
+\[\frac{1}{u}+\frac{1}{-25{\rm cm}}=\frac{1}{10{\rm cm}}\]
+得到$u=7.1$厘米．
 
+因此，
+\[m=\left|\frac{v}{u}\right|=\frac{25}{7.1}=3.5\]
 \end{solution}
 \item 物体位于离凹透镜15厘米处，凹透镜的焦距是7.5
 厘米，像距是多大？像的放大率是多大？
 
 \begin{solution}
-
+    凹透镜的焦距$f=-7.5$厘米，代入透镜成像公式
+    可得
+\[\frac{1}{15{\rm cm}}+\frac{1}{v}=\frac{1}{-7.5{\rm cm}}\quad \Rightarrow\quad v=-5{\rm cm}\]
+\[m=\frac{|v|}{u}=\frac{5}{15}=\frac{1}{3}\]
 \end{solution}
 \item 幻灯机的镜头也相当于一个凸透镜，如果不改变幻
 灯机的镜头，当幻灯机到幕的距离增大时，应该怎样调节镜头
@@ -1924,7 +2007,13 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 是变小？
 
 \begin{solution}
-
+    幻灯片通过镜头成放大实像，一般来说镜头到屏幕
+    的距离（像距）远远大于幻灯片到镜头的距离（物距），因此幻
+    灯机到幕的距离可以当作像距$v$. 由透镜公式可知，镜头焦
+    距$f$不变，$v$增大时，$u$必定减小，即应使镜头靠近幻灯片，才
+    能得到清晰的像．由公式$m=v/u$
+    可知，$v$增大而$u$减小时，$m$
+    将增大，屏上的像变大。
 \end{solution}
 \end{enumerate}
 
@@ -1939,23 +2028,65 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 画图加以说明．
 
 \begin{solution}
+如图5.42所示．人 
+身高$AB=1.8$米，对于平面镜
+$MN$人与像是对称的，像长$A'B'=1.8$米．人如果能从镜中
+看到自己的全身像，必须使$AB$各点发出的光通过镜面$MN$
+反射后都能到达人眼$C$处，即好象是从虚像$A'B'$发出的光都
+到达$C$点。$CA'$、$CB'$与镜面的交点是$P$、$Q$，$PQ$的长度就是平
+面镜的最小长度。
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.6]{fig/5-42.png}
+    \caption{}
+\end{figure}
 
+由于$AB$、$MN$都是直立的，有$AB\parallel MN\parallel A'B'$. 所以$\triangle CPQ\backsim \triangle CA'B'$. 根据
+\[\frac{PQ}{A'B'}=\frac{CP}{CA'}=\frac{1}{2}\]
+所以
+\[PQ=\frac{1}{2}A'B'=0.90{\rm m}\]
 \end{solution}
 \item 光可以从弯曲玻璃棒的一端传到另一端，这是否跟
 光在同一种媒质中沿直线传播相矛盾？
 
 \begin{solution}
-
+    不矛盾。光从玻璃棒的一端射入，在均匀玻璃棒内
+    是沿直线传播的。在玻璃和空气的界面处发生全反射后，在
+    玻璃棒内继续沿直线传播。光在玻璃和空气界面处多次发生
+    全反射，才使光沿着折线从弯曲的玻璃棒的一端传到另一端。
 \end{solution}
 \item 在水面下1.0米处有一个点光源，从水面上看，这个
 点光源能照亮水面多大的面积？
 
 \begin{solution}
+    有折射光线射出的水面，才是在水面上看到的光源
+    照亮的面积。由于水对空气的临界角
+\[    C=\arcsin\frac{1}{n}=48.8^{\circ}\]
+    也就是在图5.43中，$\angle SAN=48.8^{\circ}$, 光的入射角大于$48.8^{\circ}$的水面，没有折射光线射出。所以从水面上看，被这个点光源
+    照亮的面积为以$O$为圆心$OA$为半径的圆．
 
+    因为
+    \[OA=h\cdot \tan C=1.0\x\tan48.8^{\circ}=1.14{\rm m}\]
+    所以圆面积
+    \[S=\pi\cdot (OA)^2=3.14\x1.14^2=4.08{\rm m^2}\]
 \end{solution}
+
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.7]{fig/5-43.png}
+    \caption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.7]{fig/5-44.png}
+    \caption{}
+    \end{minipage}
+    \end{figure}
+
 \item 用下面的方法可以测量液体的折射率：取一个半径
 为$r$的软木塞，在它的圆心处插上一枚大头针，让软木塞浮在
-液面上（图5.58）．调整大头针插进软木塞的深度，使它露在
+液面上（课本图5.58）．调整大头针插进软木塞的深度，使它露在
 外面的长度为$h$．这时从软木塞周围各个方向向液体中看，恰
 好看不到大头针．利用测得的数据$r$和$h$即可以求出液体的
 折射率．
@@ -1963,61 +2094,68 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
     \item 写出用$r$和$h$求折射率的计算式；
     \item 用这种方法实际做一下，求出水的折射率．
 \end{enumerate}
-\begin{figure}[htp]\centering
- %   \includegraphics[scale=1]{fig/5-58.pdf}
-    \caption{}
-    \end{figure}
+
+\begin{solution}
+    在图5.44中，$P$为大头针的顶部，$A$为软木塞边缘
+某点，$AN$为法线。在液面上从各个方向向液体中恰好看不
+到大头针时，$\angle PAN=C$（临界角）。
+
+因为    
+\[AP=\sqrt{r^2+h^2},\qquad \sin C=\frac{r}{\sqrt{r^2+h^2}},\qquad \sin C=\frac{1}{n}\]
+所以
+\[n=\frac{1}{\sin C}=\frac{\sqrt{r^2+h^2}}{r}\]
+\end{solution}
+
+
 \item 为了从坦克内部观察外界目标，在坦克壁上开有一
 个长方形孔．假定坦克的壁厚为20厘米，孔的宽度为12厘
 米，孔内安装一块折射率$n=1.52$的玻璃，厚度跟坦克的壁厚
 相同，车内人员通过这块玻璃能看到的外界范围为多大角度？
 
 \begin{solution}
+    外界的光通过玻璃到达处于孔中心处$P$点的人眼
+    （图5.45）时，
+\[\sin i=n\cdot \sin r=1.52\x \frac{6.0}{6^2+20^2}=0.44\quad \Rightarrow\quad i=26^{\circ}\]
+眼在中心处观察可以看到外界范围的角度为$2i=52^{\circ}$.
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.7]{fig/5-45.png}
+    \caption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\includegraphics[scale=.7]{fig/5-46.png}
+    \caption{}
+    \end{minipage}
+    \end{figure}
+
+说明：
+人眼在不同位置观察时，看到外界的范围是不同的。当
+人眼P位于孔的边缘处观察图5.46, 可得
+\[\sin i=n\cdot \sin r =1.52\x \frac{12}{\sqrt{20^2+12^2}}=0.78\quad \Rightarrow\quad i=51^{\circ}\]
+观察范围（角度）为$51^{\circ}$.
 
 \end{solution}
-\item 图5.59中给出了光线在光学器件上射入和射出的
+\item 课本图5.59中给出了光线在光学器件上射入和射出的
 方向，试在方框内画出可用的光学器件及光路图．
-\begin{figure}[htp]
-	\centering
-\begin{tikzpicture}[>=latex]
-  
-\draw (0,0) rectangle (1.5,1.5);
-\draw (0,2.5) rectangle (0+1.5,2.5+1.5);
-\draw (4,0) rectangle (4+1.5,1.5);
- \draw (4,2.5) rectangle (4+1.5,2.5+1.5);
-\draw [->] (5.5, 1.3)--(6.5,1.3);
-\draw [->] (5.5, .2)--(6.5,.2);
-\draw [->] (3, 1)--(4,1);
-\draw [->] (3, .5)--(4,.5);
-
-
-\draw [->] (5.5, 3.8)--(6.5,3.8);
-\draw [->] (5.5, 2.7)--(6.5,2.7);
-\draw [->] (3, 3.5)--(4,3);
-\draw [->] (3, 3)--(4,3.5);
-
-\draw [->] (-1, 3.5)--(0,3.5);
-\draw [->] (-1, 3)--(0,3);
-\draw [->] (.5, 4)--(.5,5);
-\draw [->] (1, 4)--(1,5);
-
-\draw [->] (-1, 1.3)--(0,1.3);
-\draw [<-] (-1, .2)--(0,.2);
-\draw [->] (-1, 1.1)--(0,1.1);
-\draw [<-] (-1, .4)--(0,.4);
-
-\end{tikzpicture}
-	\caption{}
-\end{figure}
 
 \begin{solution}
-
+    答案如图5.47所示。
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.7]{fig/5-47.png}
+        \caption{}
+    \end{figure}
 \end{solution}
 \item 如果把凸透镜的中部用一块黑纸遮住，用它还能得
 到物体的像吗？为什么？
 
 \begin{solution}
-
+凸透镜成像是由于光在透镜两侧界面上发生折射的
+结果。如果凸透镜中部用一块黑纸遮住，它的其余部分仍能
+透过光线，并在两侧界面上发生折射，仍能成像。只是由于黑
+纸的遮挡，透过凸透镜的光减少了，成像的亮度降低。
 \end{solution}
 \item 蜡烛到凸透镜的距离为20厘米，到光屏的距离为40
 厘米，这时在光屏上得到清晰的烛像，如果把凸透镜向光屏
@@ -2025,14 +2163,36 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 时像的放大率是增大了，还是减小了？
 
 \begin{solution}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.7]{fig/5-48.png}
+        \caption{}
+    \end{figure}
 
+    在图5.48中，物距$u=20$厘米，像距$v=L-u=40-20=20$厘米。
+    焦距
+\[f=\frac{uv}{u+v}=\frac{20\x 20}{20+20}=10{\rm cm}\]
+\[m=\frac{v}{u}=1\]
+
+将凸透镜向光屏移动$d=5$厘米，物距$u'=u+d=25$
+厘米，像距
+\[v'=\frac{u'f}{u'-f}=\frac{25\x 10 }{25-10}=17{\rm cm}\]
+光屏移动的距离
+\[\Delta L=u'+v'-L=2{\rm cm}\]
+放大率$m'=\dfrac{v'}{u'}=\dfrac{17}{25}=0.68<m$, 像的放大率减小了。
 \end{solution}
 \item 当物体到凸透镜的距离为36厘米时，光屏上所成的
 像的高度为10厘米；当物体到凸透镜的距离变为24厘米时，
 光屏上像的高度变为20厘米，这个凸透镜的焦距是多大？
 
 \begin{solution}
-
+    由透镜公式$\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$
+    和放大率公式$m=\dfrac{v}{u}=\dfrac{y'}{y}$（$y$和$y'$分别为物和像的高度）可得
+\[f=\frac{u\cdot v}{u+v}=\frac{mu}{m+1}=\frac{y'\cdot u}{y'+y}\]
+则
+\[f=\frac{y'_1\cdot u_1}{y'_1+y},\qquad f=\frac{y'_2\cdot u_2}{y'_2+y}\]
+消$y$并代入数值得
+\[f=\frac{y'_1u_1-y'_2u_2}{y'_1-y'_2}=\frac{10\x 36+20\x 24}{10-20}=12{\rm cm}\]
 \end{solution}
 \item 透镜焦距的倒数$1/f$
 叫做透镜的焦度，焦度的单位叫
@@ -2041,10 +2201,14 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 数是250度，他的眼镜是什么透镜？焦距是多大？
 
 \begin{solution}
-
+    近视眼镜为凹透镜。
+    
+    250度近视镜的焦度
+\[D=\frac{-250}{100}=-2.5\text{屈光度}\]
+\[f=\frac{1}{D}=-\frac{1}{2.5}=-0.40{\rm m}=-40{\rm cm}\]
 \end{solution}
-\item 如图5.60所示，如果以凸透镜的两个焦点$F_1$、$F_2$
-分别作为计算物距和像距的起点，并且用x表示物体AB到
+\item 如图5.49所示，如果以凸透镜的两个焦点$F_1$、$F_2$
+分别作为计算物距和像距的起点，并且用$x$表示物体$AB$到
 第一焦点$F_1$的距离，以$x'$表示像$A'B'$到第二焦点$F_2$的距
 离．试证明；凸透镜成像的公式
 \[\frac{1}{u}+\frac{1}{v}=\frac{1}{f} \]
@@ -2066,6 +2230,29 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 	\caption{}
 \end{figure}
 （提示：$u=x+f$，$v=x'+f$）
+
+\begin{proof}
+在$\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$公式中代入$u=x+f$、$v=x'+f$, 
+得到
+\[\frac{1}{x+f}+\frac{1}{x'+f}=\frac{1}{f}\]    
+整理可得
+\[x'f+xf+2f^2=xx'+fx'+xf+f^2\]
+所以$x\cdot x'=f^2$
+
+注意：牛顿公式也可由透镜成像作图（图5.50）直接
+证明。
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.7]{fig/5-50.png}
+    \caption{}
+\end{figure}
+
+因为$\triangle FAB\backsim \triangle FDO$, 所以
+$\dfrac{AB}{DO}=\dfrac{x}{f}$，
+又因为$\triangle F'A'B'\backsim \triangle F'CO$, 所以$\dfrac{CO}{A'B'}=\frac{f}{x'}$
+而$AB=CO$, $A'B'=DO$, 因此
+\[\frac{x}{f}=\frac{f}{x'},\qquad x\cdot x'=f^2\]
+\end{proof}
 \item 某人用焦距为2厘米和8厘米的两个凸透镜分别
 作物镜和目镜，制成一架简易显微镜．如果物镜到被观察物
 体的距离为2.2厘米，要想使目镜最后所成的虚像距目镜25
@@ -2073,7 +2260,21 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 多大？
 
 \begin{solution}
-
+对于目镜成放大的虚像，像距 $v_2=-25$厘米，
+$f_2=8$厘米．对应的物距
+\[u_2=\frac{f_2\cdot v_2}{v_2-f_2}=\frac{8\x (-25)}{-25-8}=6.1{\rm cm}\]
+对于物镜成放大实像．物距$u_1=2.2$厘米，$f_1=2$厘米。
+对应的像距
+\[v_1=\frac{f_1\cdot u_1}{u_1-f_1}=\frac{2\x 2.2}{2.2-2}=22{\rm cm}\]
+所以目镜和物镜间的距离$L=v_1+u_2=28$厘米
+显微镜的放大率
+\[m=m_1\cdot m_2=\frac{v_1}{u_1}\cdot \frac{v_2}{u_2}=\frac{22}{2.2}\x\frac{25}{6.1}=41\]
+光路图如图5.51所示．
+\begin{figure}[htp]
+    \centering
+    \includegraphics[scale=.7]{fig/5-51.png}
+    \caption{}
+\end{figure}
 \end{solution}
 \end{enumerate}
 
@@ -2100,12 +2301,225 @@ $\dfrac{1}{u}+\dfrac{1}{v}=\dfrac{1}{f}$，
 
 
 
+\section{参考资料}
+\subsection{光的速度}
+光速是在物理学史和科学技术上有着非常重要意义的基
+本物理常数。
+
+1851年傅科测出水中的光速小于真空中的光速，成为波
+动说战胜微粒说的实验依据。
+
+1865年麦克斯韦从理论上计算出电磁波速度
+\[v=\frac{1}{\sqrt{\varepsilon_0\cdot \mu_0}}=
+3.10740\x10^5{\rm km/s}\]
+与实验测定的光速值一致，他大胆地预言光是一种电磁波，建
+立了光的电磁学说。
+
+真空中光速的测量为狭义相对论的建立奠定了实验基
+础。真空中光速恒定不变，不管选择什么样的参照系，也不管
+光源或接收器是否运动。光速不变原理成为狭义相对论的基
+本假设之一。
+
+本世纪70年代以后，光速的测量已十分精确，以致在
+1983年第十七届国际计量大会上决定，用光速重新定义长度
+的基准单位——米：“米”是光在真空中，在$1/299792458$秒的
+时间间隔内运行路程的长度。
+
+测量真空中的光速一览表
+\begin{center}
+    \begin{tabular}{lp{.3\textwidth}p{.3\textwidth}l}
+\hline
+年代&作者&方法&光速值（km/s）\\
+\hline
+1727年&布喇德雷（Bradley）&光行差法& $301,000$\\
+1849年&斐索（Fizeau）&齿轮法& $313,000$\\
+1851年&傅科（Foucault）&旋转镜法& $298,000\pm 500$\\
+1933年&迈克耳孙（Michelson）皮斯（Pease）皮尔孙（Pearson）   &旋转镜法& $299,774\pm 2$\\
+1941年&安德森（Anderson）&克尔盒调谐器&$299,776\pm 6$\\
+1950年&埃森（Essen）&谐振腔法&$299,792.5\pm 1$\\
+1951年&贝格斯特兰（Bergstrand）&光电测距仪&$299,793.1\pm 0.3$\\
+1956年&艾奇（Edge）&光电测距仪&$299,792.2\pm 0.1$\\
+1957年&韦德莱（Wadley）&雷达测距仪&$299,792.6\pm 1.2$\\
+1958年&弗罗默（Froome）&微波干涉仪&$299,792.5\pm 0.1$\\
+1961年&卡特科斯基（Cutkosky）托马斯（Thomas）&电荷的静电单位和电磁单位的比值&$299,791.96\pm 0.8$\\
+1964年&
+兰克、琼斯、艾迪（Rank, Jones, Gordy）&光谱法（氯化氢）&$299,792.8\pm 0.4$\\
+1966年&卡洛路斯、赫姆伯格（Karolus, Helmberger）&声调制法&$299,792.47\pm 0.15$\\
+1972年&贝依等（Bay）&氦氖激光（0.663微米）&$299,792.462\pm 0.018$\\
+1972年&贝艾德（Baird）&二氧化碳激光（9和10微米）&$299,792.460\pm 0.006$\\
+1973年&美国国家标准局&测定氦-氖激光3.39微米谱线的频率和波长&$299,792.574\pm 0.0011$\\
+1974年&美国国立物理实验室&测定$\rm CO_2$激光9.3微米谱线的频率和波长&$299.792.4590\pm 0.0008$\\
+\hline
+    \end{tabular}
+\end{center}
 
 
+\subsection{光导纤维}
 
+从20世纪50年代开始利用光导纤维传输光能的技术得
+到迅速发展。至今已经形成一门专门的科学——纤维光学。
+根据传输光能的机制，光导纤维可以分为反射型和折射型
+两类。
 
+反射型光导纤维由两层均匀媒质组成（图5.52甲），内层
+称为芯线，外层称为包层，芯线的折射率$n_1$大于包层的折射
+率$n_2$. 光从圆柱形光导纤维端面入射，进入芯线内传播，到达
+芯线与包层的界面处发生全反射（图5.52乙），使得光只在芯
+线中由一端传到另一端而不进入包层，光能量的损失较小。
+\begin{figure}[htp]\centering
+\includegraphics[scale=.6]{fig/5-52.png}
+    \caption{}
+    \end{figure}
 
+折射型光导纤维是折射率非均匀分布的光导纤维。光导
+纤维的折射率在它的横断面上沿半径方向连续变化，中心轴
+线处折射率最大，沿半径向外逐渐减小（图5.53甲），在光导纤
+维内部，光传播的径迹总是偏向中心轴线方向弯曲的周期性
+变化的曲线，如（图5.53乙）所示．和反射型光导纤维一样，光
+从端面射入光导纤维内传播时，也约束在光导纤维内部一
+定范围内。折射型光导纤维还具有自动聚焦作用。以不同角
+度入射到$O$点的光线在光导纤维内行进半个周期的整数倍的
+路程后，还可以交于一点。光导纤维对光的这种作用和透镜
+对光的作用一样，因此，可以用在成像系统中。
+\begin{figure}[htp]\centering
+    \includegraphics[scale=.6]{fig/5-53.png}
+        \caption{}
+        \end{figure}
 
+光导纤维被广泛地用于传输光能，具有结构简单、可以任
+意弯曲的优点。在医疗上，光导纤维可以用于照明和成像，把
+光导纤维伸入人体内，强光源的光聚焦到光导纤维的注入面，
+光通过光导纤维传送到人体内，照亮病人体内的病灶部位。同
+时，再由光导纤维把病变的图象传送出来，供医生观看。如果
+把能量足够高的激光通过光导纤维传输到人体内，还可以完
+成高效的外科手术。女果用光导纤维把激光能量传输到体内
+出血部位，用激光的凝血作用止血，可治疗胃溃疡病人内
+出血。
 
+光导纤维和激光技术相结合，发展为光纤通信。光纤通
+信用光导纤维作传输信号的媒质，用光波作载波。传输的任
+何信息或由信息转换成的交变电流都有一定的频率范围，称
+为频带宽度，简称带宽。载波要能携带信息，其频带必须比
+信息的频带更宽．人发出的声音的频带为0.3千赫—3.4千
+赫，如果传输一路电话，载波的频带宽度须大于3.4千赫．
+所以载波的频带越宽，所能传输的通话路数越多。光纤通信
+用光波作为载波，光的频率在$10^{10}$—$10^{12}$千赫，可同时容纳
+100亿个话路。
 
+在传输信号的媒质上也存在着带宽的问题。由它限制着
+所能传输的信号的频带宽度。对光纤来说，由它的色散特性
+决定了它所允许的传输带宽很宽。
+
+通常电话信号占用的频带为4—5千赫，彩色电视信号占
+用频带宽约8—10兆赫．利用光波做载波的光纤通信技术，目
+前已能在一根光导纤维上传送几万路电话或者几十路电视。
+在实际中，还常常用几对、几十对乃至几百对光导纤维组成光
+缆，这样，使每根光缆的通信容量又可以增加几倍，甚至几百
+倍。另外，光纤通信的中继距离长。在微波通信线路中，由于电
+波能量的损耗，每隔一段路程就要设置中继站，把接收到的电
+波信号放大，才能继续传播下去。对于微波通信，中继站的间
+隔为3公里．对于光纤通信，由于制造光纤的技术不断改进，
+1970年美国制造的光导纤维每公里衰减20分贝（即每公里衰
+减到原来的1/100),现在生产的光导纤维每公里只衰减0.2
+分贝，非常接近于理论的极限值0.18分贝．这样，光纤通信
+的中继站的间距可以大大拉长，目前可达到100公里以上，此
+外，光纤通信还具有线径小（一根光纤的直径为0.06—0.1毫
+米）、重量轻，（现在的轻质光缆每公里不到2千克），取材易、
+价格低廉，抗干扰、耐震动等优点，到1983年底，全世界共
+敷设27万公里长的光纤通信线路，我国在上海、北京、武汉等
+城市中敷设了总长100多公里的光纤通信线路，连接武汉三
+镇的光纤电话已通过鉴定，并已在试用。我国新兴的光纤通
+信产业已初具规模，在一些重要技术上已达到国际八十年代
+初的水平。
+
+\subsection{助视光学仪器的视角放大倍数}
+助视光学仪器包括放大镜、显微镜和望远镜。使用助视
+光学仪器的主要目的是放大视角，通常用视角放大倍数来衡
+量助视光学仪器的放大本领。物体通过助视光学仪器得到的
+虚像对人眼所张的视角$U'$与物体直接对人眼所张的视角$U$
+之比，即$M=U'/U$
+叫做光学仪器的视角放大倍数。视角越大。
+物体在视网膜上所成的实像也越长。在近轴条件下，
+\[U\approx \sin U\approx \tan U, U'\approx \sin U'\approx \tan U'\]
+因此，视角放大倍数也等
+于借助于助视光学仪器后物体在视网膜上所成的实像长$h'$
+与物体直接在视网膜上所成实像长$h$之此。即
+\[M=\frac{U'}{U}=\frac{h'}{h}\]
+
+（1）放大镜用来观察近处比较细小的物体，最简单的放
+大镜是一个凸透镜。它的放大倍数计算如下：
+
+眼睛直接观察，细小物体，一般放在明视距离$L=25$厘米
+处．视角$U=y/L$（图5.54甲）。
+
+\begin{figure}[htp]\centering
+    \includegraphics[scale=.6]{fig/5-54.png}
+        \caption{}
+        \end{figure}
+
+眼睛通过放大镜观察，看到的是细小物体的放大虚像，视
+角$U'=y'/L'$（图5.54乙），其中$L'=-x'+X'$, 代入放大率
+公式
+\[m=\frac{y'}{y}=-\frac{x'}{f}\]
+视角放大倍数
+\[\begin{split}
+    M=\frac{U'}{U}=\frac{y'}{y}\cdot \frac{L}{L'}&=-\frac{x'}{f}\cdot \frac{25}{L'}{\rm cm}\\
+    &=\frac{25}{f}{\rm cm}\x \left(1-\frac{X'}{L'}\right)
+\end{split}\]
+一般说来，放大镜的放大本领与放大镜的焦距有关，还与放大
+镜的使用情况，即物和透镜的距离，人眼和透镜的距离有关。
+当人眼处于像方焦点$F'$处时，$X'=0$, 则
+\[M_0=\frac{25}{f}\]
+仅与放大镜的焦距有关，一般所说的放大镜的放大倍数就是
+指$M_0$来说的。
+
+由于像差的存在，一般简单放大镜的放大倍数不超过
+3倍．
+
+\begin{figure}[htp]\centering
+    \includegraphics[scale=.6]{fig/5-55.png}
+        \caption{显微镜成像光路}
+        \end{figure}
+
+（2）显微镜由焦距很短的物镜和焦距较长的目镜组成。
+其成像光路如图5.55所示。近处细微的物体放在物镜的物方
+焦平面附近，成倒立实像于目镜的物方焦面附近，从目镜折射
+出来的光线都近于平行，这样，虚像$y'$对人眼张的视角$U'$近
+似等于实像$y_1$对目镜光心$O_2$所张的角度。即$U'=y_1/f_2$. 
+由于
+物镜的放大率
+\[m_1=\frac{y_1}{y}=\frac{V_1}{u_1}\]
+对物镜来说，物距$u_1$近似等于它
+的焦距$f_1$, 像距$v_1$近似等于镜筒长$L$, 所以
+\[\frac{y_1}{y}\approx \frac{L}{f}\]
+由此得到
+\[U'=\frac{y\cdot L}{f_1\cdot f_2}\]
+
+直接将物体放在明视距离处观察的视角$U=\dfrac{y}{25{\rm cm}}$
+微镜的视角放大倍数
+\[M=\frac{25{\rm cm}}{f_2}\cdot \frac{L}{f_1}\]
+相当于目镜的放大倍数和物镜的放大倍数的乘积。通常显微镜的目镜和物镜都标有
+放大倍数的字样，如物镜标有$40\x$, 目镜标有$15\x$, 则它们组
+成的显微镜的放大倍数是$M=40\x15=600$（倍）。
+
+（3）望远镜用来观察远处大物体。由于物体距人眼很远，
+视角很小，难以被人分辨清楚。望远镜的作用就是放大视角，
+物体通过望远镜成虚像，该虚像对人眼所张的视角比物体直
+接对人眼所张的视角大，犹如把物体从远处“拉近”一样。
+
+开普勒望远镜的目镜和物镜都是凸透镜，物镜的焦距$f_1$
+大于目镜的焦距$f_2$, 它们相距$L=f_1+f_2$, 因此物镜的像方焦
+平面和目镜的物方焦平面重合。远处的物体$AB$通过物镜成
+实像$A_1B_1$于焦平面上，再通过目镜或虚像于无限远处．该虚
+像对人眼所张的视角等于像$A_1B_1$对目镜光心$O_2$张的角度
+\[U'=\frac{y'}{f_2}\]
+远处物体直接对人眼所张的视角等于它对物镜的光心$O_1$所
+张的视角$U$, 由图5.56可以看出，$U=y'/f_1$。
+望远镜的视角放大
+倍数为$M=f_1/f_2$。
+
+\begin{figure}[htp]\centering
+    \includegraphics[scale=.6]{fig/5-56.png}
+        \caption{开普勒望远镜成像光路}
+        \end{figure}
 
