@@ -136,7 +136,35 @@ $LC$回路的周期和频率跟哪些因素有关呢？让我们改变
 
 从麦克斯韦的电磁场理论可以知道：如果在空间某处发生了不均匀变化的电场，就会在邻近的空间引起变化的磁场，这个变化的磁场又会在较远的空间引起新的变化的电场，接着又在更远的空间引起新的变化的磁场，这样，变化的电场和变化的磁场并不局限于空间某个区域，而要由近及远向周围空间传播开去，电磁场这样由近及远地传播就形成\textbf{电磁波}．
 \begin{figure}[htp]\centering
-\includegraphics[scale=.75]{fig/4-6.png}
+\begin{tikzpicture}[>=latex, scale=1.1]
+	\draw[pattern=north east lines](-.8,-.8) rectangle (.8,-.6);
+	\draw[pattern=north east lines](-.8,.8) rectangle (.8,.6);
+	\draw(0,.8)--(0,1.5);
+	\draw(0,-.8)--(0,-1.5);
+	\foreach \x in {0,3,-3}
+	{
+		\draw[thick](\x,0) ellipse [x radius=.9, y radius=.3];
+	}
+	\foreach \x in {1.5,-1.5}
+	{
+		\draw[dashed, thick](\x,0) circle (.8);
+		\node at (\x,1){$E$};
+	}
+	\draw[dashed, thick](4.5,.8)node[above]{$E$} arc (90:270:.8);
+	\draw[dashed, thick](-4.5,.8)node[above]{$E$}  arc (90:-90:.8);
+	\foreach \x in {-.6,-.4,-.2,...,.4,.6}
+	{
+		\draw[dashed](\x,-.6)--(\x,.6);
+	}
+	
+	\node at (3,.5){$B$};
+	\node at (-3,.5){$B$};
+	
+	\draw[dashed](-.8,-.6)[bend left=30] to (-.8,.6);
+	\draw[dashed](.8,-.6)[bend left=-30] to (.8,.6);
+	
+	
+\end{tikzpicture}
 \caption{电磁波传播过程的示意图}
 \end{figure}
 

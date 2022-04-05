@@ -1,6 +1,6 @@
 \chapter{磁场}
 \section{磁场}
-我们在初中学过，把一根磁铁放在另一根磁铁的附近，两根磁铁的碰极之间会产生相互作用的磁力：同名磁极互相推斥，异名磁极互相吸引．我们知道，两个电荷之间相互作用的电力，不是在电荷之间直接发生的，而是通过电场传递的．同样，磁极之间相互作用的磁力，也不是在磁极之间直接发生的，而是通过磁场传递的．磁极在周围的空间里产生磁场，磁场对处在它里面的磁极有磁场力的作用．
+我们在初中学过，把一根磁铁放在另一根磁铁的附近，两根磁铁的磁极之间会产生相互作用的磁力：同名磁极互相推斥，异名磁极互相吸引．我们知道，两个电荷之间相互作用的电力，不是在电荷之间直接发生的，而是通过电场传递的．同样，磁极之间相互作用的磁力，也不是在磁极之间直接发生的，而是通过磁场传递的．磁极在周围的空间里产生磁场，磁场对处在它里面的磁极有磁场力的作用．
 
 磁铁并不是磁场的唯一来源，1820年丹麦物理学家奥斯特（1777—1851）做过下面的实验：把一条导线平行地放在磁针的上方，给导线通电，磁针就发生偏转（图1.1），这说明
 不仅磁铁能产生磁场，电流也能产生磁场，电和磁是有密切联系的．
@@ -104,19 +104,38 @@
 磁极和电流同样能够产生磁场，磁场对磁极和电流同样有磁场力的作用．通电螺线管和条形磁铁又那么相似，这些现象使我们想到：磁极的磁场和电流的磁场是不是有相同的起源？这个问题现在已经有了明确的回答，这个相同的起源就是电荷的运动．
 
 导体中的电流是由电荷的运动形成的，因而我们不难理解通电导线的磁场是由电荷的运动产生的．那么，能不能进一步用实验直接证实：原来静止的电荷，当它运动起来的时
-候就会产生磁场呢？这个问题早在一百多年以前就提出来了．1876年美国的罗兰用实验证实了这一点，罗兰把大量的电荷加在一个橡胶圆盘上，然后使盘绕中心轴高速转动，在盘的附近用小磁针来检验运动电荷产生的磁场（图1.9），结果他发现：当带电盘转动时，小磁针果然发生了偏转，而且改变盘的转动方向或者改变所带电荷的正负时，小磁针的偏转方向电改变，磁针的偏转方向跟运动电荷所形成的电流方向间的关系同样符合安培定则．这个实验证明了运动电荷确实产生磁场，进一步揭示了磁现象的电本质．
+候就会产生磁场呢？这个问题早在一百多年以前就提出来了．1876年美国的罗兰用实验证实了这一点，罗兰把大量的电荷加在一个橡胶圆盘上，然后使盘绕中心轴高速转动，在盘的附近用小磁针来检验运动电荷产生的磁场（图1.9），结果他发现：当带电盘转动时，小磁针果然发生了偏转，而且改变盘的转动方向或者改变所带电荷的正负时，小磁针的偏转方向也改变，磁针的偏转方向跟运动电荷所形成的电流方向间的关系同样符合安培定则．这个实验证明了运动电荷确实产生磁场，进一步揭示了磁现象的电本质．
+
 \begin{figure}[htp]\centering
-\includegraphics{fig/1-9.png}
-\caption{罗兰实验的示意图}
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+\begin{tikzpicture}[>=latex]
+			\fill[pattern=north east lines](-1,1.8) rectangle (0,2);
+			\draw(-1,1.8)--(0,1.8);
+			\draw(0,0)ellipse[x radius=1, y radius=.5];
+			\draw[fill=white](0,0.1)ellipse[x radius=1, y radius=.5];
+			\draw(-.5,1.8)--(-.5,0);
+			\draw(-.6,-.1)--(-.4,0.1);
+			\draw[fill=white](-.05,0) rectangle (.05,1.5);
+			\draw[fill=white](0,-1.5)ellipse[x radius=.05, y radius=.025];
+			\draw[fill=white](-.05,-.5) rectangle (.05,-1.5);
+			\draw[fill=white](0,1.5)ellipse[x radius=.05, y radius=.025];
+			\draw[->](-.2,1.2) arc [start angle =-180, end angle =70, x radius=.2, y radius=.1];
+			
+		\end{tikzpicture}
+		\caption{罗兰实验的示意图}
+	\end{minipage}
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=1]{fig/1-10.pdf}
+		\caption{}
+	\end{minipage}
 \end{figure}
+
 
 磁铁的磁场是否也是由电荷的运动产生的呢？法国科学家安培（1775—1836），从奥斯特实验得到启示，提出了著名的分子电流的假说．他认为：在原子、分子等物质微粒内部存
 在着一种环形电流，叫做分子电流，分子电流使每一个物质微粒都成为一个微小的磁体，它的两侧相当于两个磁极（图1.10），这两个磁极跟分子电流不可分割地联系在一起．
 
-\begin{figure}[htp]\centering
-\includegraphics{fig/1-10.pdf}
-\caption{}
-\end{figure}
 
 安培的假说能够解释各种磁现象，一根软铁棒，在未被磁化的时候，内部各分子电流的取向是杂乱无章的（图1.11甲），它们的磁场互相抵消，对外界不显磁性，当软铁棒受到外界磁场的作用时，各分子电流的取向变得大致相同（图1.11乙），软铁棒就被磁化了，两端对外界显示出较强的磁作用，形成磁极．
 
@@ -210,7 +229,7 @@
 
 一般永磁铁的磁极附近的磁感应强度大约是0.4—0.7特，在电机和变压器的铁心中，磁感应强度可达0.8—1.4特，通过超导材料的强电流的磁感应强度可高达1000特，而地面附近地磁场的磁感应强度大约只有$0.5\x 10^{-4}$特．
 
-正象用电力线的疏密程度可以形象地表示电场强度的大小一样，用磁力线的硫密程度也可以形象地表示磁感应强度的大小，在磁感应强度大的地方磁力线密一些，在磁感应强度小的地方磁力线稀一些．
+正像用电力线的疏密程度可以形象地表示电场强度的大小一样，用磁力线的硫密程度也可以形象地表示磁感应强度的大小，在磁感应强度大的地方磁力线密一些，在磁感应强度小的地方磁力线稀一些．
 
 如果在磁场的某一区域里，磁感应强度的大小和方向都相同，这个区域就叫做\textbf{匀强磁场}，匀强磁场的磁力线，方向相同，疏密程度也一样，是一些分布均匀的平行直线．
 
@@ -503,15 +522,16 @@
 	\includegraphics[scale=.75]{fig/1-28.png}
 	\caption{电流天平}
 \end{figure}
+    \begin{figure}[htp]\centering
+	\includegraphics[scale=.75]{fig/1-29.png}
+	\caption{测定螺线管的磁感应强度}
+\end{figure}
 
 整个装置如图1.28甲所示，它的横臂（图1.28乙）能绕
 通过点$O$和$O'$的轴自由转动，轴的左右两侧，臂长相等，在轴的一侧，沿着横臂的边沿固定一条U形绝缘导线．这样，
 在天平的一端就有了一段短直导线$CD$，它的长度是$\ell$\footnote{为了可以改变$\ell$的长度，仪器的U形导线中间又加了一条引线，因此，还可以用这个仪器来研究磁场对电流的作用力跟导线的长度的关系．}．天平的另一端可以悬挂砝码或细金属丝等轻小物体．调整天平，使它平衡．把有U形导线的一端放入待测的磁场中（图1.29），然后给U形导线通电，如果磁场方向和U形导线中的电流方向如图所示，$CD$段导线就受到一个向下的安培力，天平因而倾斜，在天平的另一端加上适当的砝码，使天平恢复平衡．设待测的磁感应强度是$B$，U形导线中通过的电流强度是$I$，砝码的质量是$m$，我们就有$I\ell B=mg$，由此可求出待测的磁感应强度
 \[B=\frac{mg}{I\ell}\]
-    \begin{figure}[htp]\centering
-	\includegraphics[scale=.75]{fig/1-29.png}
-	\caption{测定螺线管的磁感应强度}
-\end{figure}
+
 
 \subsection*{练习四}
 \begin{enumerate}
@@ -529,10 +549,65 @@
 这一节我们讨论常用的磁电式仪表的工作原理．磁电式仪表是利用通电线圈在磁场中发生偏转的现象制成的，下面我们先讲磁场对通电线圈的作用．
 
 \subsection{磁场对通电线圈的作用}
-    \begin{figure}[htp]\centering
-	\includegraphics[scale=.75]{fig/1-30.png}
+
+\begin{figure}[htp]\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\begin{tikzpicture}[>=latex,yscale=1.3]
+			\foreach \x in {-1,-.5,...,1.5}
+			{
+				\draw[->](-2,\x)--(2,\x);
+			}
+			\draw[dashed](0,-1.5)node[below]{$O'$}--(0,2)node[above]{$O$};
+			
+			\tkzDefPoints{-1/.8/a, 1/1.8/d, -1/-1.2/b}
+			\tkzDefPointsBy[translation= from a to b](d){c}
+			\tkzDrawSegments[very thick](a,b b,c c,d)
+			\tkzDefPointWith[linear, K=.4](a,d)\tkzGetPoint{a'}
+			\tkzDefPointWith[linear, K=.6](a,d)\tkzGetPoint{d'}
+			\tkzDrawSegments[very thick](a,a' d,d')
+			\tkzLabelPoints[left](a,b)
+			\tkzLabelPoints[right](c,d)
+			\draw[very thick](a')--+(0,.25);
+			\draw[very thick](d')--+(0,.25);
+			\draw[->](d')--+(0.2,.7)node[above]{$F_{ad}$};
+			\draw[->](1,0.5)--+(0.3,.6)node[above]{$F_{cd}$};
+			\draw[->](-1,0)--+(-0.3,-.6)node[below]{$F_{ab}$};
+			\draw[->](0,-.7)--+(-0.2,-.7)node[left]{$F_{bc}$};
+			
+			\node at (0,1.3)[right]{$\theta$};
+		\end{tikzpicture}
+		\caption*{甲}
+	\end{minipage}
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\begin{tikzpicture}[>=latex, scale=1]
+			\foreach \x in {-1,0,1,2}
+			{
+				\draw[->](-1.5,\x)--(3,\x);
+			}
+			\node at (3.5,.5){$B$};
+			\draw[->](1.5,1.5)--(1.5,3)node[right]{$F_{cd}$};
+			\draw[->](-.5,-.5)--(-.5,-2)node[right]{$F_{ab}$};
+			\draw[dashed](1.5,1.5)--(1.5,-.7);
+			\draw[<->](-.3,-.5)--node[fill=white]{$d$}(1.5,-.5);
+			\draw[fill=white](1.5,1.5)node{$\cdot$} circle(.15); 
+			\draw[fill=white](-.5,-.5)node{$\times$} circle(.15); 
+			\draw(1.5-.1,1.5+.1)--(-.5-.1,-.5+.1);
+			\draw(1.5+.1,1.5-.1)--(-.5+.1,-.5-.1);
+			\node at (1.5,1.5)[right=5pt]{$d$};
+			\node at (-.5,-.5)[left=5pt]{$a$};
+			\tkzDefPoints{.5/.5/O, 1.5/-.5/A, -.3/-.5/B, 1.6/1.4/O'}
+			\tkzDrawPoints(O)
+			\tkzLabelPoints[below right](O)
+			\tkzLabelAngle[pos=.8](A,B,O'){$\theta$}
+			\tkzMarkAngles[mark=none, size=.5](A,B,O')
+		\end{tikzpicture}
+		\caption*{乙}
+	\end{minipage}
 	\caption{磁场对通电线圈的作用}
 \end{figure}
+
 
 图1.30甲表示放在匀强磁场中的通电矩形线圈，线圈平面跟磁力线成$\theta$角．线圈顶边$da$和底边$bc$所受的安培力$F_{da}$和$F_{bc}$大小相等，方向相反，彼此
 平衡，$ab$和$cd$两个侧边与磁力线垂直，它们受到的安培力$F_{ab}$和$F_{cd}$虽然大小相等，方向相反，但是它们形成力偶，使线圈绕竖直轴$OO'$转动．
@@ -543,16 +618,22 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 从上式可以看出，当线圈平面跟磁力线平行时，$\theta=0$，$\cos\theta=1$，所受力偶矩最大．当线圈平面跟磁力线垂直时，$\theta=90^{\circ}$，$\cos\theta=0$，力偶矩为零，这时$F_{ab}$和$F_{cd}$彼此平衡，所以线圈会停在这个位置上．
 
 \subsection{电流表的工作原理}
-    \begin{figure}[htp]\centering
-	\includegraphics[scale=.75]{fig/1-31.png}
-	\caption{电流表的构造}
-\end{figure}
+
 常用的电流表的构造如图1.31所示．在很强的蹄形磁铁的两极间有一个固定的圆柱形铁心，铁心外面套一个可以绕轴转动的铝框，铝框上绕有线圈，铝框的转轴上装有两个螺旋弹簧和一个指针．线圈的两端分别接
 在这两个螺旋弹簧上，被测电流就是经过这两个弹簧通入线圈的．
 \begin{figure}[htp]\centering
-\includegraphics[scale=1]{fig/1-32.pdf}
-\caption{}
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=.7]{fig/1-31.png}
+		\caption{电流表的构造}
+	\end{minipage}
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=1.2]{fig/1-32.pdf}
+		\caption{}
+	\end{minipage}
 \end{figure}
+
 
 蹄形磁铁和铁心间的磁场是均匀地辐向分布的（图1.32），不管通电线圈转到什么角度，它的平面都跟磁力线平行，
 因此磁场使线圈偏转的力偶矩$M_1$不随偏角而改变．另一方面，线圈的偏转使弹簧扭紧或扭松，于是弹簧产生一个阻碍线圈偏转的力矩$M_2$．线圈偏转的角度越大，弹簧的力矩$M_2$也越大．到$M_1$跟$M_2$平衡时，线圈就停在某一偏角上，固定在转轴上的指针也转过同样的偏角，指到刻度盘的某一刻度．
@@ -962,12 +1043,12 @@ F_{cd}=BI·ab$，从图1.30乙（图甲的俯视图）可以看出，力偶臂$d
 \centering
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-    	\includegraphics[scale=.75]{fig/1-42.png}
+    	\includegraphics[scale=.9]{fig/1-42.png}
 \caption{}
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-	\includegraphics[scale=.75]{fig/1-43.png}
+	\includegraphics[scale=.9]{fig/1-43.png}
 \caption{}
 \end{minipage}
 \end{figure}
